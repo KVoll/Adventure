@@ -14,7 +14,7 @@ def main():
         game = Game(file_name)
 
     else:
-        game = Game("creepy.xml")
+        game = Game("Q2API_XML/creepy.xml")
         print game.state.something[0].value
 
         # Slow text via sleep for intro

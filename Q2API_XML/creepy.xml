@@ -2,195 +2,245 @@
     <player>
         <inventory items=""/>
         <room name="unknown room"/>
+        <score val=""/>
     </player>
-    <something>
-DARKNESS
-I can’t tell if my eyes are open or not. I rub my face and squint harder to see. Eventually objects
-emerge from the darkness and begin to take familiar forms. As my eyes adjust my attention is suddenly directed
-to a subtle yet foul odor in the room. Behind me is the only form of light in the room. The dim light cuts a
-distinguishable perimeter of what must be another door. Thinking to myself, I quickly reason that another door
-could mean a possibility of freedom…
-    </something>
+    <intro>
+I couldn't tell if my eyes were open or not. I rubbed my face and squinted harder to see. Eventually objects
+emerged from the darkness and began to take familiar forms.  The first thing I laid my eyes on was
+a door on the other side of the room.  It looked aged and rugged, but it was screaming my name.</intro>
     <tip>
 ---------------------------------------------------------------------------------------------------------------------------------
 TIP:  You can type 'menu' to see a list of commands, 'inv' to see what items are in your inventory, and 'exit' to quit playing.
 ---------------------------------------------------------------------------------------------------------------------------------
     </tip>
     <room name="unknown room">
-        <desc>&lt;The room is dark, musky, and cold.&gt;</desc>
-        <l noun="unknown room">I inspected the room. It was a challenge to make my way around the room in such total
-                     darkness. I discovered what appears to be a desk, and the door that glows with salvation.</l>
-        <o noun="unknown room">Opening a room is absurd.</o>
-        <t noun="unknown room">How do you think you're going to take a room along with you? No.</t>
-        <g noun="unknown room">Sorry, you can't go anywhere. Currently, you are trapped in this cursed room.</g>
+        <desc>&lt;This room is completely foreign to me.  It looks like it has gone through some sort of accident.&gt;</desc>
+        <l noun="unknown room">I inspected the room. It was a challenge to make my way around the room amongst all the chaos.</l>
+        <o noun="unknown room">Hmm... I don't thing that's going to work.  Let's see.
+                               Nope. Try something else.</o>
+        <t noun="unknown room">I don't know how that is going to happen. Oh wait, it's not.</t>
         <item type="desk" obtainable="0" inspected="0">
             <visible in="unknown room"/>
-            <l noun="desk">The desk is aged and brittle.  If you decide to open it, be careful while touching it.  You may try
-                 to open the desk drawers to see what you can find... If you dare.</l>
-            <o noun="desk">You hesitated, but eventually opened the drawers slowly as they squeaked.</o>
-            <t noun="desk">You wrap your arms around the desk and try to pick it up, and then you notice that it has
-disgusting mildew buildup all over.  You let go and decide to go on without taking the desk.  However, you were able move it slightly.</t>
-            <g noun="desk">You start heading back to where you saw the old desk.</g>
+            <l>The desk is aged and brittle.  If you decide to open it, be careful while touching it.  You may try
+                 to open the desk drawers to see what you can find.</l>
+            <o>You hesitated, but eventually opened the drawers slowly as they squeaked.</o>
+            <t>You wrap your arms around the desk and try to pick it up, and then you notice that it has
+               disgusting mildew buildup all over.  You let go and decide to go on without taking the desk.
+               However, you were able move it slightly.</t>
             <item type="journal" obtainable="1" inspected="0">
                 <visible in="desk"/>
-                <requirement req="o desk" met = "0">
-                    <prereq>&lt;PREREQ TEXT&gt;</prereq>
-                    <postreq>&lt;POSTREQ TEXT&gt;</postreq>
+                <requirement req="o desk">
+                    <prereq>&lt;You need to interact with the desk first.&gt;</prereq>
+                    <postreq>&lt;You have opened the desk, giving access items inside.&gt;</postreq>
                 </requirement>
-                <l noun="journal">The journal is old, falling apart, and covered in dust.  Maybe it's important.</l>
-                <o noun="journal">When you open the journal, pages crinkle and look like they are going to find out.</o>
-                <t noun="journal">The journal contains important information.</t>
-                <g noun="journal"/>
+                <l>The journal is old, falling apart, and covered in dust.  It's clear that this is not my journal.
+                   I wonder who wrote in it.</l>
+                <o>I started to go through the journal and saw a lot of meaningless things written.  It seems like the
+                   owner was a scientist of sorts.  It wasn't until I got to the last page that I saw something
+                   interesting.  It reads,
+                   "WANT OUT OF HERE?
+                   Use this:
+                   {FUTURE CODE TO BE DECRYPTED}
+                   </o>
+                <t>I take the journal for future reference.</t>
+            </item>
+            <item type="picture" obtainable="1" inspected="0">
+                <visible in="desk"/>
+                <l>My gaze focused in on the picture attached to the mirror on the desk.  There's a man, a woman, and
+                   a little boy posing for a happy picture.  Unfortunately, I don't know who the two boys are.  At
+                   that moment my eyes shifted to the mirror and realized that the woman in the picture is me.  I took
+                   a moment to inspect the picture further and found something strange on the back.  There was a small
+                   note stuck to it that said, "keyword is SALT".  As if I know what that means.  This place, wherever
+                   it is, is eerie.  This is not my home, why do they have a picture of me?  Suddenly my urge to get
+                   out of has increased.</l>
+                <o> </o>
+                <t> </t>
+                <item type="note" obtainable="1" inspected="0">
+                    <visible in="picture"/>
+                    <l/>
+                    <o/>
+                    <t/>
+                </item>
+            </item>
+            <item type="mirror" obtainable="0" inspected="0">
+                <visible in="desk"/>
+                <l> </l>
+                <o> </o>
+                <t> </t>
             </item>
         </item>
         <item type="bed" obtainable="0" inspected="1">
             <visible in="unknown room"/>
-            <l noun="bed">You look at the filthy bed trying not to be sick.</l>
-            <o noun="bed">The bed is covered in filth.  Do not open it.</o>
-            <t noun="bed">This disgusting bed is not worth taking along.</t>
-            <g noun="bed">You slowly walk over to the bed.</g>
+            <l>You look at the filthy bed trying not to be sick.</l>
+            <o>The bed is covered in filth.  Do not open it.</o>
+            <t>This disgusting bed is not worth taking along.</t>
             <item type="pillow" obtainable="1" inspected="0">
                 <visible in="bed"/>
-                <l noun="pillow">'I feel sorry for anyone who has to lay their head on this pillow.'</l>
-                <o noun="pillow">You rip open the pillow and feathers fly everywhere getting stuck to everything damp.
-                But within the dirty pile of feathers, you see something shining through. What could it be?</o>
-                <t noun="pillow">You grab the pillow.  Maybe it will be of some use later.</t>
-                <g noun="pillow">You go back to where you found the pillow.</g>
+                <l>'I feel sorry for anyone who has to lay their head on this pillow.'</l>
+                <o>You rip open the pillow and feathers fly everywhere getting stuck to everything damp.
+                   But within the dirty pile of feathers, you see something shining through. What could it be?</o>
+                <t>You grab the pillow.  Maybe it will be of some use later.</t>
                 <item type="pentagonal prism" obtainable="1" inspected="0">
                     <visible in="pillow"/>
-                    <requirement req="o pillow" met="0">
+                    <requirement req="o pillow">
                         <prereq>&lt;PREREQ TEXT&gt;</prereq>
                         <postreq>&lt;POSTREQ TEXT&gt;</postreq>
                     </requirement>
-                    <l noun="pentagonal prism">'I have never seen anything like this before. I wonder what it could be used for.'</l>
-                    <o noun="pentagonal prism">You twist the prism every which way, but you cannot get it to open.  Then, you find a small hole on one of the sides.  Maybe there's a key or special device that will open it.</o>
-                    <t noun="pentagonal prism">'I'd better hold onto this in case I need it later.'</t>
-                    <g noun="pentagonal prism">You go to where the prism is.</g>
+                    <l>'I have never seen anything like this before. I wonder what it could be used for.'</l>
+                    <o>You twist the prism every which way, but you cannot get it to open.  Then, you find a small hole
+                       on one of the sides.  Maybe there's a key or special device that will open it.</o>
+                    <t>'I'd better hold onto this in case I need it later.'</t>
                 </item>
             </item>
             <item type="mattress" obtainable="0" inspected="0">
                 <visible in="bed"/>
-                <l noun="mattress">'I keep the key to my chest under here when I'm not holding it.'</l>
-                <t noun="mattress">You try to take the mattress off the bed, but fail miserably.  You ripped it open!</t>
-                <o noun="mattress">Under the mattress you find an key.</o>
-                <g noun="mattress">You make your way back to where you found the grungy mattress</g>
+                <l>'I keep the key to my chest under here when I'm not holding it.'</l>
+                <t>You try to take the mattress off the bed, but fail miserably.  You ripped it open!</t>
+                <o>Under the mattress you find an key.</o>
                 <item type="key" obtainable="1" inspected="0">
                     <visible in="mattress"/>
-                    <requirement req="o mattress" met="0">
+                    <requirement req="o mattress">
                         <prereq>&lt;PREREQ TEXT&gt;</prereq>
                         <postreq>&lt;POSTREQ TEXT&gt;</postreq>
                     </requirement>
-                    <l noun="key">'I don't know what it opens, but at least it opens something.'</l>
-                    <o noun="key">The key cannot be opened.</o>
-                    <t noun="key">You hold on to the key hoping it will be valuable.</t>
-                    <g noun="key">You go to where you found the key.</g>
+                    <l>I don't know what it opens, but it's got to open something.</l>
+                    <o>The key cannot be opened.</o>
+                    <t>You hold on to the key hoping it will be valuable.</t>
                 </item>
             </item>
         </item>
         <item type="chest" obtainable="0" inspected="0">
             <visible in="dim light"/>
-            <requirement req="key" met="0">
+            <requirement req="key">
                 <prereq>&lt;ACCESS DENIED&gt;</prereq>
                 <postreq>&lt;YOU WIN&gt;</postreq>
             </requirement>
-            <l noun="chest">The chest contains your most precious things.</l>
-            <o noun="chest">Hmm... I wonder what could be in the chest</o>
-            <t noun="chest">The chest is too heavy to carry.</t>
-            <g noun="chest">You walk to the chest.</g>
+            <l>The chest contains your most precious things.</l>
+            <o>Hmm... I wonder what could be in the chest</o>
+            <t>The chest is too heavy to carry.</t>
             <item type="photo album" obtainable="1" inspected="0">
                 <visible in="chest"/>
-                <requirement req="key">
+                <requirement req="o chest">
                     <prereq>&lt;You must open the chest first.&gt;</prereq>
                     <postreq>&lt;POSTREQ TEXT&gt;</postreq>
                 </requirement>
-                <l noun="photo album">You look at the photo album, and blow off the dust build-up.  Underneath all the
-dust, you see a beautiful leather cover with gold engravings.</l>
-                <o noun="photo album">You open the photo album and see old fashioned pictures of people you've never seen before.</o>
-                <t noun="photo album"/>
-                <g noun="photo album"/>
+                <l>You look at the photo album, and blow off the dust build-up.  Underneath all the
+                     dust, you see a beautiful leather cover with gold engravings.</l>
+                <o>You open the photo album and see old fashioned pictures of people you've never seen before.</o>
+                <t/>
+                <item type="decryption table" obtainable="1" inspected="1">
+                    <requirement req="o photo album">
+                        <prereq>&lt;You must open the photo album first.&gt;</prereq>
+                        <postreq> </postreq>
+                    </requirement>
+                    <l>
+                        | A B C D E F G H I J K L M N O P Q R S T U V W X Y Z
+                        ======================================================
+                        A| b c d e f g h i j k l m n o p q r s t u v w x y z a
+                        B| c d e f g h i j k l m n o p q r s t u v w x y z a b
+                        C| d e f g h i j k l m n o p q r s t u v w x y z a b c
+                        D| e f g h i j k l m n o p q r s t u v w x y z a b c d
+                        E| f g h i j k l m n o p q r s t u v w x y z a b c d e
+                        F| g h i j k l m n o p q r s t u v w x y z a b c d e f
+                        G| h i j k l m n o p q r s t u v w x y z a b c d e f g
+                        H| i j k l m n o p q r s t u v w x y z a b c d e f g h
+                        I| j k l m n o p q r s t u v w x y z a b c d e f g h i
+                        J| k l m n o p q r s t u v w x y z a b c d e f g h i j
+                        K| l m n o p q r s t u v w x y z a b c d e f g h i j k
+                        L| m n o p q r s t u v w x y z a b c d e f g h i j k l
+                        M| n o p q r s t u v w x y z a b c d e f g h i j k l m
+                        N| o p q r s t u v w x y z a b c d e f g h i j k l m n
+                        O| p q r s t u v w x y z a b c d e f g h i j k l m n o
+                        P| q r s t u v w x y z a b c d e f g h i j k l m n o p
+                        Q| r s t u v w x y z a b c d e f g h i j k l m n o p q
+                        R| s t u v w x y z a b c d e f g h i j k l m n o p q r
+                        S| t u v w x y z a b c d e f g h i j k l m n o p q r s
+                        T| u v w x y z a b c d e f g h i j k l m n o p q r s t
+                        U| v w x y z a b c d e f g h i j k l m n o p q r s t u
+                        V| w x y z a b c d e f g h i j k l m n o p q r s t u v
+                        W| x y z a b c d e f g h i j k l m n o p q r s t u v w
+                        X| y z a b c d e f g h i j k l m n o p q r s t u v w x
+                        Y| z a b c d e f g h i j k l m n o p q r s t u v w x y
+                        Z| a b c d e f g h i j k l m n o p q r s t u v w x y z
+                    </l>
+                    <o/>
+                    <t/>
+                </item>
             </item>
             <item type="broken flashlight" obtainable="1" inspected="0">
                 <visible in="chest"/>
-                <requirement req="o chest" met="0">
-                    <prereq>&lt;In order to interact with this, you must gain access to the chest by finding the key.&gt;    </prereq>
+                <requirement req="o chest">
+                    <prereq>&lt;In order to interact with this, you must gain access to the chest by finding the key.&gt;</prereq>
                     <postreq>&lt;POSTREQ TEXT&gt;</postreq>
                 </requirement>
-                <l noun="broken flashlight">You may need your flashlight to fend off monsters that live in darkness.</l>
-                <o noun="broken flashlight">You open the flashlight to find two batteries and some wiring inside.  They're dead of course.</o>
-                <t noun="broken flashlight">Maybe the broken remains will come in handy.</t>
-                <g noun="broken flashlight">You go back to where you found the broken flashlight.</g>
+                <l>You may need your flashlight to fend off monsters that live in darkness.</l>
+                <o>You open the flashlight to find two batteries and some wiring inside.  They're dead of course.</o>
+                <t>Maybe the broken remains will come in handy.</t>
                 <item type="battery" obtainable="1" inspected="0">
                     <l noun="battery">The battery is dead.</l>
                     <o noun="battery">You open the battery and nickel metal hydrate acid spills all over your hands.</o>
                     <t noun="battery">You hesitantly decide to take the battery.</t>
-                    <g noun="battery">You go back to where you found the battery.</g>
                 </item>
             </item>
         </item>
         <item type="rustic door" obtainable="0" inspected="0">
             <visible in="unknown room"/>
-            <requirement req="broken flashlight" met = "0">
-                <prereq>&lt;You desperately wiggle the knob, but the door does not open.  You must find the item(s) needed to open&gt;   </prereq>
+            <requirement req="broken flashlight">
+                <prereq>&lt;You desperately wiggle the knob, but the door does not open.  You must find the item(s) needed to open&gt;</prereq>
                 <postreq>&lt;You open the door...&gt;</postreq>
             </requirement>
-            <l noun="rustic door">I think this is probably the way out of the room.  The light shining through allows me to see the shape
+            <l>I think this is probably the way out of the room.  The light shining through allows me to see the shape
                         of other objects around.</l>
-            <o noun="rustic door">LET ME OUT OF HERE!</o>
-            <t noun="rustic door"/>
-            <g noun="rustic door"/>
+            <o>LET ME OUT OF HERE!</o>
+            <t/>
         </item>
         <item type="small window" obtainable="0" inspected="0">
-            <visible in="light on"/>
-            <requirement req="book shelf" met = "0">
+            <visible in="unknown room"/>
+            <requirement req="NOT SURE YET">
                 <prereq>&lt;PREREQ TEXT&gt;</prereq>
                 <postreq>&lt;POSTREQ TEXT&gt;</postreq>
             </requirement>
-            <l noun="small window"/>
-            <o noun="small window"/>
-            <t noun="small window"/>
-            <g noun="small window"/>
+            <l/>
+            <o/>
+            <t/>
         </item>
         <item type="light switch" obtainable="0" inspected="0">
             <visible in="light on"/>
-            <requirement req="o rustic door" met= "0">
+            <requirement req="o rustic door">
                 <prereq>&lt;PREREQ TEXT&gt;</prereq>
                 <postreq>&lt;POSTREQ TEXT&gt;</postreq>
             </requirement>
-            <l noun="light switch"/>
-            <o noun="light switch"/>
-            <t noun="light switch"/>
-            <g noun="light switch"/>
+            <l/>
+            <o/>
+            <t/>
         </item>
         <item type="bookshelf" obtainable="0" inspected="0">
             <visible in="light on"/>
-            <requirement req="o light switch" met = "0">
+            <requirement req="o light switch">
                 <prereq>&lt;PREREQ TEXT&gt;</prereq>
                 <postreq>&lt;POSTREQ TEXT&gt;</postreq>
             </requirement>
-            <l noun="bookshelf"/>
-            <o noun="bookshelf"/>
-            <t noun="bookshelf"/>
-            <g noun="bookshelf"/>
+            <l/>
+            <o/>
+            <t/>
             <item type="dusty book" obtainable="1" inspected="0">
                 <visible in="bookshelf"/>
-                <requirement req="o bookshelf" met = "0">
+                <requirement req="o bookshelf">
                     <prereq>&lt;PREREQ TEXT&gt;</prereq>
                     <postreq>&lt;POSTREQ TEXT&gt;</postreq>
                 </requirement>
-                <l noun="dusty book">The dusty book is written in a foreign language and illegible to you. However, there are very interesting pictures and diagrams.</l>
-                <o noun="dusty book"/>
-                <t noun="dusty book">You take the book just in case it proves to be useful.</t>
-                <g noun="dusty book">You go to where you found the dusty book.</g>
+                <l>The dusty book is written in a foreign language and illegible to you. However, there are very interesting pictures and diagrams.</l>
+                <o/>
+                <t>You take the book just in case it proves to be useful.</t>
                 <item type="secret door" obtainable="0" inspected="0">
                     <visible in="dusty book"/>
-                    <requirement req="dusty book" met="0">
+                    <requirement req="dusty book">
                         <prereq>&lt;PREREQ TEXT&gt;</prereq>
                         <postreq>&lt;POSTREQ TEXT&gt;</postreq>
                     </requirement>
-                    <l noun="secret door">You suspiciously look at the secret door.  It could be a trap.  On the other hand, it could lead to answers.</l>
-                    <o noun="secret door"/>
-                    <t noun="secret door"/>
-                    <g noun="secret door"/>
+                    <l>You suspiciously look at the secret door.  It could be a trap.  On the other hand, it could lead to answers.</l>
+                    <o/>
+                    <t/>
                     <!--<room>-->
                         <!--<desc>-->
 
