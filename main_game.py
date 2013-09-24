@@ -1,9 +1,11 @@
 import os
-import sys
 from time import sleep
 import ascii_art
 from game import Game
-import string
+from Q2API.util import logging
+import traceback
+
+logger = logging.out_file_instance("game_log")
 
 
 def main():
@@ -15,13 +17,17 @@ def main():
         game = Game("creepy.xml")
         print game.state.something[0].value
 
+        # Slow text via sleep for intro
         # for char in game.intro[0].value:
         #     sys.stdout.write(char),
         #     sleep(0.025)
         # sys.stdout.write('\n')
         # sleep(1.5)
-    ascii_img = ascii_art.get_ascii_image()
-    ascii_img.get_image("title.png")
+
+    # ASCII intro picture
+    # ascii_img = ascii_art.get_ascii_image()
+    # ascii_img.get_image("title.png")
+
     print game.state.tip[0].value
 
     quit_game = False
@@ -92,4 +98,9 @@ def prompt_save():
 
 
 if __name__ == "__main__":
-    main()
+    try:
+        main()
+    except:
+        exception_string = traceback.format_exc()
+        logger.write_line([exception_string])
+        print exception_string
