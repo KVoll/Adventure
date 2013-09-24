@@ -22,7 +22,7 @@ TIP:  You can type 'menu' to see a list of commands, 'inv' to see what items are
         <item type="desk" obtainable="0" inspected="0">
             <visible in="unknown room"/>
             <l>The desk is aged and brittle.  If you decide to open it, be careful while touching it.  You may try
-                 to open the desk drawers to see what you can find.</l>
+                  to open the desk drawers to see what you can find.</l>
             <o>You hesitated, but eventually opened the drawers slowly as they squeaked.</o>
             <t>You wrap your arms around the desk and try to pick it up, and then you notice that it has
                disgusting mildew buildup all over.  You let go and decide to go on without taking the desk.

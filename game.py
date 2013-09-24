@@ -33,48 +33,68 @@ class Game():
             self.cmd_exit()
 
     def cmd_look(self, noun, place=None):
-        print type(self.player_inv)
+        """ cmd_look is a recursive function that processes a 'look' command for the player """
         text = ""
         num = len("[LOOK AT " + noun.upper() + "]>  ")
+
+        # If place is none the intended place is the current room
         if place is None:
             place = self.room
+
+        # If noun is not given the intended noun is the current room
         if noun == "":
             text = " <You see a "
             print "[LOOK AROUND ROOM]>  ",
             num = len("[LOOK AROUND ROOM]>  ")
             print place.l[0].value
 
+            # For all items in the current place
             for item in place.item:
+                # If item is visible in the same place, generate appropriate text
                 if item.visible[0].attrs["in"] == place.attrs["name"]:
                     text += item.attrs["type"]
                     text += ", a "
             text = " "*num + text[:-4] + ".>\n"
 
+            # Return the generated text to be printed
             return text
-
+        # Otherwise, the noun is given
         else:
             temp_list = []
+
+            # For each item in the noun given
             for item in place.item:
+
+                # If the item's type is the same as the noun
                 if item.attrs["type"] == noun:
                     print "[LOOK AT " + noun.upper() + "]>  ",
+                    # Print appropriate response from XML
                     print item.l[0].value
+                    # For each child object in the item
                     for child in item.item:
+                        # If the item type is the same as where the child is visible, and the child has no requirements
                         if item.attrs["type"] == child.visible[0].attrs["in"] and len(child.requirement) == 0:
+                            # If a list of children exists
                             if len(item.item) > 0:
+                                # Append to temporary list
                                 temp_list.append(child.attrs["type"])
 
                     temp_str = ""
+                    # If temporary list isn't empty
                     if temp_list:
+                        # Return the words in the list as a string for output
                         for i in range(len(temp_list)):
                             temp_str += temp_list[i]
                             temp_str += ", a "
                         return " "*num + " <You see a " + temp_str[:-4] + ".>\n"
-
+                # Otherwise, make a recursive call back to find the given noun/item
                 else:
                     text = self.cmd_look(noun, item)
+            # Returns string obtained from list
             return text
 
     def cmd_open(self, noun, place=None):
+        """ cmd_open is a recursive function that processes a 'open' command from the player. """
         temp_list = []
         temp_list1 = []
         player_inv = []
@@ -283,7 +303,7 @@ class Game():
             print "       <There are " + str(num) + " items in your inventory: " + temp_str
 
     def cmd_exit(self):
-        """Safely close program"""
+        """ Safely close program. """
         return sys.exit()
 
     def cmd_save(self):
