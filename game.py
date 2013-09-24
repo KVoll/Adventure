@@ -1,8 +1,8 @@
 # python C:\Python27\Lib\Q2API\xml\mk_class.py C:\Users\KVOll\PycharmProjects\Adventure\creepy.xml
 import os
 import sys
-import creepy
 from Imports.Stack import stack
+from Q2API_XML import creepy
 
 
 class Game():
@@ -299,12 +299,12 @@ class Game():
             save_file = save_file.replace(" ", "_")
 
         # Write saved data
-        with open("saved_files\\" + save_file + ".xml", "w") as f:
+        with open("Saved_Files\\" + save_file + ".xml", "w") as f:
             f.write(saved_game_data)
 
-        file_list = os.listdir("saved_files")
+        file_list = os.listdir("Saved_Files")
 
-        # If the file is in the saved_files folder, print success. Otherwise, print error and try again
+        # If the file is in Saved_Files, print success. Otherwise, print error and try again
         if (save_file + ".xml") in file_list:
             print "Save successful.\n"
         else:

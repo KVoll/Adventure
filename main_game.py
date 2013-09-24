@@ -1,15 +1,15 @@
 import os
-from time import sleep
-import ascii_art
-from game import Game
 from Q2API.util import logging
 import traceback
+
+from game import Game
+
 
 logger = logging.out_file_instance("game_log")
 
 
 def main():
-    if os.listdir("saved_files"):
+    if os.listdir("Saved_Files"):
         file_name = prompt_save()
         game = Game(file_name)
 
@@ -77,7 +77,7 @@ def parse(command, game):
 
 
 def prompt_save():
-    saved_game = os.listdir("saved_files")
+    saved_game = os.listdir("Saved_Files")
     if saved_game:
         for i, fin in enumerate(saved_game):
             print str(i) + "\t" + fin.split(".")[0]
@@ -85,7 +85,7 @@ def prompt_save():
 
         if choice.lower() not in ["n", "new"]:
             try:
-                file_name = "saved_files/" + saved_game[int(choice)]
+                file_name = "Saved_Files/" + saved_game[int(choice)]
             except IndexError:
                 print "Invalid choice.  Starting new game..."
                 file_name = "creepy.xml"
