@@ -90,9 +90,9 @@ def prompt_save():
                 print "Invalid choice.  Starting new game..."
                 file_name = "creepy.xml"
         else:
-            file_name = "creepy.xml"
+            file_name = "Q2API_XML/creepy.xml"
     else:
-        file_name = "creepy.xml"
+        file_name = "Q2API_XML/creepy.xml"
 
     return file_name
 
