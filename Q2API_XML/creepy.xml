@@ -36,30 +36,32 @@ TIP:  You can type 'menu' to see a list of commands, 'inv' to see what items are
                 <l>The journal is old, falling apart, and covered in dust.  It's clear that this is not my journal.
                    I wonder who wrote in it.</l>
                 <o>I started to go through the journal and saw a lot of meaningless things written.  It seems like the
-                   owner was a scientist of sorts.  It wasn't until I got to the last page that I saw something
-                   interesting.  It reads,
-                   "WANT OUT OF HERE?
-                   Use this:
-                   {FUTURE CODE TO BE DECRYPTED}
+                  owner was a scientist of sorts.  It wasn't until I got to the last page that I saw something
+                  interesting.  It reads,
+
+                                           "WANT OUT OF HERE?
+                                           Use this:
+                                           {FUTURE CODE TO BE DECRYPTED}
                    </o>
                 <t>I take the journal for future reference.</t>
-            </item>
-            <item type="picture" obtainable="1" inspected="0">
-                <visible in="desk"/>
-                <l>My gaze focused in on the picture attached to the mirror on the desk.  There's a man, a woman, and
-                   a little boy posing for a happy picture.  Unfortunately, I don't know who the two boys are.  At
-                   that moment my eyes shifted to the mirror and realized that the woman in the picture is me.  I took
-                   a moment to inspect the picture further and found something strange on the back.  There was a small
-                   note stuck to it that said, "keyword is SALT".  As if I know what that means.  This place, wherever
-                   it is, is eerie.  This is not my home, why do they have a picture of me?  Suddenly my urge to get
-                   out of has increased.</l>
-                <o> </o>
-                <t> </t>
-                <item type="note" obtainable="1" inspected="0">
-                    <visible in="picture"/>
-                    <l/>
+                <item type="picture" obtainable="1" inspected="0">
+                    <visible in="journal"/>
+                    <l>My gaze focused in on the picture attached to the mirror on the desk. There's a man, a woman, and
+                          a little boy posing for a happy picture. Unfortunately, I don't know who the two boys are. At
+                          that moment my eyes shifted to the mirror and realized that the woman in the picture is me. I
+                          took a moment to inspect the picture further and found something strange on the back. There was a
+                          small note stuck to it that said, "keyword is SALT". As if I know what that means. This place,
+                          wherever it is, is eerie. This is not my home, why do they have a picture of me? Suddenly my
+                          urge to get out of has increased.
+                    </l>
                     <o/>
                     <t/>
+                    <item type="note" obtainable="1" inspected="0">
+                        <visible in="picture"/>
+                        <l/>
+                        <o/>
+                        <t/>
+                    </item>
                 </item>
             </item>
             <item type="mirror" obtainable="0" inspected="0">
