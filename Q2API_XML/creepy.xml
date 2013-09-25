@@ -14,19 +14,16 @@ TIP:  You can type 'menu' to see a list of commands, 'inv' to see what items are
 ---------------------------------------------------------------------------------------------------------------------------------
     </tip>
     <room name="unknown room">
-        <desc>&lt;This room is completely foreign to me.  It looks like it has gone through some sort of accident.&gt;</desc>
-        <l noun="unknown room">I inspected the room. It was a challenge to make my way around the room amongst all the chaos.</l>
-        <o noun="unknown room">Hmm... I don't thing that's going to work.  Let's see.
+        <desc>&lt;This room is completely foreign to me.n&gt;</desc>
+        <l>I inspected the room. It was a challenge to make my way around the room amongst all the chaos.</l>
+        <o>Hmm... I don't thing that's going to work.  Let's see.
                                Nope. Try something else.</o>
-        <t noun="unknown room">I don't know how that is going to happen. Oh wait, it's not.</t>
+        <t>I don't know how do that.</t>
         <item type="desk" obtainable="0" inspected="0">
             <visible in="unknown room"/>
-            <l>The desk is aged and brittle.  If you decide to open it, be careful while touching it.  You may try
-                  to open the desk drawers to see what you can find.</l>
-            <o>You hesitated, but eventually opened the drawers slowly as they squeaked.</o>
-            <t>You wrap your arms around the desk and try to pick it up, and then you notice that it has
-               disgusting mildew buildup all over.  You let go and decide to go on without taking the desk.
-               However, you were able move it slightly.</t>
+            <l>The desk is aged and brittle.  I'm scared to touch it in fear</l>
+            <o>You hesitated, but eventually opened the drawers slowly as they creaked.</o>
+            <t>You wrap your arms around the desk and try to pick it up  You let go and decide to go on without taking the desk.</t>
             <item type="journal" obtainable="1" inspected="0">
                 <visible in="desk"/>
                 <requirement req="o desk">
@@ -41,8 +38,8 @@ TIP:  You can type 'menu' to see a list of commands, 'inv' to see what items are
 
                                            "WANT OUT OF HERE?
                                            Use this:
-                                           {FUTURE CODE TO BE DECRYPTED}
-                   </o>
+                                           { m b w y m f e n }
+                </o>
                 <t>I take the journal for future reference.</t>
                 <item type="picture" obtainable="1" inspected="0">
                     <visible in="journal"/>
@@ -65,7 +62,7 @@ TIP:  You can type 'menu' to see a list of commands, 'inv' to see what items are
                 </item>
             </item>
             <item type="mirror" obtainable="0" inspected="0">
-                <visible in="desk"/>
+                <visible in="o desk"/>
                 <l> </l>
                 <o> </o>
                 <t> </t>
@@ -88,7 +85,7 @@ TIP:  You can type 'menu' to see a list of commands, 'inv' to see what items are
                         <prereq>&lt;PREREQ TEXT&gt;</prereq>
                         <postreq>&lt;POSTREQ TEXT&gt;</postreq>
                     </requirement>
-                    <l>'I have never seen anything like this before. I wonder what it could be used for.'</l>
+                    <l>I have never seen anything like this before. I wonder what it could be used for.</l>
                     <o>You twist the prism every which way, but you cannot get it to open.  Then, you find a small hole
                        on one of the sides.  Maybe there's a key or special device that will open it.</o>
                     <t>'I'd better hold onto this in case I need it later.'</t>
@@ -112,9 +109,9 @@ TIP:  You can type 'menu' to see a list of commands, 'inv' to see what items are
             </item>
         </item>
         <item type="chest" obtainable="0" inspected="0">
-            <visible in="dim light"/>
+            <visible in="unknown room"/>
             <requirement req="key">
-                <prereq>&lt;ACCESS DENIED&gt;</prereq>
+                <prereq>&lt;There is a special key to open the chest.&gt;</prereq>
                 <postreq>&lt;YOU WIN&gt;</postreq>
             </requirement>
             <l>The chest contains your most precious things.</l>
@@ -135,8 +132,8 @@ TIP:  You can type 'menu' to see a list of commands, 'inv' to see what items are
                         <prereq>&lt;You must open the photo album first.&gt;</prereq>
                         <postreq> </postreq>
                     </requirement>
-                    <l>
-                        | A B C D E F G H I J K L M N O P Q R S T U V W X Y Z
+                    <l>m b w y m f e n
+                         | A B C D E F G H I J K L M N O P Q R S T U V W X Y Z
                         ======================================================
                         A| b c d e f g h i j k l m n o p q r s t u v w x y z a
                         B| c d e f g h i j k l m n o p q r s t u v w x y z a b
@@ -188,7 +185,7 @@ TIP:  You can type 'menu' to see a list of commands, 'inv' to see what items are
         <item type="rustic door" obtainable="0" inspected="0">
             <visible in="unknown room"/>
             <requirement req="broken flashlight">
-                <prereq>&lt;You desperately wiggle the knob, but the door does not open.  You must find the item(s) needed to open&gt;</prereq>
+                <prereq>&lt;You desperately wiggle the knob, but the door does not open.  You must find the item(s) needed to open.&gt;</prereq>
                 <postreq>&lt;You open the door...&gt;</postreq>
             </requirement>
             <l>I think this is probably the way out of the room.  The light shining through allows me to see the shape

@@ -102,7 +102,7 @@ class Game():
 
         # Get list of inventory items
         if self.player_inv.attrs["items"]:
-            player_inv = self.player_inv.attrs["items"].split()
+            player_inv = self.player_inv.attrs["items"].split(", a ")
 
         # If place is None, the intended place is the current room object
         if place is None:
@@ -110,6 +110,7 @@ class Game():
 
         # If a noun wasn't given, the intended place is the current room.  Prints appropriate text.
         if noun == "":
+            print "[OPEN ROOM]>  ",
             return place.o[0].value + "\n"
         # Otherwise, if the noun is non-empty
         elif noun != "":
@@ -118,13 +119,14 @@ class Game():
                 # If the item is the same as the noun, the item is found
                 if item.attrs["type"] == noun:
                     print "[OPEN " + noun.upper() + "]>  ",
-                    print item.o[0].value
+
                     # For any children inside the item
                     for child in item.item:
                         # If the child is visible in the item
                         if child.visible[0].attrs["in"] == noun:
                             # If there are no requirements on the item being opened, append to temp_list
                             if len(item.requirement) == 0:
+                                print item.o[0].value
                                 item.attrs["inspected"] = "1"
                                 temp_list.append(child.attrs["type"])
                             # Otherwise, check item requirement
@@ -133,6 +135,7 @@ class Game():
                                 # If the required item is in player's inventory or the item has been inspected, the
                                 # item can be opened.
                                 if req in player_inv or item.attrs["inspected"] == "1":
+
                                     # Append post-requirement text to temp_list1
                                     temp_list1.append(item.requirement[0].postreq[0].value)
                                     # Change item's inspected status to '1'
@@ -163,13 +166,22 @@ class Game():
     def cmd_take(self, noun, place=None, parent_inspected=""):
         """ cmd_take is a recursive function that processes a 'take' command from the player. """
         text = ""
-        player_inv = []
-        # Create stack for easier processing
+        # player_inv = []
+        # Create stn
+        # ack for easier processing
         take_stack = stack()
 
         # Get list of inventory items
-        if self.player_inv.attrs["items"]:
-            player_inv = self.player_inv.attrs["items"].split()
+        if self.player_inv.attrs["items"] != "":
+
+            player_inv = self.player_inv.attrs["items"].split(", a ")
+            # print player_inv
+            # Remove any empty strings from player_inventory
+            for i in range(len(player_inv)):
+                if player_inv[i] == "":
+                    player_inv.pop()
+        else:
+            player_inv = []
 
         # If place is None, the intended place is the current room object
         if place is None:
@@ -179,7 +191,6 @@ class Game():
         if noun == "":
             print("[TAKE ROOM]>  "),
             text += place.t[0].value
-            print type(place.t[0].value)
             take_stack.push(text)
             if not take_stack.isEmpty():
                 print str(take_stack.pop()) + "\n"
@@ -280,19 +291,22 @@ class Game():
     def cmd_inv(self):
         """ Shows contents of inventory. """
         temp_str = ""
-        player_inv = self.player_inv.attrs["items"].split(", a ")
+        if self.player_inv.attrs["items"] != "":
+            player_inv = self.player_inv.attrs["items"].split(", a ")
         
-        # Remove empty items
-        for i in range(len(player_inv)):
-            if player_inv[i] == "":
-                player_inv.pop()
+            # Remove empty items
+            for i in range(len(player_inv)):
+                if player_inv[i] == "":
+                    player_inv.pop()
+        else:
+            player_inv = []
 
         num = len(player_inv)
-        len_last = len(", a " + player_inv[num - 1] + ", a ")
+        # len_last = len(", a " + player_inv[num - 1] + ", a ")
 
-        if num > 1:
-            temp_str = "a " + self.player_inv.attrs["items"][:-len_last] + ", and a " + player_inv[num - 1] + ".>\n"
-            self.player_inv.attrs["items"] = temp_str
+        # if num > 1:
+        #     temp_str = "a " + self.player_inv.attrs["items"][:-len_last] + ", and a " + player_inv[num - 1] + ".>\n"
+        #     self.player_inv.attrs["items"] = temp_str
 
         if num == 0:                                                  # If inventory is empty
             print "       <There is nothing in your inventory.>\n"    # Print corresponding text
@@ -300,7 +314,8 @@ class Game():
             print "       <You have one item in your inventory: " + \
                 self.player_inv.attrs["items"][:-4] + ".>\n"
         else:                                                         # Otherwise, print multiple items
-            print "       <There are " + str(num) + " items in your inventory: " + temp_str
+            for i in range(len(player_inv)):
+                print(player_inv[i])
 
     def cmd_exit(self):
         """ Safely close program. """

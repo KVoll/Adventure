@@ -1,5 +1,5 @@
-# XML Parser/Data Access Object C:\Users\KVOll\PycharmProjects\Adventure\creepy.py
-"""AUTO-GENERATED Source file for C:\\Users\\KVOll\\PycharmProjects\\Adventure\\creepy.py"""
+# XML Parser/Data Access Object C:\Users\KVOll\PycharmProjects\Adventure\Q2API_XML\creepy.py
+"""AUTO-GENERATED Source file for C:\\Users\\KVOll\\PycharmProjects\\Adventure\\Q2API_XML\\creepy.py"""
 import xml.sax
 import Queue
 import Q2API.xml.base_xml
@@ -43,19 +43,6 @@ class requirement_q2class(Q2API.xml.base_xml.XMLNode):
         self.prereq = []
         Q2API.xml.base_xml.XMLNode.__init__(self, "requirement", attrs, None, [])
 
-class item_q2class(Q2API.xml.base_xml.XMLNode):
-    def __init__(self, attrs):
-        self.level = 4
-        self.path = [None, u'house', u'player', u'inventory']
-        self.requirement = []
-        self.g = []
-        self.visible = []
-        self.l = []
-        self.o = []
-        self.t = []
-        self.item = []
-        Q2API.xml.base_xml.XMLNode.__init__(self, "item", attrs, None, [])
-
 class visible_q2class(Q2API.xml.base_xml.XMLNode):
     def __init__(self, attrs):
         self.level = 4
@@ -68,18 +55,23 @@ class desc_q2class(Q2API.xml.base_xml.XMLNode):
         self.path = [None, u'house', u'room']
         Q2API.xml.base_xml.XMLNode.__init__(self, "desc", attrs, None, [])
 
-class g_q2class(Q2API.xml.base_xml.XMLNode):
-    def __init__(self, attrs):
-        self.level = 3
-        self.path = [None, u'house', u'room']
-        Q2API.xml.base_xml.XMLNode.__init__(self, "g", attrs, None, [])
-
 class inventory_q2class(Q2API.xml.base_xml.XMLNode):
     def __init__(self, attrs):
         self.level = 3
         self.path = [None, u'house', u'player']
-        self.item = []
         Q2API.xml.base_xml.XMLNode.__init__(self, "inventory", attrs, None, [])
+
+class item_q2class(Q2API.xml.base_xml.XMLNode):
+    def __init__(self, attrs):
+        self.level = 3
+        self.path = [None, u'house', u'room']
+        self.requirement = []
+        self.item = []
+        self.visible = []
+        self.l = []
+        self.o = []
+        self.t = []
+        Q2API.xml.base_xml.XMLNode.__init__(self, "item", attrs, None, [])
 
 class l_q2class(Q2API.xml.base_xml.XMLNode):
     def __init__(self, attrs):
@@ -97,13 +89,18 @@ class room_q2class(Q2API.xml.base_xml.XMLNode):
     def __init__(self, attrs):
         self.level = 3
         self.path = [None, u'house', u'player']
-        self.g = []
+        self.item = []
         self.l = []
         self.o = []
         self.t = []
-        self.item = []
         self.desc = []
         Q2API.xml.base_xml.XMLNode.__init__(self, "room", attrs, None, [])
+
+class score_q2class(Q2API.xml.base_xml.XMLNode):
+    def __init__(self, attrs):
+        self.level = 3
+        self.path = [None, u'house', u'player']
+        Q2API.xml.base_xml.XMLNode.__init__(self, "score", attrs, None, [])
 
 class t_q2class(Q2API.xml.base_xml.XMLNode):
     def __init__(self, attrs):
@@ -111,19 +108,20 @@ class t_q2class(Q2API.xml.base_xml.XMLNode):
         self.path = [None, u'house', u'room']
         Q2API.xml.base_xml.XMLNode.__init__(self, "t", attrs, None, [])
 
+class intro_q2class(Q2API.xml.base_xml.XMLNode):
+    def __init__(self, attrs):
+        self.level = 2
+        self.path = [None, u'house']
+        Q2API.xml.base_xml.XMLNode.__init__(self, "intro", attrs, None, [])
+
 class player_q2class(Q2API.xml.base_xml.XMLNode):
     def __init__(self, attrs):
         self.level = 2
         self.path = [None, u'house']
-        self.room = []
+        self.score = []
         self.inventory = []
+        self.room = []
         Q2API.xml.base_xml.XMLNode.__init__(self, "player", attrs, None, [])
-
-class something_q2class(Q2API.xml.base_xml.XMLNode):
-    def __init__(self, attrs):
-        self.level = 2
-        self.path = [None, u'house']
-        Q2API.xml.base_xml.XMLNode.__init__(self, "something", attrs, None, [])
 
 class tip_q2class(Q2API.xml.base_xml.XMLNode):
     def __init__(self, attrs):
@@ -135,10 +133,10 @@ class house_q2class(Q2API.xml.base_xml.XMLNode):
     def __init__(self, attrs):
         self.level = 1
         self.path = [None]
-        self.room = []
-        self.player = []
         self.tip = []
-        self.something = []
+        self.player = []
+        self.intro = []
+        self.room = []
         Q2API.xml.base_xml.XMLNode.__init__(self, "house", attrs, None, [])
 
 class NodeHandler(xml.sax.handler.ContentHandler):
@@ -167,14 +165,11 @@ class NodeHandler(xml.sax.handler.ContentHandler):
         elif name == "prereq":
             self.obj_depth.append(prereq_q2class(p_attrs))
 
-        elif name == "room":
-            self.obj_depth.append(room_q2class(p_attrs))
+        elif name == "score":
+            self.obj_depth.append(score_q2class(p_attrs))
 
-        elif name == "g":
-            self.obj_depth.append(g_q2class(p_attrs))
-
-        elif name == "player":
-            self.obj_depth.append(player_q2class(p_attrs))
+        elif name == "item":
+            self.obj_depth.append(item_q2class(p_attrs))
 
         elif name == "house":
             self.obj_depth.append(house_q2class(p_attrs))
@@ -194,17 +189,20 @@ class NodeHandler(xml.sax.handler.ContentHandler):
         elif name == "t":
             self.obj_depth.append(t_q2class(p_attrs))
 
-        elif name == "item":
-            self.obj_depth.append(item_q2class(p_attrs))
+        elif name == "player":
+            self.obj_depth.append(player_q2class(p_attrs))
 
-        elif name == "something":
-            self.obj_depth.append(something_q2class(p_attrs))
+        elif name == "intro":
+            self.obj_depth.append(intro_q2class(p_attrs))
+
+        elif name == "inventory":
+            self.obj_depth.append(inventory_q2class(p_attrs))
 
         elif name == "desc":
             self.obj_depth.append(desc_q2class(p_attrs))
 
-        elif name == "inventory":
-            self.obj_depth.append(inventory_q2class(p_attrs))
+        elif name == "room":
+            self.obj_depth.append(room_q2class(p_attrs))
 
         self.char_buffer = []
         self.last_processed = "start"
@@ -237,20 +235,14 @@ class NodeHandler(xml.sax.handler.ContentHandler):
             self.obj_depth.pop() # remove this node from the list, processing is complete
             self.char_buffer = []
 
-        elif name == "room":
-            self.obj_depth[-2].room.append(self.obj_depth[-1]) #  make this object a child of the next object up...
+        elif name == "score":
+            self.obj_depth[-2].score.append(self.obj_depth[-1]) #  make this object a child of the next object up...
             self.obj_depth[-2].children.append(self.obj_depth[-1]) #  put a reference in the children list as well
             self.obj_depth.pop() # remove this node from the list, processing is complete
             self.char_buffer = []
 
-        elif name == "g":
-            self.obj_depth[-2].g.append(self.obj_depth[-1]) #  make this object a child of the next object up...
-            self.obj_depth[-2].children.append(self.obj_depth[-1]) #  put a reference in the children list as well
-            self.obj_depth.pop() # remove this node from the list, processing is complete
-            self.char_buffer = []
-
-        elif name == "player":
-            self.obj_depth[-2].player.append(self.obj_depth[-1]) #  make this object a child of the next object up...
+        elif name == "item":
+            self.obj_depth[-2].item.append(self.obj_depth[-1]) #  make this object a child of the next object up...
             self.obj_depth[-2].children.append(self.obj_depth[-1]) #  put a reference in the children list as well
             self.obj_depth.pop() # remove this node from the list, processing is complete
             self.char_buffer = []
@@ -291,14 +283,20 @@ class NodeHandler(xml.sax.handler.ContentHandler):
             self.obj_depth.pop() # remove this node from the list, processing is complete
             self.char_buffer = []
 
-        elif name == "item":
-            self.obj_depth[-2].item.append(self.obj_depth[-1]) #  make this object a child of the next object up...
+        elif name == "player":
+            self.obj_depth[-2].player.append(self.obj_depth[-1]) #  make this object a child of the next object up...
             self.obj_depth[-2].children.append(self.obj_depth[-1]) #  put a reference in the children list as well
             self.obj_depth.pop() # remove this node from the list, processing is complete
             self.char_buffer = []
 
-        elif name == "something":
-            self.obj_depth[-2].something.append(self.obj_depth[-1]) #  make this object a child of the next object up...
+        elif name == "intro":
+            self.obj_depth[-2].intro.append(self.obj_depth[-1]) #  make this object a child of the next object up...
+            self.obj_depth[-2].children.append(self.obj_depth[-1]) #  put a reference in the children list as well
+            self.obj_depth.pop() # remove this node from the list, processing is complete
+            self.char_buffer = []
+
+        elif name == "inventory":
+            self.obj_depth[-2].inventory.append(self.obj_depth[-1]) #  make this object a child of the next object up...
             self.obj_depth[-2].children.append(self.obj_depth[-1]) #  put a reference in the children list as well
             self.obj_depth.pop() # remove this node from the list, processing is complete
             self.char_buffer = []
@@ -309,8 +307,8 @@ class NodeHandler(xml.sax.handler.ContentHandler):
             self.obj_depth.pop() # remove this node from the list, processing is complete
             self.char_buffer = []
 
-        elif name == "inventory":
-            self.obj_depth[-2].inventory.append(self.obj_depth[-1]) #  make this object a child of the next object up...
+        elif name == "room":
+            self.obj_depth[-2].room.append(self.obj_depth[-1]) #  make this object a child of the next object up...
             self.obj_depth[-2].children.append(self.obj_depth[-1]) #  put a reference in the children list as well
             self.obj_depth.pop() # remove this node from the list, processing is complete
             self.char_buffer = []
