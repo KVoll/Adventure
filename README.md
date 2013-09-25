@@ -21,3 +21,7 @@ to encourage the player to use every command on every object in the game.  The g
 100 things I would like to add to the game, but the bulk of the work that needs to be implemented in the current
 standing of this code is the storyline.  Anyone viewing this code will see a solid engine with hardly any story on top
 supporting it.  These additions will be added in the next few repository updates.
+
+KNOWN ISSUES:
+- Printing multiple items in inventory unformatted.
+- "l", "o", and "t" work, but "look", "open", and "take" don't.  This is an important problem I'm looking into right now.
