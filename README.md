@@ -23,6 +23,8 @@ standing of this code is the storyline.  Anyone viewing this code will see a sol
 supporting it.  These additions will be added in the next few repository updates.
 
 KNOWN ISSUES:
+- Story is a mixture of ideas, in first person, second person, past tense, present tense, and all sorts of confusing stuff.
+  Fixing the story to be engaging, fun, and not confusing is HIGH PRIORITY right now, but not top.  My engine is solid, but
+  I keep finding minor quirks that started arising when I moved my inventory from a class object to XML object. See below.
 - Printing multiple items in inventory unformatted.
-- "l", "o", and "t" work, but "look", "open", and "take" don't.  This is an important problem I'm looking into right now.
-    - Fixed, but not thoroughly tested.
+- Bug in cmd_open with requirements check.  TOP PRIORITY.
