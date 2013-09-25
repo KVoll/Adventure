@@ -34,6 +34,7 @@ class Game():
 
     def cmd_look(self, noun, place=None):
         """ cmd_look is a recursive function that processes a 'look' command for the player """
+        # global verbs
         text = ""
         num = len("[LOOK AT " + noun.upper() + "]>  ")
 

@@ -63,13 +63,15 @@ def parse(command, game):
     words = command.lower().strip().split()
     try:
     # If the command is only one word, set it as verb
-        if len(words) == 1 and words[0] != "l" and words[0] not in game.keywords:
-            verb = words[0]
+        if len(words) == 1:# and words[0] != "l" and words[0] not in game.keywords:
+            verb = game.verbs[words[0]]
+            noun = ""
         else:
-            verb = words[0]
-            verb = game.verbs.get(verb, "")
+            # verb = words[0]
+            verb = game.verbs[words[0]]
             # Join the remaining words as the noun.
-        noun = ' '.join(words[1:])
+            noun = ' '.join(words[1:])
+        print verb, words[0], noun
 
         return verb, noun
     except IndexError:

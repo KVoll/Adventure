@@ -16,8 +16,8 @@
     <file path="/creepy.xml" changelist="d5db1b08-d885-4052-ab8a-a8a922327d6d" time="1380134481834" ignored="false" />
     <file path="/gameplay.py" changelist="d5db1b08-d885-4052-ab8a-a8a922327d6d" time="1379366929985" ignored="false" />
     <file path="/Secret of Text.py" changelist="d5db1b08-d885-4052-ab8a-a8a922327d6d" time="1379537671549" ignored="false" />
-    <file path="/game.py" changelist="d5db1b08-d885-4052-ab8a-a8a922327d6d" time="1380134812393" ignored="false" />
-    <file path="/main_game.py" changelist="d5db1b08-d885-4052-ab8a-a8a922327d6d" time="1380059720147" ignored="false" />
+    <file path="/game.py" changelist="d5db1b08-d885-4052-ab8a-a8a922327d6d" time="1380137357585" ignored="false" />
+    <file path="/main_game.py" changelist="d5db1b08-d885-4052-ab8a-a8a922327d6d" time="1380138509650" ignored="false" />
     <file path="/gui_test.py" changelist="d5db1b08-d885-4052-ab8a-a8a922327d6d" time="1379825681652" ignored="false" />
     <file path="/Python Console" changelist="d5db1b08-d885-4052-ab8a-a8a922327d6d" time="1379947268281" ignored="false" />
     <file path="/Stack.py" changelist="d5db1b08-d885-4052-ab8a-a8a922327d6d" time="1380034991675" ignored="false" />
@@ -47,11 +47,14 @@
   </component>
   <component name="FileEditorManager">
     <leaf>
-      <file leaf-file-name="main_game.py" pinned="false" current="false" current-in-tab="false">
+      <file leaf-file-name="main_game.py" pinned="false" current="true" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/main_game.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="12" column="19" selection-start="197" selection-end="197" vertical-scroll-proportion="0.0">
-              <folding />
+            <state line="66" column="39" selection-start="1941" selection-end="1941" vertical-scroll-proportion="0.62863535">
+              <folding>
+                <element signature="e#148#816#0" expanded="true" />
+                <element signature="e#846#1606#0" expanded="true" />
+              </folding>
             </state>
           </provider>
         </entry>
@@ -65,24 +68,16 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="game.py" pinned="false" current="true" current-in-tab="true">
+      <file leaf-file-name="game.py" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/game.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="144" column="65" selection-start="6646" selection-end="6646" vertical-scroll-proportion="0.5313175">
+            <state line="37" column="17" selection-start="1564" selection-end="1564" vertical-scroll-proportion="0.0">
               <folding>
                 <element signature="e#622#1156#0" expanded="true" />
-                <element signature="e#7644#11334#0" expanded="true" />
-                <element signature="e#13042#14348#0" expanded="true" />
+                <element signature="e#4166#7594#0" expanded="true" />
+                <element signature="e#7667#11357#0" expanded="true" />
+                <element signature="e#13065#14371#0" expanded="true" />
               </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="inv_test.xml" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/Saved_Files/inv_test.xml">
-          <provider selected="true" editor-type-id="text-editor">
-            <state line="24" column="6" selection-start="4110" selection-end="4110" vertical-scroll-proportion="-15.692307">
-              <folding />
             </state>
           </provider>
         </entry>
@@ -91,15 +86,6 @@
         <entry file="file://$PROJECT_DIR$/Q2API_XML/creepy.xml">
           <provider selected="true" editor-type-id="text-editor">
             <state line="111" column="37" selection-start="6776" selection-end="6776" vertical-scroll-proportion="-8.076923">
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="open_test.xml" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/Saved_Files/open_test.xml">
-          <provider selected="true" editor-type-id="text-editor">
-            <state line="25" column="935" selection-start="5614" selection-end="5614" vertical-scroll-proportion="-7.4615383">
               <folding />
             </state>
           </provider>
@@ -147,19 +133,18 @@
         <option value="$PROJECT_DIR$/creepy.py" />
         <option value="$PROJECT_DIR$/creepy.xml" />
         <option value="$PROJECT_DIR$/Imports/Stack.py" />
-        <option value="$PROJECT_DIR$/main_game.py" />
         <option value="$PROJECT_DIR$/game_log.09-24-2013.log" />
         <option value="$PROJECT_DIR$/Q2API_XML/creepy.xml" />
-        <option value="$PROJECT_DIR$/game.py" />
         <option value="$PROJECT_DIR$/README.txt" />
+        <option value="$PROJECT_DIR$/game.py" />
+        <option value="$PROJECT_DIR$/main_game.py" />
       </list>
     </option>
   </component>
   <component name="ProjectFrameBounds">
-    <option name="x" value="-8" />
-    <option name="y" value="-8" />
-    <option name="width" value="1936" />
-    <option name="height" value="1096" />
+    <option name="x" value="960" />
+    <option name="width" value="960" />
+    <option name="height" value="1080" />
   </component>
   <component name="ProjectLevelVcsManager" settingsEditedManually="true">
     <OptionsSetting value="true" id="Add" />
@@ -479,18 +464,18 @@
     </todo-panel>
   </component>
   <component name="ToolWindowManager">
-    <frame x="-8" y="-8" width="1936" height="1096" extended-state="6" />
+    <frame x="960" y="0" width="960" height="1080" extended-state="0" />
     <editor active="false" />
     <layout>
       <window_info id="Changes" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32942432" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32942432" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32977587" sideWeight="0.5223404" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
-      <window_info id="Project" active="true" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.2230523" sideWeight="0.52132195" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.46547884" sideWeight="0.5130152" order="0" side_tool="false" content_ui="combo" />
       <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.44136462" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="1" side_tool="true" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.3848614" sideWeight="0.46318036" order="9" side_tool="true" content_ui="tabs" />
-      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.47867805" sideWeight="0.53681964" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Run" active="true" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.48698482" sideWeight="0.53681964" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.3287234" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
@@ -633,13 +618,6 @@
         <state />
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/main_game.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="12" column="19" selection-start="197" selection-end="197" vertical-scroll-proportion="0.0">
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/Saved_Files/inv_test.xml">
       <provider selected="true" editor-type-id="text-editor">
         <state line="24" column="6" selection-start="4110" selection-end="4110" vertical-scroll-proportion="-15.692307">
@@ -663,11 +641,22 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/game.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="144" column="65" selection-start="6646" selection-end="6646" vertical-scroll-proportion="0.5313175">
+        <state line="37" column="17" selection-start="1564" selection-end="1564" vertical-scroll-proportion="0.0">
           <folding>
             <element signature="e#622#1156#0" expanded="true" />
-            <element signature="e#7644#11334#0" expanded="true" />
-            <element signature="e#13042#14348#0" expanded="true" />
+            <element signature="e#4166#7594#0" expanded="true" />
+            <element signature="e#7667#11357#0" expanded="true" />
+            <element signature="e#13065#14371#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/main_game.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="66" column="39" selection-start="1941" selection-end="1941" vertical-scroll-proportion="0.62863535">
+          <folding>
+            <element signature="e#148#816#0" expanded="true" />
+            <element signature="e#846#1606#0" expanded="true" />
           </folding>
         </state>
       </provider>
