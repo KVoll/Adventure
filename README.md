@@ -25,3 +25,4 @@ supporting it.  These additions will be added in the next few repository updates
 KNOWN ISSUES:
 - Printing multiple items in inventory unformatted.
 - "l", "o", and "t" work, but "look", "open", and "take" don't.  This is an important problem I'm looking into right now.
+    - Fixed, but not thoroughly tested.
