@@ -17,7 +17,7 @@ TIP:  You can type 'menu' to see a list of commands, 'inv' to see what items are
         <desc>&lt;This room is completely foreign to me.n&gt;</desc>
         <l>I inspected the room. It was a challenge to make my way around the room amongst all the chaos.</l>
         <o>Hmm... I don't thing that's going to work.  Let's see.
-                               Nope. Try something else.</o>
+              Nope. Try something else.</o>
         <t>I don't know how do that.</t>
         <item type="desk" obtainable="0" inspected="0">
             <visible in="unknown room"/>
@@ -27,11 +27,11 @@ TIP:  You can type 'menu' to see a list of commands, 'inv' to see what items are
             <item type="journal" obtainable="1" inspected="0">
                 <visible in="desk"/>
                 <requirement req="o desk">
-                    <prereq>&lt;You need to interact with the desk first.&gt;</prereq>
-                    <postreq>&lt;You have opened the desk, giving access items inside.&gt;</postreq>
+                    <prereq>&lt;The journal is important.  You need to take it for future reference.&gt;</prereq>
+                    <postreq>&lt;You have added the journal to your inventory, giving access items inside.&gt;</postreq>
                 </requirement>
                 <l>The journal is old, falling apart, and covered in dust.  It's clear that this is not my journal.
-                   I wonder who wrote in it.</l>
+                    I wonder who wrote in it.</l>
                 <o>I started to go through the journal and saw a lot of meaningless things written.  It seems like the
                   owner was a scientist of sorts.  It wasn't until I got to the last page that I saw something
                   interesting.  It reads,
@@ -44,20 +44,20 @@ TIP:  You can type 'menu' to see a list of commands, 'inv' to see what items are
                 <item type="picture" obtainable="1" inspected="0">
                     <visible in="journal"/>
                     <l>My gaze focused in on the picture attached to the mirror on the desk. There's a man, a woman, and
-                          a little boy posing for a happy picture. Unfortunately, I don't know who the two boys are. At
-                          that moment my eyes shifted to the mirror and realized that the woman in the picture is me. I
-                          took a moment to inspect the picture further and found something strange on the back. There was a
-                          small note stuck to it that said, "keyword is SALT". As if I know what that means. This place,
-                          wherever it is, is eerie. This is not my home, why do they have a picture of me? Suddenly my
-                          urge to get out of has increased.
+                       a little boy posing for a happy picture. Unfortunately, I don't know who the two boys are. At
+                       that moment my eyes shifted to the mirror and realized that the woman in the picture is me. I
+                       took a moment to inspect the picture further and found something strange on the back. There was a
+                       small note stuck to it that said, "keyword is SALT". As if I know what that means. This place,
+                       wherever it is, is eerie. This is not my home, why do they have a picture of me? Suddenly my
+                       urge to get out of has increased.
                     </l>
-                    <o/>
-                    <t/>
+                    <o> </o>
+                    <t> </t>
                     <item type="note" obtainable="1" inspected="0">
                         <visible in="picture"/>
-                        <l/>
-                        <o/>
-                        <t/>
+                        <l> </l>
+                        <o> </o>
+                        <t> </t>
                     </item>
                 </item>
             </item>

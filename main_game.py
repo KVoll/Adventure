@@ -71,7 +71,6 @@ def parse(command, game):
             verb = game.verbs[words[0]]
             # Join the remaining words as the noun.
             noun = ' '.join(words[1:])
-        print verb, words[0], noun
 
         return verb, noun
     except IndexError:

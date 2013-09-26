@@ -65,7 +65,6 @@ class Game():
 
             # For each item in the noun given
             for item in place.item:
-
                 # If the item's type is the same as the noun
                 if item.attrs["type"] == noun:
                     print "[LOOK AT " + noun.upper() + "]>  ",
@@ -94,24 +93,29 @@ class Game():
             # Returns string obtained from list
             return text
 
-    def cmd_open(self, noun, place=None):
+    def cmd_open(self, noun, place=None, parent_inspected=""):
         """ cmd_open is a recursive function that processes a 'open' command from the player. """
         temp_list = []
-        temp_list1 = []
-        player_inv = []
-        num = len("[OPEN " + noun.upper() + "]>  ")
+        num = len("[OPEN " + noun.upper() + "]> ")
 
         # Get list of inventory items
-        if self.player_inv.attrs["items"]:
+        if self.player_inv.attrs["items"] != "":
+
             player_inv = self.player_inv.attrs["items"].split(", a ")
+            # Remove any empty strings from player_inventory
+            for i in range(len(player_inv)):
+                if player_inv[i] == "":
+                    player_inv.pop()
+        else:
+            player_inv = []
 
         # If place is None, the intended place is the current room object
         if place is None:
             place = self.room
 
-        # If a noun wasn't given, the intended place is the current room.  Prints appropriate text.
+        # If a noun wasn't given, the intended place is the current room. Prints appropriate text.
         if noun == "":
-            print "[OPEN ROOM]>  ",
+            print "[OPEN ROOM]> ",
             return place.o[0].value + "\n"
         # Otherwise, if the noun is non-empty
         elif noun != "":
@@ -119,49 +123,76 @@ class Game():
             for item in place.item:
                 # If the item is the same as the noun, the item is found
                 if item.attrs["type"] == noun:
-                    print "[OPEN " + noun.upper() + "]>  ",
-
-                    # For any children inside the item
-                    for child in item.item:
-                        # If the child is visible in the item
-                        if child.visible[0].attrs["in"] == noun:
-                            # If there are no requirements on the item being opened, append to temp_list
-                            if len(item.requirement) == 0:
-                                print item.o[0].value
-                                item.attrs["inspected"] = "1"
-                                temp_list.append(child.attrs["type"])
-                            # Otherwise, check item requirement
+                    print "[OPEN " + noun.upper() + "]> ",
+                    if item.requirement:
+                        req = item.requirement[0].attrs["req"]
+                        if str(req).startswith("o "):
+                            if parent_inspected != "1":
+                                print item.requirement[0].prereq[0].value
                             else:
-                                req = item.requirement[0].attrs["req"]
-                                # If the required item is in player's inventory or the item has been inspected, the
-                                # item can be opened.
-                                if req in player_inv or item.attrs["inspected"] == "1":
-
-                                    # Append post-requirement text to temp_list1
-                                    temp_list1.append(item.requirement[0].postreq[0].value)
-                                    # Change item's inspected status to '1'
-                                    item.attrs["inspected"] = "1"
-                                # Otherwise,
-                                else:
-                                    # append pre-requirement text
-                                    temp_list1.append(item.requirement[0].prereq[0].value)
-
-                    # Print the appropriate temporary text
+                                print item.o[0].value
+                                for child in item.item:
+                                    if child.visible[0].attrs["in"] == item.attrs["type"]:
+                                        temp_list.append(child.attrs["type"])
+                                item.attrs["inspected"] = "1"
+                        elif req not in player_inv:
+                            print item.requirement[0].prereq[0].value
+                        else:
+                            print item.o[0].value
+                            for child in item.item:
+                                if child.visible[0].attrs["in"] == item.attrs["type"]:
+                                    temp_list.append(child.attrs["type"])
+                            item.attrs["inspected"] = "1"
+                    else:
+                        print item.o[0].value
+                        for child in item.item:
+                            if child.visible[0].attrs["in"] == item.attrs["type"]:
+                                temp_list.append(child.attrs["type"])
+                        item.attrs["inspected"] = "1"
+            #         # print item.o[0].value
+            #         # For any children inside the item
+            #         for child in item.item:
+            #             # If the child is visible in the item
+            #             if child.visible[0].attrs["in"] == noun:
+            #                 # If there are no requirements on the item being opened, append to temp_list
+            #                 if len(item.requirement) == 0:
+            #                     item.attrs["inspected"] = "1"
+            #                     print item.o[0].value
+            #                     temp_list.append(child.attrs["type"])
+            #                 # Otherwise, check item requirement
+            #                 else:
+            #                     req = item.requirement[0].attrs["req"]
+            #                     # If the required item is in player's inventory or the item has been inspected, the
+            #                     # item can be opened.
+            #                     if req in player_inv or parent_inspected == "1":
+            #                         # Append post-requirement text to temp_list1
+            #                         print item.attrs["type"], parent_inspected, req
+            #                         print item.o[0].value
+            #                         temp_list.append(child.attrs["type"])
+            #                         # Change item's inspected status to '1'
+            #                         item.attrs["inspected"] = "1"
+            #                     # Otherwise,
+            #                     else:
+            #                         # append pre-requirement text
+            #                         temp_list1.append(item.requirement[0].prereq[0].value)
+            #
+            #         # Print the appropriate temporary text
                     temp_str = ""
-                    if temp_list1:
-                        temp_str += str(temp_list1[0])
-                        return " " * num + " " + temp_str + "\n"
+            #         if temp_list1:
+            #             temp_str += str(temp_list1[0])
+            #             return " " * num + " " + temp_str + "\n"
                     if temp_list:
                         for i in range(len(temp_list)):
                             temp_str += temp_list[i]
                             temp_str += ", a "
                         return " " * num + " <You see a " + temp_str[:-4] + ".>\n"
-                # Otherwise, if the item is not the noun given, make recursive call until item is found
+            #     # Otherwise, if the item is not the noun given, make recursive call until item is found
                 else:
-                    res = self.cmd_open(noun, item)
+                    parent_inspected = item.attrs["inspected"]
+                    res = self.cmd_open(noun, item, parent_inspected)
                     if res is not None:
                         print res
-            # Returns None to the caller
+                        # Returns None to the caller
             return
 
     def cmd_take(self, noun, place=None, parent_inspected=""):
@@ -176,7 +207,6 @@ class Game():
         if self.player_inv.attrs["items"] != "":
 
             player_inv = self.player_inv.attrs["items"].split(", a ")
-            # print player_inv
             # Remove any empty strings from player_inventory
             for i in range(len(player_inv)):
                 if player_inv[i] == "":
@@ -221,7 +251,7 @@ class Game():
                         text += " "*num + "<You cannot take the " + item.attrs["type"] + " yet.>"
                         take_stack.push(text)
                         if not take_stack.isEmpty():
-                            print str(take_stack.pop())
+                            print "\n" + str(take_stack.pop())
                     # Otherwise, the item can be taken
                     else:
                         text = item.t[0].value
