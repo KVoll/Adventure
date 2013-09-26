@@ -9,8 +9,8 @@ and use the company's API while completing some essential tasks:
 -- Have a logging tool, and use git for version control
 
 My game is incomplete and a work in progress.  The demos will be on Oct. 4, 2013.
-As it stands, I have a working engine with minor formatting "bugs".
-The engine handles three main commands: look, open, and take.
+As it stands, I have a working engine with minor formatting issues.
+The current engine handles three main commands: look, open, and take.
 The player can also open a menu (list of commands), save, and load.
 
 The biggest thing my game lacks at this point is an engaging storyline.  The idea was to create a game heavy in story
@@ -19,11 +19,9 @@ hidden sub-rooms.  The scoring system (to be implemented) will be based on findi
 to encourage the player to use every command on every object in the game.  The game handles obscure commands such as
 "take room" in one of two ways, the player finds something hidden, or a witty response is displayed.  There is still
 100 things I would like to add to the game, but the bulk of the work that needs to be implemented in the current
-standing of this code is the storyline.  Anyone viewing this code will see a solid engine with hardly any story on top
-supporting it.  These additions will be added in the next few repository updates.
+standing of this code is the storyline. 
 
 KNOWN ISSUES:
 - Story is a mixture of ideas, in first person, second person, past tense, present tense, and all sorts of confusing stuff.
-  Fixing the story to be engaging, fun, and not confusing is HIGH PRIORITY right now, but not top.  My engine is solid, but
-  I keep finding minor quirks that started arising when I moved my inventory from a class object to XML object. See below.
-- Printing multiple items in inventory unformatted.
+  Fixing the story to be engaging, fun, and not confusing is HIGH PRIORITY.
+- Incomplete XML
