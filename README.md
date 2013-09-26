@@ -27,4 +27,3 @@ KNOWN ISSUES:
   Fixing the story to be engaging, fun, and not confusing is HIGH PRIORITY right now, but not top.  My engine is solid, but
   I keep finding minor quirks that started arising when I moved my inventory from a class object to XML object. See below.
 - Printing multiple items in inventory unformatted.
-- Bug in cmd_open with requirements check.  TOP PRIORITY.
