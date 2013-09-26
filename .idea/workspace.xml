@@ -4,25 +4,6 @@
     <list default="true" id="d5db1b08-d885-4052-ab8a-a8a922327d6d" name="Default" comment="" />
     <ignored path="Adventure.iws" />
     <ignored path=".idea/workspace.xml" />
-    <file path="/main.py" changelist="d5db1b08-d885-4052-ab8a-a8a922327d6d" time="1379908557492" ignored="false" />
-    <file path="/template.xml" changelist="d5db1b08-d885-4052-ab8a-a8a922327d6d" time="1378842914760" ignored="false" />
-    <file path="$PROJECT_DIR$/../Once And For All/word_parser.py" changelist="d5db1b08-d885-4052-ab8a-a8a922327d6d" time="1378844865118" ignored="false" />
-    <file path="$PROJECT_DIR$/../Once And For All/actions.py" changelist="d5db1b08-d885-4052-ab8a-a8a922327d6d" time="1378843234656" ignored="false" />
-    <file path="/actions.py" changelist="d5db1b08-d885-4052-ab8a-a8a922327d6d" time="1378843128345" ignored="false" />
-    <file path="$PROJECT_DIR$/../Once And For All/home.xml" changelist="d5db1b08-d885-4052-ab8a-a8a922327d6d" time="1378844865118" ignored="false" />
-    <file path="/word_parser.py" changelist="d5db1b08-d885-4052-ab8a-a8a922327d6d" time="1378844687742" ignored="false" />
-    <file path="/home.xml" changelist="d5db1b08-d885-4052-ab8a-a8a922327d6d" time="1379082365719" ignored="false" />
-    <file path="$PROJECT_DIR$/../Once And For All/dialog.py" changelist="d5db1b08-d885-4052-ab8a-a8a922327d6d" time="1378845577534" ignored="false" />
-    <file path="/creepy.xml" changelist="d5db1b08-d885-4052-ab8a-a8a922327d6d" time="1380190286620" ignored="false" />
-    <file path="/gameplay.py" changelist="d5db1b08-d885-4052-ab8a-a8a922327d6d" time="1379366929985" ignored="false" />
-    <file path="/Secret of Text.py" changelist="d5db1b08-d885-4052-ab8a-a8a922327d6d" time="1379537671549" ignored="false" />
-    <file path="/game.py" changelist="d5db1b08-d885-4052-ab8a-a8a922327d6d" time="1380186677203" ignored="false" />
-    <file path="/main_game.py" changelist="d5db1b08-d885-4052-ab8a-a8a922327d6d" time="1380187135268" ignored="false" />
-    <file path="/gui_test.py" changelist="d5db1b08-d885-4052-ab8a-a8a922327d6d" time="1379825681652" ignored="false" />
-    <file path="/Python Console" changelist="d5db1b08-d885-4052-ab8a-a8a922327d6d" time="1379947268281" ignored="false" />
-    <file path="/Stack.py" changelist="d5db1b08-d885-4052-ab8a-a8a922327d6d" time="1380034991675" ignored="false" />
-    <file path="/Dummy.txt" changelist="d5db1b08-d885-4052-ab8a-a8a922327d6d" time="1380205167497" ignored="false" />
-    <file path="/README.txt" changelist="d5db1b08-d885-4052-ab8a-a8a922327d6d" time="1380136580191" ignored="false" />
     <option name="TRACKING_ENABLED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -47,10 +28,10 @@
   </component>
   <component name="FileEditorManager">
     <leaf>
-      <file leaf-file-name="main_game.py" pinned="false" current="false" current-in-tab="false">
+      <file leaf-file-name="main_game.py" pinned="false" current="true" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/main_game.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="33" column="33" selection-start="850" selection-end="850" vertical-scroll-proportion="0.0">
+            <state line="120" column="0" selection-start="3600" selection-end="3600" vertical-scroll-proportion="0.29028815" vertical-offset="0" max-vertical-offset="1311">
               <folding />
             </state>
           </provider>
@@ -59,16 +40,16 @@
       <file leaf-file-name="game.py" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/game.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="71" column="46" selection-start="2933" selection-end="2933" vertical-scroll-proportion="0.0">
+            <state line="10" column="26" selection-start="457" selection-end="457" vertical-scroll-proportion="0.0" vertical-offset="170" max-vertical-offset="6120">
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="creepy.xml" pinned="false" current="true" current-in-tab="true">
+      <file leaf-file-name="creepy.xml" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/Q2API_XML/creepy.xml">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="70" column="118" selection-start="5473" selection-end="5473" vertical-scroll-proportion="0.019144144">
+            <state line="76" column="23" selection-start="5992" selection-end="5992" vertical-scroll-proportion="0.0" vertical-offset="1292" max-vertical-offset="4114">
               <folding />
             </state>
           </provider>
@@ -77,7 +58,7 @@
       <file leaf-file-name="Stack.py" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/Imports/Stack.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="0" column="13" selection-start="13" selection-end="13" vertical-scroll-proportion="0.0">
+            <state line="0" column="13" selection-start="13" selection-end="13" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="323">
               <folding />
             </state>
           </provider>
@@ -105,7 +86,6 @@
   <component name="IdeDocumentHistory">
     <option name="changedFiles">
       <list>
-        <option value="$PROJECT_DIR$/home.xml" />
         <option value="$PROJECT_DIR$/gameplay.py" />
         <option value="$PROJECT_DIR$/../Secret of Text.py" />
         <option value="$PROJECT_DIR$/gui_test.py" />
@@ -118,9 +98,10 @@
         <option value="$PROJECT_DIR$/game_log.09-24-2013.log" />
         <option value="$PROJECT_DIR$/README.txt" />
         <option value="$PROJECT_DIR$/try.py" />
+        <option value="$PROJECT_DIR$/Imports/ascii_art.py" />
         <option value="$PROJECT_DIR$/game.py" />
-        <option value="$PROJECT_DIR$/main_game.py" />
         <option value="$PROJECT_DIR$/Q2API_XML/creepy.xml" />
+        <option value="$PROJECT_DIR$/main_game.py" />
       </list>
     </option>
   </component>
@@ -175,20 +156,6 @@
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="Adventure" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="Adventure" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="Saved_Files" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
         </subPane>
       </pane>
     </panes>
@@ -224,28 +191,7 @@
       <recent name="C:\Users\KVOll\PycharmProjects\Adventure" />
     </key>
   </component>
-  <component name="RunManager" selected="Python.main_game">
-    <configuration default="false" name="main" type="PythonConfigurationType" factoryName="Python" temporary="true">
-      <option name="INTERPRETER_OPTIONS" value="" />
-      <option name="PARENT_ENVS" value="true" />
-      <envs>
-        <env name="PYTHONUNBUFFERED" value="1" />
-      </envs>
-      <option name="SDK_HOME" value="" />
-      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
-      <option name="IS_MODULE_SDK" value="true" />
-      <option name="ADD_CONTENT_ROOTS" value="true" />
-      <option name="ADD_SOURCE_ROOTS" value="true" />
-      <module name="Adventure" />
-      <EXTENSION ID="PythonCoverageRunConfigurationExtension" enabled="false" sample_coverage="true" runner="coverage.py" />
-      <option name="SCRIPT_NAME" value="C:\Users\KVOll\PycharmProjects\Random_Files\main.py" />
-      <option name="PARAMETERS" value="" />
-      <RunnerSettings RunnerId="PyDebugRunner" />
-      <RunnerSettings RunnerId="PythonRunner" />
-      <ConfigurationWrapper RunnerId="PyDebugRunner" />
-      <ConfigurationWrapper RunnerId="PythonRunner" />
-      <method />
-    </configuration>
+  <component name="RunManager" selected="Python.Gui">
     <configuration default="false" name="main_game" type="PythonConfigurationType" factoryName="Python" temporary="true">
       <option name="INTERPRETER_OPTIONS" value="" />
       <option name="PARENT_ENVS" value="true" />
@@ -267,44 +213,6 @@
       <ConfigurationWrapper RunnerId="PythonRunner" />
       <method />
     </configuration>
-    <configuration default="false" name="game" type="PythonConfigurationType" factoryName="Python" temporary="true">
-      <option name="INTERPRETER_OPTIONS" value="" />
-      <option name="PARENT_ENVS" value="true" />
-      <envs>
-        <env name="PYTHONUNBUFFERED" value="1" />
-      </envs>
-      <option name="SDK_HOME" value="" />
-      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
-      <option name="IS_MODULE_SDK" value="true" />
-      <option name="ADD_CONTENT_ROOTS" value="true" />
-      <option name="ADD_SOURCE_ROOTS" value="true" />
-      <module name="Adventure" />
-      <EXTENSION ID="PythonCoverageRunConfigurationExtension" enabled="false" sample_coverage="true" runner="coverage.py" />
-      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/game.py" />
-      <option name="PARAMETERS" value="" />
-      <RunnerSettings RunnerId="PythonRunner" />
-      <ConfigurationWrapper RunnerId="PythonRunner" />
-      <method />
-    </configuration>
-    <configuration default="false" name="gui_test" type="PythonConfigurationType" factoryName="Python" temporary="true">
-      <option name="INTERPRETER_OPTIONS" value="" />
-      <option name="PARENT_ENVS" value="true" />
-      <envs>
-        <env name="PYTHONUNBUFFERED" value="1" />
-      </envs>
-      <option name="SDK_HOME" value="" />
-      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
-      <option name="IS_MODULE_SDK" value="true" />
-      <option name="ADD_CONTENT_ROOTS" value="true" />
-      <option name="ADD_SOURCE_ROOTS" value="true" />
-      <module name="Adventure" />
-      <EXTENSION ID="PythonCoverageRunConfigurationExtension" enabled="false" sample_coverage="true" runner="coverage.py" />
-      <option name="SCRIPT_NAME" value="C:\Users\KVOll\PycharmProjects\Random_Files\gui_test.py" />
-      <option name="PARAMETERS" value="" />
-      <RunnerSettings RunnerId="PythonRunner" />
-      <ConfigurationWrapper RunnerId="PythonRunner" />
-      <method />
-    </configuration>
     <configuration default="false" name="try" type="PythonConfigurationType" factoryName="Python" temporary="true">
       <option name="INTERPRETER_OPTIONS" value="" />
       <option name="PARENT_ENVS" value="true" />
@@ -319,6 +227,63 @@
       <module name="Adventure" />
       <EXTENSION ID="PythonCoverageRunConfigurationExtension" enabled="false" sample_coverage="true" runner="coverage.py" />
       <option name="SCRIPT_NAME" value="$PROJECT_DIR$/try.py" />
+      <option name="PARAMETERS" value="" />
+      <RunnerSettings RunnerId="PythonRunner" />
+      <ConfigurationWrapper RunnerId="PythonRunner" />
+      <method />
+    </configuration>
+    <configuration default="false" name="setup" type="PythonConfigurationType" factoryName="Python" temporary="true">
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="$USER_HOME$/Documents/colorama-0.2.7/colorama-0.2.7" />
+      <option name="IS_MODULE_SDK" value="false" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <module name="Adventure" />
+      <EXTENSION ID="PythonCoverageRunConfigurationExtension" enabled="false" sample_coverage="true" runner="coverage.py" />
+      <option name="SCRIPT_NAME" value="$USER_HOME$/Documents/colorama-0.2.7/colorama-0.2.7/setup.py" />
+      <option name="PARAMETERS" value="" />
+      <RunnerSettings RunnerId="PythonRunner" />
+      <ConfigurationWrapper RunnerId="PythonRunner" />
+      <method />
+    </configuration>
+    <configuration default="false" name="pygame2exe" type="PythonConfigurationType" factoryName="Python" temporary="true">
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="$USER_HOME$/AppData/Local/Temp" />
+      <option name="IS_MODULE_SDK" value="false" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <module name="Adventure" />
+      <EXTENSION ID="PythonCoverageRunConfigurationExtension" enabled="false" sample_coverage="true" runner="coverage.py" />
+      <option name="SCRIPT_NAME" value="$USER_HOME$/AppData/Local/Temp/pygame2exe.py" />
+      <option name="PARAMETERS" value="" />
+      <RunnerSettings RunnerId="PythonRunner" />
+      <ConfigurationWrapper RunnerId="PythonRunner" />
+      <method />
+    </configuration>
+    <configuration default="false" name="Gui" type="PythonConfigurationType" factoryName="Python" temporary="true">
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="C:/Python27/Lib/site-packages/swampy" />
+      <option name="IS_MODULE_SDK" value="true" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <module name="Adventure" />
+      <EXTENSION ID="PythonCoverageRunConfigurationExtension" enabled="false" sample_coverage="true" runner="coverage.py" />
+      <option name="SCRIPT_NAME" value="C:/Python27/Lib/site-packages/swampy/Gui.py" />
       <option name="PARAMETERS" value="" />
       <RunnerSettings RunnerId="PythonRunner" />
       <ConfigurationWrapper RunnerId="PythonRunner" />
@@ -385,19 +350,19 @@
       <method />
     </configuration>
     <list size="5">
-      <item index="0" class="java.lang.String" itemvalue="Python.main" />
-      <item index="1" class="java.lang.String" itemvalue="Python.main_game" />
-      <item index="2" class="java.lang.String" itemvalue="Python.game" />
-      <item index="3" class="java.lang.String" itemvalue="Python.gui_test" />
-      <item index="4" class="java.lang.String" itemvalue="Python.try" />
+      <item index="0" class="java.lang.String" itemvalue="Python.main_game" />
+      <item index="1" class="java.lang.String" itemvalue="Python.try" />
+      <item index="2" class="java.lang.String" itemvalue="Python.setup" />
+      <item index="3" class="java.lang.String" itemvalue="Python.pygame2exe" />
+      <item index="4" class="java.lang.String" itemvalue="Python.Gui" />
     </list>
     <recent_temporary>
       <list size="5">
-        <item index="0" class="java.lang.String" itemvalue="Python.main_game" />
-        <item index="1" class="java.lang.String" itemvalue="Python.try" />
-        <item index="2" class="java.lang.String" itemvalue="Python.game" />
-        <item index="3" class="java.lang.String" itemvalue="Python.gui_test" />
-        <item index="4" class="java.lang.String" itemvalue="Python.main" />
+        <item index="0" class="java.lang.String" itemvalue="Python.Gui" />
+        <item index="1" class="java.lang.String" itemvalue="Python.pygame2exe" />
+        <item index="2" class="java.lang.String" itemvalue="Python.setup" />
+        <item index="3" class="java.lang.String" itemvalue="Python.main_game" />
+        <item index="4" class="java.lang.String" itemvalue="Python.try" />
       </list>
     </recent_temporary>
   </component>
@@ -449,13 +414,14 @@
   </component>
   <component name="ToolWindowManager">
     <frame x="1912" y="-8" width="1936" height="1096" extended-state="6" />
-    <editor active="false" />
+    <editor active="true" />
     <layout>
       <window_info id="Changes" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32942432" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="-1" side_tool="false" content_ui="tabs" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32942432" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32977587" sideWeight="0.5223404" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
-      <window_info id="Project" active="true" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.11953042" sideWeight="0.5031915" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.1421875" sideWeight="0.5031915" order="0" side_tool="false" content_ui="combo" />
       <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.44136462" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="1" side_tool="true" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.3848614" sideWeight="0.46318036" order="9" side_tool="true" content_ui="tabs" />
@@ -474,58 +440,9 @@
     <option name="myLimit" value="2678400000" />
   </component>
   <component name="VcsManagerConfiguration">
-    <option name="OFFER_MOVE_TO_ANOTHER_CHANGELIST_ON_PARTIAL_COMMIT" value="true" />
-    <option name="CHECK_CODE_SMELLS_BEFORE_PROJECT_COMMIT" value="false" />
-    <option name="CHECK_NEW_TODO" value="true" />
     <option name="myTodoPanelSettings">
-      <value>
-        <are-packages-shown value="false" />
-        <are-modules-shown value="false" />
-        <flatten-packages value="false" />
-        <is-autoscroll-to-source value="false" />
-      </value>
+      <TodoPanelSettings />
     </option>
-    <option name="PERFORM_UPDATE_IN_BACKGROUND" value="true" />
-    <option name="PERFORM_COMMIT_IN_BACKGROUND" value="true" />
-    <option name="PERFORM_EDIT_IN_BACKGROUND" value="true" />
-    <option name="PERFORM_CHECKOUT_IN_BACKGROUND" value="true" />
-    <option name="PERFORM_ADD_REMOVE_IN_BACKGROUND" value="true" />
-    <option name="PERFORM_ROLLBACK_IN_BACKGROUND" value="false" />
-    <option name="CHECK_LOCALLY_CHANGED_CONFLICTS_IN_BACKGROUND" value="false" />
-    <option name="CHANGED_ON_SERVER_INTERVAL" value="60" />
-    <option name="SHOW_ONLY_CHANGED_IN_SELECTION_DIFF" value="true" />
-    <option name="CHECK_COMMIT_MESSAGE_SPELLING" value="true" />
-    <option name="DEFAULT_PATCH_EXTENSION" value="patch" />
-    <option name="SHORT_DIFF_HORIZONTALLY" value="true" />
-    <option name="SHORT_DIFF_EXTRA_LINES" value="2" />
-    <option name="SOFT_WRAPS_IN_SHORT_DIFF" value="true" />
-    <option name="INCLUDE_TEXT_INTO_PATCH" value="false" />
-    <option name="INCLUDE_TEXT_INTO_SHELF" value="false" />
-    <option name="SHOW_FILE_HISTORY_DETAILS" value="true" />
-    <option name="SHOW_VCS_ERROR_NOTIFICATIONS" value="true" />
-    <option name="SHOW_DIRTY_RECURSIVELY" value="false" />
-    <option name="LIMIT_HISTORY" value="true" />
-    <option name="MAXIMUM_HISTORY_ROWS" value="1000" />
-    <option name="UPDATE_FILTER_SCOPE_NAME" />
-    <option name="USE_COMMIT_MESSAGE_MARGIN" value="false" />
-    <option name="COMMIT_MESSAGE_MARGIN_SIZE" value="72" />
-    <option name="WRAP_WHEN_TYPING_REACHES_RIGHT_MARGIN" value="false" />
-    <option name="FORCE_NON_EMPTY_COMMENT" value="false" />
-    <option name="CLEAR_INITIAL_COMMIT_MESSAGE" value="false" />
-    <option name="LAST_COMMIT_MESSAGE" />
-    <option name="MAKE_NEW_CHANGELIST_ACTIVE" value="false" />
-    <option name="OPTIMIZE_IMPORTS_BEFORE_PROJECT_COMMIT" value="false" />
-    <option name="CHECK_FILES_UP_TO_DATE_BEFORE_COMMIT" value="false" />
-    <option name="REFORMAT_BEFORE_PROJECT_COMMIT" value="false" />
-    <option name="REFORMAT_BEFORE_FILE_COMMIT" value="false" />
-    <option name="FILE_HISTORY_DIALOG_COMMENTS_SPLITTER_PROPORTION" value="0.8" />
-    <option name="FILE_HISTORY_DIALOG_SPLITTER_PROPORTION" value="0.5" />
-    <option name="ACTIVE_VCS_NAME" />
-    <option name="UPDATE_GROUP_BY_PACKAGES" value="false" />
-    <option name="UPDATE_GROUP_BY_CHANGELIST" value="false" />
-    <option name="UPDATE_FILTER_BY_SCOPE" value="false" />
-    <option name="SHOW_FILE_HISTORY_AS_TREE" value="false" />
-    <option name="FILE_HISTORY_SPLITTER_PROPORTION" value="0.6" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -533,97 +450,96 @@
     </breakpoint-manager>
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/Q2API_XML/creepy.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="46" column="30" selection-start="1754" selection-end="1754" vertical-scroll-proportion="0.0" />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/Saved_Files/asd.xml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="0" column="52" selection-start="52" selection-end="52" vertical-scroll-proportion="0.6666667" />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/game_log.09-24-2013.log">
-      <provider editor-type-id="com.intellij.persistence.database.editor.CsvTableFileEditorProvider">
-        <state />
-      </provider>
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="11" column="0" selection-start="424" selection-end="424" vertical-scroll-proportion="0.0" />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/Saved_Files/inv_test.xml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="24" column="6" selection-start="4110" selection-end="4110" vertical-scroll-proportion="-15.692307" />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/Saved_Files/open_test.xml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="25" column="935" selection-start="5614" selection-end="5614" vertical-scroll-proportion="-7.4615383" />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/Saved_Files/like.xml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/Saved_Files/open_test1.xml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://C:/Python27/Lib/Q2API/xml/gen_from_base_xml_new.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="75" column="27" selection-start="3774" selection-end="3774" vertical-scroll-proportion="0.0" />
-      </provider>
-    </entry>
-    <entry file="file://C:/Python27/Lib/Q2API/__init__.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="5" column="0" selection-start="153" selection-end="153" vertical-scroll-proportion="0.0" />
-      </provider>
-    </entry>
     <entry file="file://C:/Python27/Lib/Q2API/xml/base_xml.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="57" column="46" selection-start="2252" selection-end="2252" vertical-scroll-proportion="0.021881837" />
+        <state line="57" column="46" selection-start="2252" selection-end="2252" vertical-scroll-proportion="0.021881837" vertical-offset="0" max-vertical-offset="0" />
       </provider>
     </entry>
     <entry file="file://C:/Python27/Lib/Q2API/xml/mk_class.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="12" column="32" selection-start="481" selection-end="481" vertical-scroll-proportion="0.1487965" />
+        <state line="12" column="32" selection-start="481" selection-end="481" vertical-scroll-proportion="0.1487965" vertical-offset="0" max-vertical-offset="0" />
       </provider>
     </entry>
-    <entry file="file://C:/Python27/Lib/curses/textpad.py">
+    <entry file="file://$PROJECT_DIR$/Imports/Stack.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0" />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/main_game.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="33" column="33" selection-start="850" selection-end="850" vertical-scroll-proportion="0.0">
+        <state line="0" column="13" selection-start="13" selection-end="13" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="0">
           <folding />
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/Imports/ascii_art.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="43" column="11" selection-start="1424" selection-end="1424" vertical-scroll-proportion="0.950783" vertical-offset="0" max-vertical-offset="0" />
+      </provider>
+    </entry>
+    <entry file="file://$USER_HOME$/Documents/colorama-0.2.7/colorama-0.2.7/setup.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="-0.68456376" vertical-offset="0" max-vertical-offset="0" />
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/game.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="71" column="46" selection-start="2933" selection-end="2933" vertical-scroll-proportion="0.0">
+        <state line="10" column="26" selection-start="457" selection-end="457" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="0">
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/Q2API_XML/creepy.xml">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="70" column="118" selection-start="5473" selection-end="5473" vertical-scroll-proportion="0.019144144">
+        <state line="76" column="23" selection-start="5992" selection-end="5992" vertical-scroll-proportion="0.0" vertical-offset="1292" max-vertical-offset="4114">
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/Imports/Stack.py">
+    <entry file="file://C:/Python27/Lib/curses/__init__.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="0" column="13" selection-start="13" selection-end="13" vertical-scroll-proportion="0.0">
+        <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="0" />
+      </provider>
+    </entry>
+    <entry file="file://$USER_HOME$/AppData/Local/Temp/pygame2exe.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="0" />
+      </provider>
+    </entry>
+    <entry file="file://C:/Python27/Lib/curses/wrapper.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="0" />
+      </provider>
+    </entry>
+    <entry file="file://C:/Python27/Lib/curses/textpad.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="0" />
+      </provider>
+    </entry>
+    <entry file="file://C:/Python27/Lib/curses/panel.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="0" />
+      </provider>
+    </entry>
+    <entry file="file://C:/Python27/Lib/site-packages/colorconsole/terminal.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="1855">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://C:/Python27/Lib/site-packages/colorconsole/ansi.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="115" column="46" selection-start="3479" selection-end="3479" vertical-scroll-proportion="0.01814301" vertical-offset="1547" max-vertical-offset="3011">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://C:/Python27/Lib/site-packages/swampy/Gui.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="0">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/main_game.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="120" column="0" selection-start="3600" selection-end="3600" vertical-scroll-proportion="0.29028815" vertical-offset="0" max-vertical-offset="1311">
           <folding />
         </state>
       </provider>

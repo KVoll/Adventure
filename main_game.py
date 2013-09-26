@@ -4,19 +4,23 @@ import traceback
 from game import Game
 from time import sleep
 import sys
-
+from Imports import ascii_art
+from colorconsole import terminal
+import pygame
 
 logger = logging.out_file_instance("game_log")
+screen = terminal.get_terminal()
+
 
 def main():
+    screen.set_title("ELEVEN")
     if os.listdir("Saved_Files"):
         file_name = prompt_save()
         game = Game(file_name)
-
     else:
         game = Game("Q2API_XML/creepy.xml")
         # print game.state.something[0].value
-    os.system('cls')
+    screen.clear()
         # Slow text via sleep for intro
     # for line in game.intro.split("        "):
     #     sys.stdout.write(line),
@@ -25,11 +29,25 @@ def main():
     # sleep(3)
 
     # ASCII intro picture
-    # ascii_img = ascii_art.get_ascii_image()
-    # ascii_img.get_image("title.png")
-    print game.state.intro[0].value
+    for words in game.state.intro[0].value.split("\n"):
+        screen.cprint(8, 0, words)
+        print
+        sleep(0.4)
+    sleep(0.4)
+    # pygame.mixer.fadeout(2000)
+
+    # print game.state.intro[0].value
+    print
+    ascii_img = ascii_art.get_ascii_image()
+    screen.cprint(7, 0, " ")
+    ascii_img.get_image("eleven.png")
+
     print game.state.tip[0].value
 
+    screen.cprint(15, 0, " "*50 + "    ELEVEN")
+    print
+    print
+    screen.cprint(8, 0, " "*50)
     print game.room.attrs["name"].upper()
     print game.room.desc[0].value
 
@@ -40,9 +58,11 @@ def main():
 
 
 def run_command(game):
+    screen.cprint(10, 0, " ")
     command = raw_input("> ")
+    screen.cprint(3, 0, " ")
     if command == '':
-        print "<Oops! Something went wrong.  Try again.>\n"
+        print(8, 0, "<Oops! Something went wrong.  Try again.>\n")
     else:
         if command.lower().strip() in game.keywords:
             key_func = game.key_words[command.lower().strip()]
@@ -98,7 +118,6 @@ def prompt_save():
         file_name = "Q2API_XML/creepy.xml"
 
     return file_name
-
 
 if __name__ == "__main__":
     try:

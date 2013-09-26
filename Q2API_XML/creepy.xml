@@ -12,40 +12,40 @@
         in an attempt to find some kind of solution to the riddle of where and who you are.
     </intro>
     <tip>
-------------------------------------------------------------------------------------------------------------------------
-TIP:  You can type 'menu' to see a list of commands, 'inv' to see what items are in your inventory, and 'exit' to quit.
-------------------------------------------------------------------------------------------------------------------------
+   ------------------------------------------------------------------------------------------------------------------------
+    TIP:  You can type 'menu' to see a list of commands, 'inv' to see what items are in your inventory, and 'exit' to quit.
+   ------------------------------------------------------------------------------------------------------------------------
     </tip>
     <room name="unknown room">
-        <desc>The room is completely foreign to you.  There's no telling how long you've been unconscious. Days? Weeks?
-            Months?  You're uncertain.  The only choice you have is to try to find answers.  Try to find a way out.  The
-            truly unfortunate thing is that your capabilities are rendered.  You only know how to look, open, and take
-            the artifacts around you.  The first thing you do is carefully inspect your surroundings.
-            There's a bookshelf, the bed that you woke up on, a large metal door, and a desk.
+        <desc>        The room is completely foreign to you.  There's no telling how long you've been unconscious. Days? Weeks?\n
+        Months?  You're uncertain.  The only choice you have is to try to find answers.  Try to find a way out.  The\n
+        truly unfortunate thing is that your capabilities are rendered.  You only know how to look, open, and take\n
+        the artifacts around you.  The first thing you do is carefully inspect your surroundings.\n
+        There's a bookshelf, the bed that you woke up on, a large metal door, and a desk.\n
         </desc>
-        <l>You notice that the room is furnished with dusty antiques.  The only light source is coming from thin paneled
-        windows with bars on them.  You take a moment to get more familiar with the room you're in.</l>
+        <l>You notice that the room is furnished with dusty antiques.  The only light source is coming from thin
+                 paneled windows with bars on them.  You take a moment to get more familiar with the room you're in.</l>
         <o>You go to the metal door and try to escape.  To no surprise, the metal door is locked.  For a moment you
-            contemplated the possibility of the windows being a way out.  It's not long before you realize that even if
-            you got the bars off, you wouldn't fit through the tiny slit anyway.  Ultimately, your attempts to open the
-            room have failed.</o>
+              contemplated the possibility of the windows being a way out.  It's not long before you realize that even if
+              you got the bars off, you wouldn't fit through the tiny slit anyway.  Ultimately, your attempts to open the
+              room have failed.</o>
         <t>Knowing how to perform only three actions must be taking it's toll on your intelligence.  After hours of
-            struggling with your pockets you finally come to the conclusion that your pants were made too tight to fit a
-            room inside of them. You give up, and stop trying to take the room.</t>
+              struggling with your pockets you finally come to the conclusion that your pants were made too tight to fit a
+              room inside of them. You give up, and stop trying to take the room.</t>
         <item type="desk" obtainable="0" inspected="0">
             <history point="1" on="l desk">&lt;You found a history point!  Score increased by 1.&gt;</history>
             <visible in="unknown room"/>
             <l>The desk is aged and brittle probably made out of wood.  You're afraid to touch it in fear it might fall
-            apart.  Dust and thick spiderwebs are covering the surface.  It must have been here for a long time to
-            collect that much buildup.  You start to fade away into a daydream, and for a moment everything goes black.
-            When the light reappears, you notice you've drawn a symbol into the dust.  You stare at it until the image
-            is etched in your mind.
+                  apart.  Dust and thick spiderwebs are covering the surface.  It must have been here for a long time to
+                  collect that much buildup.  You start to fade away into a daydream, and for a moment everything goes black.
+                  When the light reappears, you notice you've drawn a symbol into the dust.  You stare at it until the image
+                  is etched in your mind.
             </l>
             <o>You hesitated for a moment because the thing feels unsteady.  The last thing you want is for it to fall
-                apart.  Whoever has kept you here might be upset.  Who DOES have you here, you wonder.  Eventually you
-                opened the drawers slowly as the desk trembled.</o>
+               apart.  Whoever has kept you here might be upset.  Who DOES have you here, you wonder.  Eventually you
+               opened the drawers slowly as the desk trembled.</o>
             <t>Your attempts are futile, poor thing.  The second you got your arms around it the whole thing shifted and
-            almost fell on top of you.  You're lucky you're still alive.</t>
+              almost fell on top of you.  You're lucky you're still alive.</t>
             <item type="journal" obtainable="1" inspected="0">
                 <visible in="desk"/>
                 <requirement req="key">

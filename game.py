@@ -1,9 +1,9 @@
 # python C:\Python27\Lib\Q2API\xml\mk_class.py C:\Users\KVOll\PycharmProjects\Adventure\Q2API_XML\creepy.xml
+# cd C:\Users\KVOll\PycharmProjects\Adventure
 import os
 import sys
 from Imports.Stack import stack
 from Q2API_XML import creepy
-
 
 class Game():
     verbs = {'look': 'l', 'scan': 'l', 'view': 'l', 'scout': 'l', 'explore': 'l', 'l': 'l',
@@ -286,6 +286,8 @@ class Game():
 
     def cmd_inv(self):
         """ Shows contents of inventory. """
+
+
         temp_str = ""
         if self.player_inv.attrs["items"] != "":
             player_inv = self.player_inv.attrs["items"].split(", a ")

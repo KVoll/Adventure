@@ -33,7 +33,7 @@ class get_ascii_image():
         """
         font_list = os.listdir('Fonts/wincmd10x20')
 
-        for file_name in font_list :
+        for file_name in font_list:
             image_file = file_name.split('.')
             image_name = image_file[0]
             img = Image.open('Fonts/wincmd10x20/' + file_name)
@@ -46,7 +46,7 @@ class get_ascii_image():
         self.get_ascii_string()
 
 
-    def get_ascii_string(self) :
+    def get_ascii_string(self):
         """
         """
         # create a reversed list for pixel_data
@@ -54,12 +54,12 @@ class get_ascii_image():
         reversed_dict = dict(reversed_ascii_chars)
 
         # compare pixel data from char and img
-        for i in range(0, len(self.pixel_data)) :
+        for i in range(0, len(self.pixel_data)):
             the_string = ''
 
-            for j in range(0, len(self.pixel_data[i])) :
+            for j in range(0, len(self.pixel_data[i])):
 
-                if self.pixel_data[i][j] == 0.0 :
+                if self.pixel_data[i][j] == 0.0:
                     # then get img from ascii dict where ascii_dict[0]
                     ascii_file_name = self.ascii_10x20_pixel_data[0]
                     the_string += reversed_dict[ascii_file_name[0]]
@@ -67,16 +67,16 @@ class get_ascii_image():
                     max_keys = max(self.ascii_10x20_pixel_data.keys())
                     scaled_pixel_data = (self.pixel_data[i][j] / 255.0) * max_keys   # scale the pixel data
 
-                    for m in range(0, len(self.ascii_10x20_pixel_data.keys())) :
+                    for m in range(0, len(self.ascii_10x20_pixel_data.keys())):
                         pixel_keys = self.ascii_10x20_pixel_data.keys()
                         if pixel_keys[m] < scaled_pixel_data <= pixel_keys[m + 1] :
                             ascii_file_name = self.ascii_10x20_pixel_data[pixel_keys[m]]
                             the_string += reversed_dict[random.choice(ascii_file_name)]
 
             the_list = list(the_string)
-            while the_list :
-                line = the_list[0 :120]
+            while the_list:
+                line = the_list[0:120]
                 if line != ' '*120:
                     print ''.join(line)
                 # print '\n'
-                del the_list[0 :120]
+                del the_list[0:120]
