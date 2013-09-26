@@ -100,7 +100,6 @@ class Game():
 
         # Get list of inventory items
         if self.player_inv.attrs["items"] != "":
-
             player_inv = self.player_inv.attrs["items"].split(", a ")
             # Remove any empty strings from player_inventory
             for i in range(len(player_inv)):
@@ -130,70 +129,35 @@ class Game():
                             if parent_inspected != "1":
                                 print item.requirement[0].prereq[0].value
                             else:
-                                print item.o[0].value
-                                for child in item.item:
-                                    if child.visible[0].attrs["in"] == item.attrs["type"]:
-                                        temp_list.append(child.attrs["type"])
-                                item.attrs["inspected"] = "1"
+                                self.requirement_met(item, temp_list)
                         elif req not in player_inv:
                             print item.requirement[0].prereq[0].value
                         else:
-                            print item.o[0].value
-                            for child in item.item:
-                                if child.visible[0].attrs["in"] == item.attrs["type"]:
-                                    temp_list.append(child.attrs["type"])
-                            item.attrs["inspected"] = "1"
+                            self.requirement_met(item, temp_list)
                     else:
-                        print item.o[0].value
-                        for child in item.item:
-                            if child.visible[0].attrs["in"] == item.attrs["type"]:
-                                temp_list.append(child.attrs["type"])
-                        item.attrs["inspected"] = "1"
-            #         # print item.o[0].value
-            #         # For any children inside the item
-            #         for child in item.item:
-            #             # If the child is visible in the item
-            #             if child.visible[0].attrs["in"] == noun:
-            #                 # If there are no requirements on the item being opened, append to temp_list
-            #                 if len(item.requirement) == 0:
-            #                     item.attrs["inspected"] = "1"
-            #                     print item.o[0].value
-            #                     temp_list.append(child.attrs["type"])
-            #                 # Otherwise, check item requirement
-            #                 else:
-            #                     req = item.requirement[0].attrs["req"]
-            #                     # If the required item is in player's inventory or the item has been inspected, the
-            #                     # item can be opened.
-            #                     if req in player_inv or parent_inspected == "1":
-            #                         # Append post-requirement text to temp_list1
-            #                         print item.attrs["type"], parent_inspected, req
-            #                         print item.o[0].value
-            #                         temp_list.append(child.attrs["type"])
-            #                         # Change item's inspected status to '1'
-            #                         item.attrs["inspected"] = "1"
-            #                     # Otherwise,
-            #                     else:
-            #                         # append pre-requirement text
-            #                         temp_list1.append(item.requirement[0].prereq[0].value)
-            #
-            #         # Print the appropriate temporary text
+                        self.requirement_met(item, temp_list)
+                    # Print the appropriate temporary text
                     temp_str = ""
-            #         if temp_list1:
-            #             temp_str += str(temp_list1[0])
-            #             return " " * num + " " + temp_str + "\n"
                     if temp_list:
                         for i in range(len(temp_list)):
                             temp_str += temp_list[i]
                             temp_str += ", a "
                         return " " * num + " <You see a " + temp_str[:-4] + ".>\n"
-            #     # Otherwise, if the item is not the noun given, make recursive call until item is found
+                # Otherwise, if the item is not the noun given, make recursive call until item is found
                 else:
                     parent_inspected = item.attrs["inspected"]
                     res = self.cmd_open(noun, item, parent_inspected)
                     if res is not None:
                         print res
-                        # Returns None to the caller
+            # Returns None to the caller
             return
+
+    def requirement_met(self, item, temp_list):
+        print item.o[0].value, "\n"
+        for child in item.item:
+            if child.visible[0].attrs["in"] == item.attrs["type"]:
+                temp_list.append(child.attrs["type"])
+        item.attrs["inspected"] = "1"
 
     def cmd_take(self, noun, place=None, parent_inspected=""):
         """ cmd_take is a recursive function that processes a 'take' command from the player. """
@@ -324,7 +288,6 @@ class Game():
         temp_str = ""
         if self.player_inv.attrs["items"] != "":
             player_inv = self.player_inv.attrs["items"].split(", a ")
-        
             # Remove empty items
             for i in range(len(player_inv)):
                 if player_inv[i] == "":
@@ -333,11 +296,6 @@ class Game():
             player_inv = []
 
         num = len(player_inv)
-        # len_last = len(", a " + player_inv[num - 1] + ", a ")
-
-        # if num > 1:
-        #     temp_str = "a " + self.player_inv.attrs["items"][:-len_last] + ", and a " + player_inv[num - 1] + ".>\n"
-        #     self.player_inv.attrs["items"] = temp_str
 
         if num == 0:                                                  # If inventory is empty
             print "       <There is nothing in your inventory.>\n"    # Print corresponding text
