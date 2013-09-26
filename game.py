@@ -153,7 +153,7 @@ class Game():
             return
 
     def requirement_met(self, item, temp_list):
-        print item.o[0].value, "\n"
+        print item.o[0].value
         for child in item.item:
             if child.visible[0].attrs["in"] == item.attrs["type"]:
                 temp_list.append(child.attrs["type"])
@@ -162,9 +162,7 @@ class Game():
     def cmd_take(self, noun, place=None, parent_inspected=""):
         """ cmd_take is a recursive function that processes a 'take' command from the player. """
         text = ""
-        # player_inv = []
-        # Create stn
-        # ack for easier processing
+        # Create stack for easier processing
         take_stack = stack()
 
         # Get list of inventory items
@@ -303,17 +301,23 @@ class Game():
             print "       <You have one item in your inventory: " + \
                 self.player_inv.attrs["items"][:-4] + ".>\n"
         else:                                                         # Otherwise, print multiple items
+            print "       <You have " + str(num) + " items in your inventory: a",
             for i in range(len(player_inv)):
-                print(player_inv[i])
+                temp_str += player_inv[i] + ", a "
+            print temp_str[:-5], ".>\n"
 
     def cmd_exit(self):
         """ Safely close program. """
-        return sys.exit()
+        choice = raw_input("Would you like to save before exiting? (y/n)\n")
+        if choice == "y":
+            self.cmd_save()
+        else:
+            return sys.exit()
 
     def cmd_save(self):
         """ Uses the Q2API to flatten the game state to new XML doc. """
         # Get file name for saving
-        save_file = raw_input("Enter a name for saved file.\n\n>")
+        save_file = raw_input("Enter a name for saved game.\n>")
 
         # Flatten room object to XML
         saved_game_data = self.state.flatten_self()
@@ -331,9 +335,6 @@ class Game():
         # If the file is in Saved_Files, print success. Otherwise, print error and try again
         if (save_file + ".xml") in file_list:
             print "Save successful.\n"
-        else:
-            print "Sorry, there was a problem saving the file.  Please try again.\n"
-            self.cmd_save()
 
         # return room object
         return self.room
