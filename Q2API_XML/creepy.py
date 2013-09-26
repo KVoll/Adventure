@@ -25,8 +25,8 @@ def clean_node_name(node_name):
 
 class postreq_q2class(Q2API.xml.base_xml.XMLNode):
     def __init__(self, attrs):
-        self.level = 6
-        self.path = [None, u'house', u'room', u'item', u'item', u'requirement']
+        self.level = 8
+        self.path = [None, u'house', u'room', u'item', u'item', u'item', u'item', u'requirement']
         Q2API.xml.base_xml.XMLNode.__init__(self, "postreq", attrs, None, [])
 
 class prereq_q2class(Q2API.xml.base_xml.XMLNode):
@@ -71,6 +71,7 @@ class item_q2class(Q2API.xml.base_xml.XMLNode):
         self.l = []
         self.o = []
         self.t = []
+        self.desc = []
         Q2API.xml.base_xml.XMLNode.__init__(self, "item", attrs, None, [])
 
 class l_q2class(Q2API.xml.base_xml.XMLNode):

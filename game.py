@@ -1,4 +1,4 @@
-# python C:\Python27\Lib\Q2API\xml\mk_class.py C:\Users\KVOll\PycharmProjects\Adventure\creepy.xml
+# python C:\Python27\Lib\Q2API\xml\mk_class.py C:\Users\KVOll\PycharmProjects\Adventure\Q2API_XML\creepy.xml
 import os
 import sys
 from Imports.Stack import stack
@@ -10,23 +10,26 @@ class Game():
              'inspect': 'l', 'check': 'l', 'search': 'l', 'examine': 'l', 'read': 'l',
              'take': 't', 'get': 't', 'obtain': 't', 'steal': 't', 'remove': 't', 't': 't',
              'open': 'o', 'access': 'o', 'use': 'o', 'o': 'o'}
-    keywords = ['exit', 'inv', 'menu', 'save']
+    keywords = ['exit', 'inv', 'menu', 'save', 'list', 'nouns']
 
     def __init__(self, file_name):
         """ Initialize the game objects """
         # Get the XML data from file given
         with open(file_name, "r") as fin:
             xml_file = fin.read()
-
+        self.nouns = []
+        self.list_used = []
         self.success, self.state = creepy.obj_wrapper(xml_file)     # Get the game state from Q2API obj_wrapper
         self.player_inv = self.state.player[0].inventory[0]         # Creates an instance of the inventory_q2class
-
+        self.intro = self.state.intro[0].value
         for room in self.state.room:
             if room.attrs["name"] == self.state.player[0].room[0].attrs["name"]:
                 self.room = room
+                self.nouns.append(self.room.attrs["name"])
 
     def update(self, cmd):
         """ Kind of pointless right now, need to change/remove.  Acting as a run_command communicator. """
+        # self.list_used.append(cmd)
         if cmd != "exit":
             return False
         else:
@@ -143,6 +146,7 @@ class Game():
                             temp_str += temp_list[i]
                             temp_str += ", a "
                         return " " * num + " <You see a " + temp_str[:-4] + ".>\n"
+
                 # Otherwise, if the item is not the noun given, make recursive call until item is found
                 else:
                     parent_inspected = item.attrs["inspected"]
@@ -167,7 +171,6 @@ class Game():
 
         # Get list of inventory items
         if self.player_inv.attrs["items"] != "":
-
             player_inv = self.player_inv.attrs["items"].split(", a ")
             # Remove any empty strings from player_inventory
             for i in range(len(player_inv)):
@@ -339,8 +342,16 @@ class Game():
         # return room object
         return self.room
 
+    def cmd_list(self):
+        for i in range(len(self.list_used)):
+            print self.list_used[i] + "  |  ",
+
+    def cmd_nouns(self):
+        for i in range(len(self.nouns)):
+            print self.nouns[i] + "  |  ",
+
     # Action shortcuts mapped to respective function
     actions = {'l': cmd_look, 'o': cmd_open, 't': cmd_take}
 
     # Keywords mapped to their respective function
-    key_words = {'exit': cmd_exit, 'menu': cmd_menu, 'inv': cmd_inv, 'save': cmd_save}
+    key_words = {'exit': cmd_exit, 'menu': cmd_menu, 'inv': cmd_inv, 'save': cmd_save, 'list': cmd_list, 'nouns': cmd_nouns}
