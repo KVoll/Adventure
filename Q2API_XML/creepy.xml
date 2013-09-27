@@ -2,7 +2,7 @@
     <player>
         <inventory items=""/>
         <room name="unknown room"/>
-        <score val=""/>
+        <score val="0"/>
     </player>
     <intro>
     Consciousness slowly returns to you after a very unnatural slumber. You feel your eyes open as panic sends your mind
@@ -17,11 +17,11 @@
    ------------------------------------------------------------------------------------------------------------------------
     </tip>
     <room name="unknown room">
-        <desc>         The room is completely foreign to you.  There's no telling how long you've been unconscious. Days? Weeks?
-         Months?  You're uncertain.  The only choice you have is to try to find answers.  Try to find a way out.  The
-         truly unfortunate thing is that your capabilities are rendered.  You only know how to look, open, and take
-         the artifacts around you.  The first thing you do is carefully inspect your surroundings.  There's a bookshelf,
-         the bed that you woke up on, a large metal door, and a desk.
+        <desc>     The room is completely foreign to you.  There's no telling how long you've been unconscious. Days? Weeks?
+     Months?  You're uncertain.  The only choice you have is to try to find answers.  Try to find a way out.  The
+     truly unfortunate thing is that your capabilities are rendered.  You only know how to look, open, and take
+     the artifacts around you.  The first thing you do is carefully inspect your surroundings.  There's a bookshelf,
+     the bed that you woke up on, a large metal door, and a desk.
         </desc>
         <l>You notice that the room is furnished with dusty antiques.  The only light source is coming from thin
                       paneled windows with bars on them.  You take a moment to get more familiar with the room you're in.</l>
@@ -33,7 +33,10 @@
               struggling with your pockets you finally come to the conclusion that your pants were made too tight to fit a
               room inside of them. You give up, and stop trying to take the room.</t>
         <item type="desk" obtainable="0" inspected="0">
-            <history point="1" on="l desk">&lt;You found a history point!  Score increased by 1.&gt;</history>
+            <score point="1" on="l desk">
+                <prompt>&lt;You've added a memory to your memory bank, and earned a point.&gt;</prompt>
+                <memory>The symbol drawn on the desk's layer of dust.</memory>
+            </score>
             <visible in="unknown room"/>
             <l> The desk is aged and brittle probably made out of wood.  You're afraid to touch it in fear it might fall
                    apart.  Dust and thick spiderwebs are covering the surface.  It must have been here for a long time to
@@ -42,8 +45,8 @@
                    is etched in your mind.
             </l>
             <o>You hesitated for a moment because the thing feels unsteady.  The last thing you want is for it to fall
-               apart.  Whoever has kept you here might be upset.  Who DOES have you here, you wonder.  Eventually you
-               opened the drawers slowly as the desk trembled.</o>
+              apart.  Whoever has kept you here might be upset.  Who DOES have you here, you wonder.  Eventually you
+              opened the drawers slowly as the desk trembled.</o>
             <t>Your attempts are futile, poor thing.  The second you got your arms around it the whole thing shifted and
               almost fell on top of you.  You're lucky you're still alive.</t>
             <item type="journal" obtainable="1" inspected="0">

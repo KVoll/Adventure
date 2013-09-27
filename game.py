@@ -5,7 +5,8 @@ import sys
 from Imports.Stack import stack
 from Q2API_XML import creepy
 from colorconsole import terminal
-from Imports import ascii_art
+#from Imports import ascii_art
+
 
 class Game():
     verbs = {'look': 'l', 'scan': 'l', 'view': 'l', 'scout': 'l', 'explore': 'l', 'l': 'l',
@@ -22,29 +23,51 @@ class Game():
             xml_file = fin.read()
         self.nouns = []
         self.list_used = []
+        self.memories = []
+        self.score = 0
         self.success, self.state = creepy.obj_wrapper(xml_file)     # Get the game state from Q2API obj_wrapper
         self.player_inv = self.state.player[0].inventory[0]         # Creates an instance of the inventory_q2class
         self.intro = self.state.intro[0].value
+        self.room = self.get_current_room()
+        self.points_available = self.get_score()
+
+    def get_score(self, place=None):
+        score_dict = {}
+        if place is None:
+            place = self.room
+        for item in place.item:
+            if item.score:
+                words = item.score[0].attrs["on"].split()
+                verb = words[0]
+                noun = ' '.join(words[1:])
+                score_dict.setdefault(verb, []).append(noun)
+            else:
+                self.get_score(item)
+        return score_dict
+
+    def get_current_room(self):
         for room in self.state.room:
             if room.attrs["name"] == self.state.player[0].room[0].attrs["name"]:
-                self.room = room
-                self.nouns.append(self.room.attrs["name"])
+                self.nouns.append(room.attrs["name"])
+                return room
 
-    def update(self, cmd):
-        """ Kind of pointless right now, need to change/remove.  Acting as a run_command communicator. """
-        # self.list_used.append(cmd)
-        #ascii = ascii_art.get_ascii_image()
-        if cmd != "exit":
-            return False
-        #elif cmd == "l desk":
-            #ascii.get_image("spirals.png")
-        else:
-            self.cmd_exit()
+    def check_score(self, n):
+        for i in range(len(self.points_available.values())):
+            if n.attrs["type"] in self.points_available.values()[i]:
+                print(n.score[0].prompt[0].value)
+                self.score += int(n.score[0].attrs["point"])
+                print("Current score is:    " + str(self.score))
+                print(n.score[0].memory[0].value)
+                self.memories.append(n.score[0].memory[0].value)
+                for score in n.score:
+                    n.score[0].attrs["point"] = "0"
+                    n.children.remove(score)
 
     def cmd_look(self, noun, place=None):
         """ cmd_look is a recursive function that processes a 'look' command for the player """
         # global verbs
-        ascii = ascii_art.get_ascii_image()
+        #ascii = ascii_art.get_ascii_image()
+        #print(self.scores_available)
         text = ""
         num = len("[LOOK AT " + noun.upper() + "]>  ")
 
@@ -58,7 +81,6 @@ class Game():
             print "[LOOK AROUND ROOM]>  ",
             num = len("[LOOK AROUND ROOM]>  ")
             print place.l[0].value
-            #ascii.get_image("eyes.png")
             # For all items in the current place
             for item in place.item:
                 # If item is visible in the same place, generate appropriate text
@@ -66,7 +88,6 @@ class Game():
                     text += item.attrs["type"]
                     text += ", a "
             text = " "*num + text[:-4] + ".>\n"
-
             # Return the generated text to be printed
             return text
         # Otherwise, the noun is given
@@ -79,8 +100,6 @@ class Game():
                     print "[LOOK AT " + noun.upper() + "]>  ",
                     # Print appropriate response from XML
                     print item.l[0].value
-                    if noun == "desk":
-                        ascii.get_image("dominos.png")
                     # For each child object in the item
                     for child in item.item:
                         # If the item type is the same as where the child is visible, and the child has no requirements
@@ -89,7 +108,13 @@ class Game():
                             if len(item.item) > 0:
                                 # Append to temporary list
                                 temp_list.append(child.attrs["type"])
+                    if item.score and item.score[0].attrs["point"] != "0":
+                        #try:
 
+                            self.check_score(item)
+
+                        #except ValueError:
+                        #    pass
                     temp_str = ""
                     # If temporary list isn't empty
                     if temp_list:
@@ -98,9 +123,11 @@ class Game():
                             temp_str += temp_list[i]
                             temp_str += ", a "
                         return " "*num + " <You see a " + temp_str[:-4] + ".>\n"
+
                 # Otherwise, make a recursive call back to find the given noun/item
                 else:
                     text = self.cmd_look(noun, item)
+
             # Returns string obtained from list
             return text
 
@@ -170,6 +197,7 @@ class Game():
             if child.visible[0].attrs["in"] == item.attrs["type"]:
                 temp_list.append(child.attrs["type"])
         item.attrs["inspected"] = "1"
+
 
     def cmd_take(self, noun, place=None, parent_inspected=""):
         """ cmd_take is a recursive function that processes a 'take' command from the player. """
@@ -364,5 +392,4 @@ class Game():
     actions = {'l': cmd_look, 'o': cmd_open, 't': cmd_take}
 
     # Keywords mapped to their respective function
-    key_words = {'exit': cmd_exit, 'menu': cmd_menu, 'inv': cmd_inv, 'save': cmd_save, 'list': cmd_list,
-                 'nouns': cmd_nouns}
+    key_words = {'exit': cmd_exit, 'menu': cmd_menu, 'inv': cmd_inv, 'save': cmd_save, 'list': cmd_list, 'nouns': cmd_nouns}

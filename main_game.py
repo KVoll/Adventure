@@ -3,7 +3,6 @@ from Q2API.util import logging
 import traceback
 from game import Game
 from time import sleep
-import sys
 from Imports import ascii_art
 from colorconsole import terminal
 
@@ -14,15 +13,16 @@ screen = terminal.get_terminal()
 def main():
     os.system('cls')
     screen.set_title("ELEVEN")
+
     if os.listdir("Saved_Files"):
         file_name = prompt_save()
         game = Game(file_name)
     else:
         game = Game("Q2API_XML/creepy.xml")
-        # print game.state.something[0].value
+
     screen.clear()
-        # Slow text via sleep for intro
-    # for line in game.intro.split("        "):
+    # Slow text via sleep for intro
+    #for line in game.intro.split("        "):
     #     sys.stdout.write(line),
     #     sleep(1.0)
     # # sys.stdout.write(game.intro)
@@ -35,29 +35,25 @@ def main():
     ascii_img.get_image("eleven.png")
     print("\n")
     for lines in game.state.intro[0].value.split("\n"):
-        screen.cprint(15, 0, lines+" ")
-        sleep(1.1)
-        print
-    sleep(0.8)
+        screen.cprint(15, 0, lines+"\n")
+        sleep(1.5)
     print("\n")
-
+    sleep(0.8)
     screen.cprint(15, 0, " ")
     print "\n" + game.state.tip[0].value
     screen.cprint(3, 0, "")
     print " " * 50 + game.room.attrs["name"].upper() + "\n"
     screen.cprint(15, 0, "")
     print game.room.desc[0].value
-    screen.cprint(7, 0, "")
-    #quit_game = False
-    screen.reset()
-    #while not quit_game:
-    #    command = run_command(game)
-    #    quit_game = game.update(command)
+
+    while 1:
+        run_command(game)
 
 
 def run_command(game):
     screen.cprint(3, 0, "")
     command = raw_input("> ")
+    logger.write_line(["The player input the command: "+repr(command)], debug_level=0)
     screen.set_color(15, 0)
     if command == '':
         print("<Oops! Something went wrong.  Try again.>\n")
@@ -82,7 +78,6 @@ def run_command(game):
 def parse(command, game):
     """ Parses the input and tries to find a verb, noun combo to return."""
     words = command.lower().strip().split()
-    #try:
     # If the command is only one word, set it as verb
     if len(words) == 1:
         verb = game.verbs[words[0]]
@@ -91,12 +86,12 @@ def parse(command, game):
         verb = game.verbs[words[0]]
         # Join the remaining words as the noun.
         noun = ' '.join(words[1:])
+        if noun.lower() == game.room.attrs["name"].lower() or noun == "room":
+            noun = ""
 
     game.list_used.append(command)
     game.nouns.append(noun)
     return verb, noun
-    #except IndexError:
-    #    print "<Sorry, unable to process input.  Please try again.>\n"
 
 
 def prompt_save():

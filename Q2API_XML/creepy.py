@@ -35,6 +35,18 @@ class prereq_q2class(Q2API.xml.base_xml.XMLNode):
         self.path = [None, u'house', u'room', u'item', u'item', u'requirement']
         Q2API.xml.base_xml.XMLNode.__init__(self, "prereq", attrs, None, [])
 
+class memory_q2class(Q2API.xml.base_xml.XMLNode):
+    def __init__(self, attrs):
+        self.level = 5
+        self.path = [None, u'house', u'room', u'item', u'score']
+        Q2API.xml.base_xml.XMLNode.__init__(self, "memory", attrs, None, [])
+
+class prompt_q2class(Q2API.xml.base_xml.XMLNode):
+    def __init__(self, attrs):
+        self.level = 5
+        self.path = [None, u'house', u'room', u'item', u'score']
+        Q2API.xml.base_xml.XMLNode.__init__(self, "prompt", attrs, None, [])
+
 class requirement_q2class(Q2API.xml.base_xml.XMLNode):
     def __init__(self, attrs):
         self.level = 5
@@ -42,12 +54,6 @@ class requirement_q2class(Q2API.xml.base_xml.XMLNode):
         self.postreq = []
         self.prereq = []
         Q2API.xml.base_xml.XMLNode.__init__(self, "requirement", attrs, None, [])
-
-class history_q2class(Q2API.xml.base_xml.XMLNode):
-    def __init__(self, attrs):
-        self.level = 4
-        self.path = [None, u'house', u'room', u'item']
-        Q2API.xml.base_xml.XMLNode.__init__(self, "history", attrs, None, [])
 
 class visible_q2class(Q2API.xml.base_xml.XMLNode):
     def __init__(self, attrs):
@@ -72,12 +78,12 @@ class item_q2class(Q2API.xml.base_xml.XMLNode):
         self.level = 3
         self.path = [None, u'house', u'room']
         self.requirement = []
+        self.score = []
         self.item = []
         self.visible = []
         self.l = []
         self.o = []
         self.t = []
-        self.history = []
         self.desc = []
         Q2API.xml.base_xml.XMLNode.__init__(self, "item", attrs, None, [])
 
@@ -108,6 +114,8 @@ class score_q2class(Q2API.xml.base_xml.XMLNode):
     def __init__(self, attrs):
         self.level = 3
         self.path = [None, u'house', u'player']
+        self.prompt = []
+        self.memory = []
         Q2API.xml.base_xml.XMLNode.__init__(self, "score", attrs, None, [])
 
 class t_q2class(Q2API.xml.base_xml.XMLNode):
@@ -173,6 +181,9 @@ class NodeHandler(xml.sax.handler.ContentHandler):
         elif name == "prereq":
             self.obj_depth.append(prereq_q2class(p_attrs))
 
+        elif name == "prompt":
+            self.obj_depth.append(prompt_q2class(p_attrs))
+
         elif name == "score":
             self.obj_depth.append(score_q2class(p_attrs))
 
@@ -206,8 +217,8 @@ class NodeHandler(xml.sax.handler.ContentHandler):
         elif name == "inventory":
             self.obj_depth.append(inventory_q2class(p_attrs))
 
-        elif name == "history":
-            self.obj_depth.append(history_q2class(p_attrs))
+        elif name == "memory":
+            self.obj_depth.append(memory_q2class(p_attrs))
 
         elif name == "desc":
             self.obj_depth.append(desc_q2class(p_attrs))
@@ -242,6 +253,12 @@ class NodeHandler(xml.sax.handler.ContentHandler):
 
         elif name == "prereq":
             self.obj_depth[-2].prereq.append(self.obj_depth[-1]) #  make this object a child of the next object up...
+            self.obj_depth[-2].children.append(self.obj_depth[-1]) #  put a reference in the children list as well
+            self.obj_depth.pop() # remove this node from the list, processing is complete
+            self.char_buffer = []
+
+        elif name == "prompt":
+            self.obj_depth[-2].prompt.append(self.obj_depth[-1]) #  make this object a child of the next object up...
             self.obj_depth[-2].children.append(self.obj_depth[-1]) #  put a reference in the children list as well
             self.obj_depth.pop() # remove this node from the list, processing is complete
             self.char_buffer = []
@@ -312,8 +329,8 @@ class NodeHandler(xml.sax.handler.ContentHandler):
             self.obj_depth.pop() # remove this node from the list, processing is complete
             self.char_buffer = []
 
-        elif name == "history":
-            self.obj_depth[-2].history.append(self.obj_depth[-1]) #  make this object a child of the next object up...
+        elif name == "memory":
+            self.obj_depth[-2].memory.append(self.obj_depth[-1]) #  make this object a child of the next object up...
             self.obj_depth[-2].children.append(self.obj_depth[-1]) #  put a reference in the children list as well
             self.obj_depth.pop() # remove this node from the list, processing is complete
             self.char_buffer = []
