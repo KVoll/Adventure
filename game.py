@@ -1,9 +1,11 @@
 # python C:\Python27\Lib\Q2API\xml\mk_class.py C:\Users\KVOll\PycharmProjects\Adventure\Q2API_XML\creepy.xml
-# cd C:\Users\KVOll\PycharmProjects\Adventure
+# cd C:\Users\KVOll\PycharmProjects\Adventure python main_game.py
 import os
 import sys
 from Imports.Stack import stack
 from Q2API_XML import creepy
+from colorconsole import terminal
+from Imports import ascii_art
 
 class Game():
     verbs = {'look': 'l', 'scan': 'l', 'view': 'l', 'scout': 'l', 'explore': 'l', 'l': 'l',
@@ -11,6 +13,7 @@ class Game():
              'take': 't', 'get': 't', 'obtain': 't', 'steal': 't', 'remove': 't', 't': 't',
              'open': 'o', 'access': 'o', 'use': 'o', 'o': 'o'}
     keywords = ['exit', 'inv', 'menu', 'save', 'list', 'nouns']
+    screen = terminal.get_terminal()
 
     def __init__(self, file_name):
         """ Initialize the game objects """
@@ -30,14 +33,18 @@ class Game():
     def update(self, cmd):
         """ Kind of pointless right now, need to change/remove.  Acting as a run_command communicator. """
         # self.list_used.append(cmd)
+        #ascii = ascii_art.get_ascii_image()
         if cmd != "exit":
             return False
+        #elif cmd == "l desk":
+            #ascii.get_image("spirals.png")
         else:
             self.cmd_exit()
 
     def cmd_look(self, noun, place=None):
         """ cmd_look is a recursive function that processes a 'look' command for the player """
         # global verbs
+        ascii = ascii_art.get_ascii_image()
         text = ""
         num = len("[LOOK AT " + noun.upper() + "]>  ")
 
@@ -51,7 +58,7 @@ class Game():
             print "[LOOK AROUND ROOM]>  ",
             num = len("[LOOK AROUND ROOM]>  ")
             print place.l[0].value
-
+            #ascii.get_image("eyes.png")
             # For all items in the current place
             for item in place.item:
                 # If item is visible in the same place, generate appropriate text
@@ -65,7 +72,6 @@ class Game():
         # Otherwise, the noun is given
         else:
             temp_list = []
-
             # For each item in the noun given
             for item in place.item:
                 # If the item's type is the same as the noun
@@ -73,6 +79,8 @@ class Game():
                     print "[LOOK AT " + noun.upper() + "]>  ",
                     # Print appropriate response from XML
                     print item.l[0].value
+                    if noun == "desk":
+                        ascii.get_image("dominos.png")
                     # For each child object in the item
                     for child in item.item:
                         # If the item type is the same as where the child is visible, and the child has no requirements
@@ -130,11 +138,11 @@ class Game():
                         req = item.requirement[0].attrs["req"]
                         if str(req).startswith("o "):
                             if parent_inspected != "1":
-                                print item.requirement[0].prereq[0].value
+                                print item.requirement[0].prereq[0].value + "\n"
                             else:
                                 self.requirement_met(item, temp_list)
                         elif req not in player_inv:
-                            print item.requirement[0].prereq[0].value
+                            print item.requirement[0].prereq[0].value + "\n"
                         else:
                             self.requirement_met(item, temp_list)
                     else:
@@ -145,7 +153,7 @@ class Game():
                         for i in range(len(temp_list)):
                             temp_str += temp_list[i]
                             temp_str += ", a "
-                        return " " * num + " <You see a " + temp_str[:-4] + ".>\n"
+                        return " " * num + "  <You see a " + temp_str[:-4] + ".>\n"
 
                 # Otherwise, if the item is not the noun given, make recursive call until item is found
                 else:
@@ -286,8 +294,6 @@ class Game():
 
     def cmd_inv(self):
         """ Shows contents of inventory. """
-
-
         temp_str = ""
         if self.player_inv.attrs["items"] != "":
             player_inv = self.player_inv.attrs["items"].split(", a ")
@@ -309,7 +315,7 @@ class Game():
             print "       <You have " + str(num) + " items in your inventory: a",
             for i in range(len(player_inv)):
                 temp_str += player_inv[i] + ", a "
-            print temp_str[:-5], ".>\n"
+            print temp_str[:-4], ".>\n"
 
     def cmd_exit(self):
         """ Safely close program. """
@@ -346,14 +352,17 @@ class Game():
 
     def cmd_list(self):
         for i in range(len(self.list_used)):
-            print self.list_used[i] + "  |  ",
+            print "|  " + self.list_used[i] + "  |",
+        print("\n")
 
     def cmd_nouns(self):
         for i in range(len(self.nouns)):
-            print self.nouns[i] + "  |  ",
+            print "|  " + self.nouns[i] + "  |",
+        print("\n")
 
     # Action shortcuts mapped to respective function
     actions = {'l': cmd_look, 'o': cmd_open, 't': cmd_take}
 
     # Keywords mapped to their respective function
-    key_words = {'exit': cmd_exit, 'menu': cmd_menu, 'inv': cmd_inv, 'save': cmd_save, 'list': cmd_list, 'nouns': cmd_nouns}
+    key_words = {'exit': cmd_exit, 'menu': cmd_menu, 'inv': cmd_inv, 'save': cmd_save, 'list': cmd_list,
+                 'nouns': cmd_nouns}

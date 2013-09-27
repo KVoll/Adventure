@@ -43,6 +43,12 @@ class requirement_q2class(Q2API.xml.base_xml.XMLNode):
         self.prereq = []
         Q2API.xml.base_xml.XMLNode.__init__(self, "requirement", attrs, None, [])
 
+class history_q2class(Q2API.xml.base_xml.XMLNode):
+    def __init__(self, attrs):
+        self.level = 4
+        self.path = [None, u'house', u'room', u'item']
+        Q2API.xml.base_xml.XMLNode.__init__(self, "history", attrs, None, [])
+
 class visible_q2class(Q2API.xml.base_xml.XMLNode):
     def __init__(self, attrs):
         self.level = 4
@@ -71,6 +77,7 @@ class item_q2class(Q2API.xml.base_xml.XMLNode):
         self.l = []
         self.o = []
         self.t = []
+        self.history = []
         self.desc = []
         Q2API.xml.base_xml.XMLNode.__init__(self, "item", attrs, None, [])
 
@@ -199,6 +206,9 @@ class NodeHandler(xml.sax.handler.ContentHandler):
         elif name == "inventory":
             self.obj_depth.append(inventory_q2class(p_attrs))
 
+        elif name == "history":
+            self.obj_depth.append(history_q2class(p_attrs))
+
         elif name == "desc":
             self.obj_depth.append(desc_q2class(p_attrs))
 
@@ -298,6 +308,12 @@ class NodeHandler(xml.sax.handler.ContentHandler):
 
         elif name == "inventory":
             self.obj_depth[-2].inventory.append(self.obj_depth[-1]) #  make this object a child of the next object up...
+            self.obj_depth[-2].children.append(self.obj_depth[-1]) #  put a reference in the children list as well
+            self.obj_depth.pop() # remove this node from the list, processing is complete
+            self.char_buffer = []
+
+        elif name == "history":
+            self.obj_depth[-2].history.append(self.obj_depth[-1]) #  make this object a child of the next object up...
             self.obj_depth[-2].children.append(self.obj_depth[-1]) #  put a reference in the children list as well
             self.obj_depth.pop() # remove this node from the list, processing is complete
             self.char_buffer = []

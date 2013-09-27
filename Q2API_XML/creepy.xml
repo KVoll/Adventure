@@ -5,11 +5,11 @@
         <score val=""/>
     </player>
     <intro>
-        Consciousness slowly returns to you after a very unnatural slumber. You feel your eyes open as panic sends your
-        mind into an adrenaline fueled search of your last memory. You take deep breaths trying to calm yourself from
-        the initial flood of panic. As your mind races you slowly come to terms that you have no recollection of the
-        events that transpired before you woke. In fact, you fail to remember anything. Your eyes dart around the room
-        in an attempt to find some kind of solution to the riddle of where and who you are.
+    Consciousness slowly returns to you after a very unnatural slumber. You feel your eyes open as panic sends your mind
+    into an adrenaline fueled search of your last memory. You take deep breaths trying to calm yourself from the
+    initial flood of panic. As your mind races you slowly come to terms that you have no recollection of the events that
+    transpired before you woke. In fact, you fail to remember anything. Your eyes dart around the room in an attempt to
+    find some kind of solution to the riddle of where and who you are.
     </intro>
     <tip>
    ------------------------------------------------------------------------------------------------------------------------
@@ -17,14 +17,14 @@
    ------------------------------------------------------------------------------------------------------------------------
     </tip>
     <room name="unknown room">
-        <desc>        The room is completely foreign to you.  There's no telling how long you've been unconscious. Days? Weeks?\n
-        Months?  You're uncertain.  The only choice you have is to try to find answers.  Try to find a way out.  The\n
-        truly unfortunate thing is that your capabilities are rendered.  You only know how to look, open, and take\n
-        the artifacts around you.  The first thing you do is carefully inspect your surroundings.\n
-        There's a bookshelf, the bed that you woke up on, a large metal door, and a desk.\n
+        <desc>         The room is completely foreign to you.  There's no telling how long you've been unconscious. Days? Weeks?
+         Months?  You're uncertain.  The only choice you have is to try to find answers.  Try to find a way out.  The
+         truly unfortunate thing is that your capabilities are rendered.  You only know how to look, open, and take
+         the artifacts around you.  The first thing you do is carefully inspect your surroundings.  There's a bookshelf,
+         the bed that you woke up on, a large metal door, and a desk.
         </desc>
         <l>You notice that the room is furnished with dusty antiques.  The only light source is coming from thin
-                 paneled windows with bars on them.  You take a moment to get more familiar with the room you're in.</l>
+                      paneled windows with bars on them.  You take a moment to get more familiar with the room you're in.</l>
         <o>You go to the metal door and try to escape.  To no surprise, the metal door is locked.  For a moment you
               contemplated the possibility of the windows being a way out.  It's not long before you realize that even if
               you got the bars off, you wouldn't fit through the tiny slit anyway.  Ultimately, your attempts to open the
@@ -35,11 +35,11 @@
         <item type="desk" obtainable="0" inspected="0">
             <history point="1" on="l desk">&lt;You found a history point!  Score increased by 1.&gt;</history>
             <visible in="unknown room"/>
-            <l>The desk is aged and brittle probably made out of wood.  You're afraid to touch it in fear it might fall
-                  apart.  Dust and thick spiderwebs are covering the surface.  It must have been here for a long time to
-                  collect that much buildup.  You start to fade away into a daydream, and for a moment everything goes black.
-                  When the light reappears, you notice you've drawn a symbol into the dust.  You stare at it until the image
-                  is etched in your mind.
+            <l> The desk is aged and brittle probably made out of wood.  You're afraid to touch it in fear it might fall
+                   apart.  Dust and thick spiderwebs are covering the surface.  It must have been here for a long time to
+                   collect that much buildup.  You start to fade away into a daydream, and for a moment everything goes black.
+                   When the light reappears, you notice you've drawn a symbol into the dust.  You stare at it until the image
+                   is etched in your mind.
             </l>
             <o>You hesitated for a moment because the thing feels unsteady.  The last thing you want is for it to fall
                apart.  Whoever has kept you here might be upset.  Who DOES have you here, you wonder.  Eventually you
@@ -52,8 +52,8 @@
                     <prereq>&lt;The journal is locked.  You must find the key to unlock it.&gt;</prereq>
                 </requirement>
                 <l>The journal is old, falling apart at its seams.  You don't remember having seen this item before, but
-                you're eyes are focused on the symbol engraved in the leather.  It appears to be the as the one that
-                appeared on the desk.</l>
+                      you're eyes are focused on the symbol engraved in the leather.  It appears to be the as the one that
+                      appeared on the desk.</l>
                 <o>I started to go through the journal and saw a lot of meaningless things written.  It seems like the
                   owner was a scientist of sorts.  It wasn't until I got to the last page that I saw something
                   interesting.  It reads,
@@ -66,19 +66,20 @@
                 <t>You take the journal hoping it will help lead to answers.</t>
                 <item type="picture" obtainable="1" inspected="0">
                     <visible in="journal"/>
-                    <l>Your gaze focused in on the picture attached to the mirror on the desk. There's a man, a woman, and
-                       a little boy posing for a happy picture. Unfortunately, I don't know who the two boys are. At
-                       that moment my eyes shifted to the mirror and realized that the woman in the picture is me. YouI
-                       took a moment to inspect the picture further and found something strange on the back. There was a
-                       small note stuck to it that said, "keyword is SALT". As if you know what that means. This place,
-                       wherever it is, is eerie. This is not my home, why do they have a picture of me? Suddenly my
-                       urge to get out of has increased.
+                    <l>Your gaze focused in on the picture attached to the mirror on the desk. There's a man, a woman,
+                       and a little boy posing for a happy picture. Unfortunately, you don't know who the two boys are.
+                       At that moment you recall seeing your reflection in the window.  It wasn't long before you
+                       realized that the woman in the picture is me. You took a moment to inspect the picture further
+                       and found something strange on the back. There is a small note stuck to it.
                     </l>
-                    <o> </o>
-                    <t> </t>
+                    <o>You try to use the picture in an futile attempt to spark some memories.  The attempt ultimately
+                          failed.</o>
+                    <t>You decide that even though you don't know the men in this picture, you'd like to hold on to it
+                           in case you do gain some memories.</t>
                     <item type="note" obtainable="1" inspected="0">
                         <visible in="picture"/>
-                        <l> </l>
+                        <l>You look at the note stuck to the back of the picture with speculation.  Why did someone
+                              put it in a locked journal on the back of a picture.  It was meant to stay hidden.  </l>
                         <o> </o>
                         <t> </t>
                     </item>

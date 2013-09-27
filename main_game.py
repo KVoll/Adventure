@@ -6,13 +6,13 @@ from time import sleep
 import sys
 from Imports import ascii_art
 from colorconsole import terminal
-import pygame
 
 logger = logging.out_file_instance("game_log")
 screen = terminal.get_terminal()
 
 
 def main():
+    os.system('cls')
     screen.set_title("ELEVEN")
     if os.listdir("Saved_Files"):
         file_name = prompt_save()
@@ -27,47 +27,45 @@ def main():
     #     sleep(1.0)
     # # sys.stdout.write(game.intro)
     # sleep(3)
-
-    # ASCII intro picture
-    for words in game.state.intro[0].value.split("\n"):
-        screen.cprint(8, 0, words)
-        print
-        sleep(0.4)
-    sleep(0.4)
-    # pygame.mixer.fadeout(2000)
-
-    # print game.state.intro[0].value
-    print
+    screen.cprint(3, 0, " "*55 + "  ELEVEN")
+    print("\n")
+    screen.set_color(8, 0)
     ascii_img = ascii_art.get_ascii_image()
-    screen.cprint(7, 0, " ")
+    screen.cprint(15, 0, " ")
     ascii_img.get_image("eleven.png")
+    print("\n")
+    for lines in game.state.intro[0].value.split("\n"):
+        screen.cprint(15, 0, lines+" ")
+        sleep(1.1)
+        print
+    sleep(0.8)
+    print("\n")
 
-    print game.state.tip[0].value
-
-    screen.cprint(15, 0, " "*50 + "    ELEVEN")
-    print
-    print
-    screen.cprint(8, 0, " "*50)
-    print game.room.attrs["name"].upper()
+    screen.cprint(15, 0, " ")
+    print "\n" + game.state.tip[0].value
+    screen.cprint(3, 0, "")
+    print " " * 50 + game.room.attrs["name"].upper() + "\n"
+    screen.cprint(15, 0, "")
     print game.room.desc[0].value
-
-    quit_game = False
-    while not quit_game:
-        command = run_command(game)
-        quit_game = game.update(command)
+    screen.cprint(7, 0, "")
+    #quit_game = False
+    screen.reset()
+    #while not quit_game:
+    #    command = run_command(game)
+    #    quit_game = game.update(command)
 
 
 def run_command(game):
-    screen.cprint(10, 0, " ")
+    screen.cprint(3, 0, "")
     command = raw_input("> ")
-    screen.cprint(3, 0, " ")
+    screen.set_color(15, 0)
     if command == '':
-        print(8, 0, "<Oops! Something went wrong.  Try again.>\n")
+        print("<Oops! Something went wrong.  Try again.>\n")
     else:
         if command.lower().strip() in game.keywords:
             key_func = game.key_words[command.lower().strip()]
             key_func(game)
-        # Otherwise, attempts to find the verb, noun command to proccess.
+        # Otherwise, attempts to find the verb, noun command to process.
         # Returns the result of the action's function.
         else:
             try:
@@ -84,21 +82,21 @@ def run_command(game):
 def parse(command, game):
     """ Parses the input and tries to find a verb, noun combo to return."""
     words = command.lower().strip().split()
-    try:
+    #try:
     # If the command is only one word, set it as verb
-        if len(words) == 1:
-            verb = game.verbs[words[0]]
-            noun = ""
-        else:
-            verb = game.verbs[words[0]]
-            # Join the remaining words as the noun.
-            noun = ' '.join(words[1:])
+    if len(words) == 1:
+        verb = game.verbs[words[0]]
+        noun = ""
+    else:
+        verb = game.verbs[words[0]]
+        # Join the remaining words as the noun.
+        noun = ' '.join(words[1:])
 
-        game.list_used.append(command)
-        game.nouns.append(noun)
-        return verb, noun
-    except IndexError:
-        print "<Sorry, unable to process input.  Please try again.>\n"
+    game.list_used.append(command)
+    game.nouns.append(noun)
+    return verb, noun
+    #except IndexError:
+    #    print "<Sorry, unable to process input.  Please try again.>\n"
 
 
 def prompt_save():
