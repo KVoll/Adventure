@@ -30,11 +30,11 @@
               you got the bars off, you wouldn't fit through the tiny slit anyway.  Ultimately, your attempts to open the
               room have failed.</o>
         <t>Knowing how to perform only three actions must be taking it's toll on your intelligence.  After hours of
-              struggling with your pockets you finally come to the conclusion that your pants were made too tight to fit a
-              room inside of them. You give up, and stop trying to take the room.</t>
+               struggling with your pockets you finally come to the conclusion that your pants were made too tight to fit a
+               room inside of them. You give up, and stop trying to take the room.</t>
         <item type="desk" obtainable="0" inspected="0">
             <score point="1" on="l desk">
-                <prompt>&lt;You've added a memory to your memory bank, and earned a point.&gt;</prompt>
+                <prompt>                   &lt;You've added a memory to your memory bank, and earned a point.&gt;</prompt>
                 <memory>The symbol drawn on the desk's layer of dust.</memory>
             </score>
             <visible in="unknown room"/>
@@ -44,97 +44,170 @@
                    When the light reappears, you notice you've drawn a symbol into the dust.  You stare at it until the image
                    is etched in your mind.
             </l>
-            <o>You hesitated for a moment because the thing feels unsteady.  The last thing you want is for it to fall
-              apart.  Whoever has kept you here might be upset.  Who DOES have you here, you wonder.  Eventually you
-              opened the drawers slowly as the desk trembled.</o>
+            <o> You hesitated for a moment because the thing feels unsteady.  The last thing you want is for it to fall
+               apart.  Whoever has kept you here might be upset.  Who DOES have you here, you wonder.  Eventually you
+               opened the drawers slowly as the desk trembled.</o>
             <t>Your attempts are futile, poor thing.  The second you got your arms around it the whole thing shifted and
-              almost fell on top of you.  You're lucky you're still alive.</t>
+               almost fell on top of you.  You're lucky you're still alive.</t>
+            <item type="mirror" obtainable="1" inspected="0">
+                <visible in="desk"/>
+                <l>You stare into the mirror wishing you knew who the woman staring back at you is.  You remember your face
+                    but the things you don't remember still outweigh the few that you do.  After carefully inspecting the mirror,
+                    you notice the name "Alice" engraved on the back.  Is that your name?   It doesn't spark any memories, so you
+                    figure Alice must be someone else, but who?</l>
+                <o>The mirror is of little use.</o>
+                <t>You hope that having the mirror in your inventory will help you remember.</t>
+            </item>
             <item type="journal" obtainable="1" inspected="0">
                 <visible in="desk"/>
                 <requirement req="key">
                     <prereq>&lt;The journal is locked.  You must find the key to unlock it.&gt;</prereq>
                 </requirement>
-                <l>The journal is old, falling apart at its seams.  You don't remember having seen this item before, but
+                <l> The journal is old, falling apart at its seams.  You don't remember having seen this item before, but
                       you're eyes are focused on the symbol engraved in the leather.  It appears to be the as the one that
                       appeared on the desk.</l>
-                <o>I started to go through the journal and saw a lot of meaningless things written.  It seems like the
-                  owner was a scientist of sorts.  It wasn't until I got to the last page that I saw something
-                  interesting.  It reads,
+                <o>You started to go through the journal and saw a lot of meaningless things written.  It seems like the
+                 owner was a scientist of sorts.  It wasn't until you got to the last page that you saw something
+                 interesting.  It reads,
 
                                                 "WANT OUT OF HERE?
                                                  Use this:
 
-                                                 { m b w y m f e n }
-                </o>
+                                                 { m b w y m f e n }"</o>
                 <t>You take the journal hoping it will help lead to answers.</t>
                 <item type="picture" obtainable="1" inspected="0">
                     <visible in="journal"/>
-                    <l>Your gaze focused in on the picture attached to the mirror on the desk. There's a man, a woman,
-                       and a little boy posing for a happy picture. Unfortunately, you don't know who the two boys are.
-                       At that moment you recall seeing your reflection in the window.  It wasn't long before you
-                       realized that the woman in the picture is me. You took a moment to inspect the picture further
-                       and found something strange on the back. There is a small note stuck to it.
+                    <l> Your gaze focused in on the picture attached to the mirror on the desk. There's a man, a woman,
+                      and a little boy posing for a happy picture. Unfortunately, you don't know who the two boys are.
+                      At that moment you recall seeing your reflection in the window.  It wasn't long before you
+                      realized that the woman in the picture is me. You took a moment to inspect the picture further
+                      and found something strange on the back. There is a small note stuck to it.
                     </l>
-                    <o>You try to use the picture in an futile attempt to spark some memories.  The attempt ultimately
-                          failed.</o>
+                    <o> You try to use the picture in an futile attempt to spark some memories.  The attempt ultimately
+                  was unsuccessful.</o>
                     <t>You decide that even though you don't know the men in this picture, you'd like to hold on to it
-                           in case you do gain some memories.</t>
+                  in case you do gain some memories.  Maybe it will lead to insight about who you are.</t>
                     <item type="note" obtainable="1" inspected="0">
                         <visible in="picture"/>
+                        <score point="2" on="l note">
+                            <prompt>                  &lt;You've added a memory to your memory bank.&gt;</prompt>
+                            <memory>You remember an important date.</memory>
+                        </score>
                         <l>You look at the note stuck to the back of the picture with speculation.  Why did someone
-                              put it in a locked journal on the back of a picture.  It was meant to stay hidden.  </l>
-                        <o> </o>
-                        <t> </t>
+                  put it in a locked journal on the back of a picture?  Clearly, it was meant to stay hidden.
+                  Regardless, you read the note.  It reads,
+                           
+                                           "March 14, 1915"
+
+                  The date rings a bell to you.  You're not sure if it is someones birthday or just a date you happen
+                  to remember.
+                        </l>
+                        <o>What are you trying to do?  Don't cause anymore trouble for yourself.  Try not to destroy the
+              owner's belongings.</o>
+                        <t>You carefully detach the note from the picture, and place the note in your pocket.</t>
                     </item>
                 </item>
-            </item>
-            <item type="mirror" obtainable="0" inspected="0">
-                <visible in="o desk"/>
-                <l> </l>
-                <o> </o>
-                <t> </t>
             </item>
         </item>
         <item type="bed" obtainable="0" inspected="1">
             <visible in="unknown room"/>
-            <desc>The bed you woke up on.</desc>
-            <l>You look at the filthy bed trying not to be sick.</l>
-            <o>The bed is covered in filth.  Do not open it.</o>
-            <t>This disgusting bed is not worth taking along.</t>
-            <item type="lock" obtainable="0" inspected="0">
+            <l> Knowing that the bed is where you woke, you decide inspecting it is a good idea. After thorough inspection
+                  you realize the bed is just an ordinary antique bed, but it is hiding something.</l>
+            <o> You contemplate going to sleep, but decide against it in fear of forgetting everything you've remembered so far.</o>
+            <t>There is no reason for you to do this.</t>
+            <item type="pillow" obtainable="1" inspected="0">
                 <visible in="bed"/>
-                <requirement req="combo">
-                    <prereq>&lt;You must enter the correct combination of numbers.&gt;</prereq>
-                </requirement>
-                <l> look lock </l>
-                <o> open lock </o>
-                <t> take lock</t>
-                <item type="chest" obtainable="0" inspected="0">
-                    <visible in="invisible"/>
-                    <requirement req="o lock">
-                        <prereq>&lt;You look around the room, but cannot remember where you saw it.&gt;</prereq>
+                <score point="2" on="l pillow">
+                    <prompt>                    &lt;You've gained a memory.&gt;</prompt>
+                    <memory>Purple is your favorite color.</memory>
+                </score>
+                <l> The pillow looks dingy, yet it is still soft and fluffy. It has a purple pillowcase on it -
+                     your favorite color.
+                </l>
+                <o> You take the pillowcase off and look anything that could be hidden inside.</o>
+                <t>You never know when you might need a pillow.</t>
+                <item type="cloth" obtainable="1" inspected="0">
+                    <visible in="pillow"/>
+                    <requirement req="o pillow">
+                        <prereq>&lt;That item is unreachable.&gt;</prereq>
                     </requirement>
-                    <l>The chest contains your most precious things.</l>
-                    <o>Hmm... I wonder what could be in the chest</o>
-                    <t>The chest is too heavy to carry.</t>
+                    <l>Inspecting the cloth shows that it was written on in the past with what appears to be faded
+                   permanent marker. It took some time but eventually you were able to make out what it says,
+
+                                                  "KEYWORD = SALT"
+                    </l>
+                    <o>You can't do that.</o>
+                    <t>You think this will help you.</t>
+                </item>
+            </item>
+            <item type="mattress" obtainable="0" inspected="0">
+                <visible in="bed"/>
+                <l>You look at the mattress wondering how much time you spent laying on it. You can see the indentation
+                      of where your body used to lay for hours on end. How many hours was it, you wonder?
+                </l>
+                <o> You lift the mattress off the box spring looking for anything you can find.</o>
+                <t>You try to take the mattress off the bed, but fail miserably.</t>
+                <item type="key" obtainable="1" inspected="0">
+                    <visible in="mattress"/>
+                    <requirement req="o mattress">
+                        <prereq>&lt;That item cannot be found.&gt;</prereq>
+                    </requirement>
+                    <l>You don't know what it opens, but it's got to open something.</l>
+                    <o>The key cannot be opened.</o>
+                    <t>You hold on to the key hoping to find what it unlocks.</t>
+                </item>
+            </item>
+            <item type="lock" obtainable="0" inspected="0">
+            <!--Special: Enter combination-->
+                <visible in="bed"/>
+                <requirement req="note">
+                    <prereq>&lt;You must have the note with the combination on it.&gt;</prereq>
+                </requirement>
+                <l>You  exam the lock. It has four dials with numbers ranging from one to ten. Currently, the numbers are 4-5-3-6 
+                  and the lock  won't budge.</l>
+                <o> With the combination securely in your inventory, you carefully turn the dials to the correct number double checking
+               yourself with each turn.  After entering the last digit, you pull the lock open revealing the now unlocked chest.</o>
+                <t>The lock is attached to the safe which cannot be obtained.  Thus, you cannot take the lock, but you effort remains
+               valiant.</t>
+                <item type="safe" obtainable="0" inspected="0">
+                    <visible in="lock"/>
+                    <!--<requirement req="combo">-->
+                        <!--<prereq>&lt;You look around the room, but cannot remember where it is.&gt;</prereq>-->
+                    <!--</requirement>-->
+                    <l>Upon inspection, you realize that the safe is embedded in the wall, and it's seemingly impossible to remove.
+                  You wonder who would go through so much effort to keep things locked and hidden in walls.  The person wasn't very
+                  clever to leave the combination in the same room.</l>
+                    <o> Since you've opened the lock, you can open the chest.  You pull the safe open, revealing items that intrigue you.
+               Surely there's something with answers inside.</o>
+                    <t>The safe is securely embedded in the wall.  Even though you would like to keep it, it's not yours to keep.</t>
                     <item type="photo album" obtainable="1" inspected="0">
-                        <visible in="chest"/>
-                        <requirement req="o chest">
-                            <prereq>&lt;You cannot get to that item at the moment.&gt;</prereq>
-                        </requirement>
+                        <visible in="safe"/>
+                        <!--<requirement req="o safe">-->
+                            <!--<prereq>&lt;You cannot get to that item at the moment.&gt;</prereq>-->
+                        <!--</requirement>-->
+                        <score point="3" on="l photo album">
+                            <prompt>                        &lt;You've gained another memory.&gt;</prompt>
+                            <memory>The gold engravings on the photo album.</memory>
+                        </score>
                         <l>You look at the photo album, and blow off the dust build-up. Underneath all the
-                            dust, you see a beautiful leather cover with gold engravings.
+                         dust, you see a beautiful leather cover with gold engravings.  These gold engravings
+                         make you have a flashback of your childhood.   You remember seeing this album before
+                         as a child.  Someone was showing it to you and telling you of its importance.  The
+                         words were soft and muffled.  You can't decipher whether or not it's male or female,
+                         young or old, or anything else.  All you know is this album is important.
                         </l>
                         <o>You open the photo album and see old fashioned pictures of people you've never seen
-                            before.
+                     before.  Among the pages of antique photos, you stumble upon something interesting.
+                     Maybe this will assist you decrypt encrypted phrases.
                         </o>
-                        <t> </t>
-                        <item type="decryption table" obtainable="1" inspected="1">
+                        <t>Since you remember the album from childhood, you feel it's necessary to take it with you.</t>
+                        <item type="decryption table" obtainable="1" inspected="0">
+                            <visible in="photo album"/>
                             <requirement req="o photo album">
                                 <prereq>&lt;You must open the photo album first.&gt;</prereq>
                             </requirement>
                             <l>
-                                | A B C D E F G H I J K L M N O P Q R S T U V W X Y Z
+                                 | A B C D E F G H I J K L M N O P Q R S T U V W X Y Z
                                 ======================================================
                                 A| b c d e f g h i j k l m n o p q r s t u v w x y z a
                                 B| c d e f g h i j k l m n o p q r s t u v w x y z a b
@@ -163,83 +236,241 @@
                                 Y| z a b c d e f g h i j k l m n o p q r s t u v w x y
                                 Z| a b c d e f g h i j k l m n o p q r s t u v w x y z
                             </l>
-                            <o/>
-                            <t/>
+                          <o>You can't do that.</o>
+                          <t>You want to keep this with you in case you ever need to decrypt something.</t>
                         </item>
                     </item>
-                    <item type="broken flashlight" obtainable="1" inspected="0">
-                        <visible in="chest"/>
-                        <requirement req="o chest">
-                            <prereq>&lt;You cannot see the broken flashlight.&gt;</prereq>
+                    <item type="handle" obtainable="1" inspected="0">
+                        <visible in="safe"/>
+                        <requirement req="o safe">
+                            <prereq>&lt;You can't get to that item yet.&gt;</prereq>
                         </requirement>
-                        <l>You may need your flashlight to fend off monsters that live in darkness.</l>
-                        <o>You open the flashlight to find two batteries and some wiring inside. They're dead of
-                            course.
-                        </o>
-                        <t>Maybe the broken remains will come in handy.</t>
-                        <item type="battery" obtainable="1" inspected="0">
-                            <l>The battery is dead.</l>
-                            <o>You open the battery and nickel metal hydrate acid spills all over
-                                your hands.
-                            </o>
-                            <t noun="battery">You hesitantly decide to take the battery.</t>
-                        </item>
-                    </item>
-                </item>
-                <item type="pillow" obtainable="1" inspected="0">
-                    <visible in="bed"/>
-                    <l>'I feel sorry for anyone who has to lay their head on this pillow.'</l>
-                    <o>You rip open the pillow and feathers fly everywhere getting stuck to everything damp.
-                        But within the dirty pile of feathers, you see something shining through. What could it be?
-                    </o>
-                    <t>You grab the pillow. Maybe it will be of some use later.</t>
-                    <item type="pentagonal prism" obtainable="1" inspected="0">
-                        <visible in="pillow"/>
-                        <requirement req="o pillow">
-                            <prereq>&lt;PREREQ TEXT&gt;</prereq>
-                            <postreq>&lt;POSTREQ TEXT&gt;</postreq>
-                        </requirement>
-                        <l>I have never seen anything like this before. I wonder what it could be used for.</l>
-                        <o>You twist the prism every which way, but you cannot get it to open. Then, you find a small
-                            hole
-                            on one of the sides. Maybe there's a key or special device that will open it.
-                        </o>
-                        <t>'I'd better hold onto this in case I need it later.'</t>
+                        <l>This handle looks like it has fallen off of something like a drawer or cabinet.</l>
+                        <o>You twist and turn the handle trying to open it while making sure it doesn't open 
+                or have any surprises hidden inside.</o>
+                        <t>Maybe the broken remains will be needed to open something.</t>
                     </item>
                 </item>
             </item>
-            <item type="mattress" obtainable="0" inspected="0">
-                <visible in="bed"/>
-                <l>'I keep the key to my chest under here when I'm not holding it.'</l>
-                <t>You try to take the mattress off the bed, but fail miserably.  You ripped it open!</t>
-                <o>Under the mattress you find an key.</o>
-                <item type="key" obtainable="1" inspected="0">
-                    <visible in="mattress"/>
-                    <requirement req="o mattress">
-                        <prereq>&lt;PREREQ TEXT&gt;</prereq>
-                    </requirement>
-                    <l>I don't know what it opens, but it's got to open something.</l>
-                    <o>The key cannot be opened.</o>
-                    <t>You hold on to the key hoping it will be valuable.</t>
+        </item>        
+        <item type="bookshelf" obtainable="0" inspected="0">
+            <visible in="unknown room"/>
+            <l> Amongst the crowd of books on the bookshelf, one stands out. Your eyes are drawn to one specific book.</l>
+            <o> After inspecting the bookshelf, you notice that there's a gap between it and the wall behind. You slide
+                    your fingers as far in between as possible. On the very tips of your fingers you feel an edge on the wall.</o>
+            <t>The bookshelf cannot be removed from the hinges attached to the wall.</t>
+            <item type="door" obtainable="0" inspected="0">
+                <visible in="bookshelf"/>
+                <requirement req="o bookshelf">
+                    <prereq>You need to open the bookshelf first.</prereq>
+                </requirement>
+                <l>The door was carefully hidden by the bookshelf.  There must be something valuable behind it.</l>
+                <o>You open the door and walk into the secret room.</o>
+                <t>The door cannot be removed from the wall.</t>
+            </item>
+            <item type="book" obtainable="1" inspected="0">
+                <!--Book contains memory, gives more insight about who she is-->
+                <visible in="bookshelf"/>
+                <score point="2" on="l book">
+                    <prompt>                  &lt;You've gained another memory.&gt;</prompt>
+                    <memory>Your mother reading to you before bedtime.</memory>
+                </score>
+                <l>The name of the book is "Alice in Wonderland" by Lewis Carrol. Well, if you're Alice, you're
+                  certainly not in Wonderland.  You don't think you're Alice... at least not that Alice.
+                  You remember a time when your mother used to read it to you before bedtime.
+                </l>
+                <o>You flip through the pages stopping at your favorite parts.  The pictures intrigue you since you haven't
+              seen them in however many years.  How many years has it been?</o>
+                <t>This book is a memento. You want to keep it.</t>
+                <!--<item type="page" obtainable="1" inspected="0">-->
+                    <!--<visible in="book"/>-->
+                <!--&lt;!&ndash;The page in the book has a picture of a sequence of shapes used-->
+                    <!--to open something in the room behind&ndash;&gt;-->
+                    <!--<requirement req="o book">-->
+                        <!--<prereq>&lt;You must open the book first.&gt;</prereq>-->
+                    <!--</requirement>-->
+                    <!--<l>FILL</l>-->
+                    <!--<o>FILL</o>-->
+                    <!--<t>FILL</t>-->
+                <!--</item>-->
+            </item>
+            <item type="box" obtainable="0" inspected="0">
+                <visible in="bookshelf"/>
+                <requirement req="screwdriver">
+                    <prereq>&lt;You need to have a screwdriver in your inventory to open this box.&gt;</prereq>
+                </requirement>
+                <l>The box is wooden and looks to be hand made.</l>
+                <o> You use the screwdriver to remove the screws one by one.</o>
+                <t>The box would only take up space in your inventory.</t>
+                <item type="badge" obtainable="1" inspected="0">
+                   <visible in="box"/>
+                    <l>It looks like some sort of security badge. There's no distinguishable words on it, but there is an
+                   oddly familiar symbol colorfully printed on it.</l>
+                    <o>You notice there's a small indentation along the perimeter of the badge. You think about trying
+               to take the thing apart but decide against it. It's of more use in one piece.</o>
+                    <t>You slide the badge in your back pocket.</t>
                 </item>
             </item>
         </item>
         <item type="metal door" obtainable="0" inspected="0">
             <visible in="unknown room"/>
-            <requirement req="broken flashlight">
-                <prereq>&lt;You desperately wiggle the knob, but the door does not open.  You must find the item(s) needed to open.&gt;</prereq>
-                <postreq>&lt;You open the door...&gt;</postreq>
+            <requirement req="badge">
+                <prereq>&lt;You desperately wiggle the knob, but the door does not open.&gt;</prereq>
             </requirement>
-            <l>I think this is probably the way out of the room.  The light shining through allows me to see the shape
-                        of other objects around.</l>
-            <o>LET ME OUT OF HERE!</o>
-            <t> </t>
+            <l>You look at the metal door and thoroughly inspect it.  It appears that the door's locks are electronic.
+            There's something that looks like a slot for a digital badge.  Also, there's a type-pad with the numbers 0-9.
+            You wonder if you'll be clever enough to hack your way out.</l>
+            <o>After obtaining the badge, and entering the password, you hear a loud noise.  The large metal locks have
+                     been released.  Hesitantly, you open the door.  </o>
+            <t>There's no way to take the metal door.</t>
         </item>
-        <item type="bookshelf" obtainable="0" inspected="0">
-            <visible in="unknown room"/>
-            <l> look bookshelf </l>
-            <o> open bookshelf </o>
-            <t> take bookshelf </t>
+        <exit link="door" to="secret room"/>
+        <exit link="metal door" to="living room"/>
+    </room>
+    <room name="secret room">
+        <!--Special: "cutscreen" into next room.  Items from other room can't be seen
+            or interacted with.  Change game state.-->
+        <desc>
+        You've entered the secret room where everything is different.  In the room before, everything was antique,
+        dusty, and meek.  In here, it looks like a high-tech operations area.  Nothing in the room is dusty or meek.
+        In fact, it's quite shiny and clean.  It appears as though this room has been maintained while you were "away".
+        There are things in the secret room that beg for your attention.
+        </desc>
+        <!--<visible in="bookshelf"/>-->
+        <!--<requirement req="o door">-->
+            <!--<prereq>&lt;You cannot find that item.&gt;</prereq>-->
+        <!--</requirement>-->
+        <l>You slowly walk around the perimeter of the room taking note of everything you see.  Immediately, you feel
+                      more comfortable in this room than the other.  In here, it's not so dreary.</l>
+        <o>Opening the room is unfeasible.</o>
+        <t>This simply isn't going to happen.</t>
+        <item type="entrance" obtainable="0" inspected="0">
+            <visible in="secret room"/>
+            <l>The entrance leads back to the secret room where you came from.</l>
+            <o>Entering unknown room...</o>
+            <t>The entrance can't be detached from the wall.</t>
         </item>
+        <item type="painting" obtainable="0" inspected="0">
+            <!--Painting has numbers on it for opening the box-->
+            <visible in="secret room"/>
+            <score point="5" on="l painting">
+                <prompt>                        &lt;You've gained another memory.&gt;</prompt>
+                <memory>Your mother painting the artwork in the secret room.</memory>
+            </score>
+            <l>The image painted is the same symbol on many other objects around.  When you look at the painting on the
+                       wall, you begin to daydream.  You remember a time when you were laying in bed, wrapped in your favorite
+                       blanket while your mother was on the opposite side of the room painting and your father was reading you
+                       "Alice in Wonderland".
+            </l>
+            <o>You lift the painting from the wall to see if there's anything hidden behind.  You're shocked when you
+                  find out there's nothing there.</o>
+            <t>As much as you'd love to take the painting with you, you decide against it.  Hauling it around in your
+                    inventory may damage it's beauty.</t>
+        </item>
+        <item type="couch" obtainable="0" inspected="0">
+            <visible in="secret room"/>
+            <l> The couch is large and comfortable.  It's made with fine brown leather and can seat around eight people.
+                    Why that many people would be in the secret room, you don't know.  Nonetheless, the couch is a nice piece
+                    of furniture.</l>
+            <o> The couch is to heavy for you to lift so you get on the floor and look for anything underneath.  There's
+                nothing underneath, but you see some other things.</o>
+            <t>The couch is too heavy to take.</t>
+            <item type="blanket" obtainable="1" inspected="0">
+                <visible in="couch"/>
+                <score point="6" on="l blanket">
+                    <prompt>                    &lt;You've gained two new memories.&gt;</prompt>
+                    <memory>The blanket from your childhood.  Your father's death.</memory>
+                </score>
+                <l>You look at the blanket and remember everything about it.  You got it when you were just a child from
+                     your grandmother.  She knitted it for your fifth birthday.  Since the moment you got it, you always slept
+                     with it.  After your father died, you would wrap yourself in this blanket for comfort.
+                </l>
+                <o>You use the blanket by wrapping it around yourself.  When you do so, you don't feel so alone and
+                 confused.  In fact, for a moment you feel at ease.</o>
+                <t>You take the blanket along with you in case you get cold.</t>
+            </item>
+            <item type="cushion" obtainable="0" inspected="0">
+                <visible in="couch"/>
+                <l>The cushions are nothing special except for the expensive looking fabric.  You notice that the cushions
+                     can be removed from the couch.</l>
+                <o> You lift the cushions from the couch searching for something hiding in the couch cushions.</o>
+                <t>There's really no reason for you to do that.</t>
+                <item type="screwdriver" obtainable="1" inspected="0">
+                    <visible in="cushion"/>
+                    <requirement req="o cushion">
+                        <prereq>&lt;There is no screwdriver in sight.&gt;</prereq>
+                    </requirement>
+                    <l>At first look, the screwdriver is a disappointment.  Then you think of all the uses a screwdriver
+                         can have.</l>
+                    <o>The screwdriver cannot be opened.</o>
+                    <t>You decide it may be useful to take the screwdriver with you.</t>
+                </item>
+            </item>
+        </item>
+        <item type="cabinet" obtainable="0" inspected="0">
+            <visible in="secret room"/>
+            <requirement req="handle">
+                <prereq>&lt;The cabinet is missing its handle. Try opening it once you have the handle in your inventory.&gt;</prereq>
+            </requirement>
+            <l>You look at the cabinets and realize there's nothing special about them.  The only thing that looks out of
+                     the ordinary is the handle that has been fiddled with.</l>
+            <o>You attach the handle to the cabinet door and open it to see what's inside.</o>
+            <t>The cabinet cannot be taken with you.</t>
+            <item type="manual" obtainable="1" inspected="0">
+                <visible in="cabinet"/>
+                <requirement req="o cabinet">
+                    <prereq>&lt;You must open the cabinet first.&gt;</prereq>
+                </requirement>
+                <l>The manual looks like it's for the machine on the table.</l>
+                <o> You open the manual and scan the pages for any useful information.  There's a certain page that sticks
+                 out to you.  This page looks like instructions for how to decrypt the encrypted message.</o>
+                <t>You take the manual with you in case you need it while operating the machine.</t>
+                <item type="instruction" obtainable="1" inspected="0">
+                    <!--Instructions on how to decrypt the cipher-->
+                    <visible in="manual"/>
+                    <requirement req="o manual">
+                        <prereq>&lt;You need to open the manual first.</prereq>
+                    </requirement>
+                    <l>You look at the instructions and realize that they are not for humans to read, but for the machine.</l>
+                    <o>There's nothing on the instructions for you to use or open.</o>
+                    <t>The instructions may be useful so you decide to take them with you.</t>
+                </item>
+            </item>
+        </item>
+        <item type="table" obtainable="0" inspected="0">
+            <visible in="secret room"/>
+            <l>The table is much newer than the things in the other room.  It's made of high quality wood with live edges.</l>
+            <o> You try to lift the table off the ground, but it's of no use.  The table is too heavy.</o>
+            <t>There's no way you'll be able to carry the table.</t>
+            <!--<item type="newspaper" obtainable="1" inspected="0">-->
+                <!--&lt;!&ndash;Newspaper leads to great insight about who she is, when it is, and how long she's been there&ndash;&gt;-->
+                <!--<visible in="table"/>-->
+                <!--<score point="10" on="l newspaper">-->
+                    <!--<prompt>&lt;You've gained an important memory.&gt;</prompt>-->
+                    <!--<memory>TBD</memory>-->
+                <!--</score>-->
+                <!--<l>FILL</l>-->
+                <!--<o>FILL</o>-->
+                <!--<t>FILL</t>-->
+            <!--</item>-->
+            <item type="machine" obtainable="0" inspected="0">
+                <!--Special:  Password?-->
+                <visible in="table"/>
+                <requirement req="password">
+                    <prereq>You try to use the machine, but it asks for a password before you can do anything.</prereq>
+                </requirement>
+                <l>You don't know what this machine is or what it does.</l>
+                <o>After entering the password, you see a message that </o>
+                <t>In order to take the machine with you, you'd have to unplug all the cables.  Not only that, where
+                  would you keep it?  You move on without taking the machine.</t>
+            </item>
+        </item>
+        <exit link="entrance" to="unknown room"/>
+    </room>
+    <room name="living room">
+        <desc>
+        Sorry to be so anti-climatic, but as it stands there's no ending to the story.  More to come... This is
+        a bitch of a placeholder.
+        </desc>
     </room>
 </house>

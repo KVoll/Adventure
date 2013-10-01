@@ -6,7 +6,7 @@ from time import sleep
 from Imports import ascii_art
 from colorconsole import terminal
 
-logger = logging.out_file_instance("game_log")
+logger = logging.out_file_instance("Logs/game_log")
 screen = terminal.get_terminal()
 
 
@@ -34,10 +34,11 @@ def main():
     screen.cprint(15, 0, " ")
     ascii_img.get_image("eleven.png")
     print("\n")
-    for lines in game.state.intro[0].value.split("\n"):
-        screen.cprint(15, 0, lines+"\n")
-        sleep(1.5)
-    print("\n")
+    # for lines in game.state.intro[0].value.split("\n"):
+    #     screen.cprint(15, 0, lines+"\n")
+    #     sleep(1.5)
+    # print("\n")
+    print game.state.intro[0].value
     sleep(0.8)
     screen.cprint(15, 0, " ")
     print "\n" + game.state.tip[0].value
@@ -51,7 +52,7 @@ def main():
 
 
 def run_command(game):
-    screen.cprint(3, 0, "")
+    screen.cprint(11, 0, "")
     command = raw_input("> ")
     logger.write_line(["The player input the command: "+repr(command)], debug_level=0)
     screen.set_color(15, 0)
@@ -96,7 +97,7 @@ def parse(command, game):
 
 def prompt_save():
     saved_game = os.listdir("Saved_Files")
-    choice = raw_input("Welcome to In.  Would you like to start a saved game? (y/n)\n> ")
+    choice = raw_input("Welcome to Eleven.  Would you like to start a saved game? (y/n)\n> ")
     if choice == 'y':
         if saved_game:
             for i, fin in enumerate(saved_game):

@@ -23,12 +23,6 @@ def clean_node_name(node_name):
 
     return clean_name
 
-class postreq_q2class(Q2API.xml.base_xml.XMLNode):
-    def __init__(self, attrs):
-        self.level = 8
-        self.path = [None, u'house', u'room', u'item', u'item', u'item', u'item', u'requirement']
-        Q2API.xml.base_xml.XMLNode.__init__(self, "postreq", attrs, None, [])
-
 class prereq_q2class(Q2API.xml.base_xml.XMLNode):
     def __init__(self, attrs):
         self.level = 6
@@ -51,7 +45,6 @@ class requirement_q2class(Q2API.xml.base_xml.XMLNode):
     def __init__(self, attrs):
         self.level = 5
         self.path = [None, u'house', u'room', u'item', u'item']
-        self.postreq = []
         self.prereq = []
         Q2API.xml.base_xml.XMLNode.__init__(self, "requirement", attrs, None, [])
 
@@ -66,6 +59,12 @@ class desc_q2class(Q2API.xml.base_xml.XMLNode):
         self.level = 3
         self.path = [None, u'house', u'room']
         Q2API.xml.base_xml.XMLNode.__init__(self, "desc", attrs, None, [])
+
+class exit_q2class(Q2API.xml.base_xml.XMLNode):
+    def __init__(self, attrs):
+        self.level = 3
+        self.path = [None, u'house', u'room']
+        Q2API.xml.base_xml.XMLNode.__init__(self, "exit", attrs, None, [])
 
 class inventory_q2class(Q2API.xml.base_xml.XMLNode):
     def __init__(self, attrs):
@@ -84,7 +83,6 @@ class item_q2class(Q2API.xml.base_xml.XMLNode):
         self.l = []
         self.o = []
         self.t = []
-        self.desc = []
         Q2API.xml.base_xml.XMLNode.__init__(self, "item", attrs, None, [])
 
 class l_q2class(Q2API.xml.base_xml.XMLNode):
@@ -107,6 +105,7 @@ class room_q2class(Q2API.xml.base_xml.XMLNode):
         self.l = []
         self.o = []
         self.t = []
+        self.exit = []
         self.desc = []
         Q2API.xml.base_xml.XMLNode.__init__(self, "room", attrs, None, [])
 
@@ -172,9 +171,6 @@ class NodeHandler(xml.sax.handler.ContentHandler):
         if name == "":
             raise ValueError, "XML Node name cannot be empty"
 
-        elif name == "postreq":
-            self.obj_depth.append(postreq_q2class(p_attrs))
-
         elif name == "requirement":
             self.obj_depth.append(requirement_q2class(p_attrs))
 
@@ -214,6 +210,9 @@ class NodeHandler(xml.sax.handler.ContentHandler):
         elif name == "intro":
             self.obj_depth.append(intro_q2class(p_attrs))
 
+        elif name == "exit":
+            self.obj_depth.append(exit_q2class(p_attrs))
+
         elif name == "inventory":
             self.obj_depth.append(inventory_q2class(p_attrs))
 
@@ -238,12 +237,6 @@ class NodeHandler(xml.sax.handler.ContentHandler):
 
         if name == "":
             raise ValueError, "XML Node name cannot be empty"
-
-        elif name == "postreq":
-            self.obj_depth[-2].postreq.append(self.obj_depth[-1]) #  make this object a child of the next object up...
-            self.obj_depth[-2].children.append(self.obj_depth[-1]) #  put a reference in the children list as well
-            self.obj_depth.pop() # remove this node from the list, processing is complete
-            self.char_buffer = []
 
         elif name == "requirement":
             self.obj_depth[-2].requirement.append(self.obj_depth[-1]) #  make this object a child of the next object up...
@@ -319,6 +312,12 @@ class NodeHandler(xml.sax.handler.ContentHandler):
 
         elif name == "intro":
             self.obj_depth[-2].intro.append(self.obj_depth[-1]) #  make this object a child of the next object up...
+            self.obj_depth[-2].children.append(self.obj_depth[-1]) #  put a reference in the children list as well
+            self.obj_depth.pop() # remove this node from the list, processing is complete
+            self.char_buffer = []
+
+        elif name == "exit":
+            self.obj_depth[-2].exit.append(self.obj_depth[-1]) #  make this object a child of the next object up...
             self.obj_depth[-2].children.append(self.obj_depth[-1]) #  put a reference in the children list as well
             self.obj_depth.pop() # remove this node from the list, processing is complete
             self.char_buffer = []
