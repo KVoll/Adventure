@@ -5,8 +5,8 @@
     <ignored path="Adventure.iws" />
     <ignored path=".idea/workspace.xml" />
     <file path="/Dummy.txt" changelist="d5db1b08-d885-4052-ab8a-a8a922327d6d" time="1380637085234" ignored="false" />
-    <file path="/creepy.xml" changelist="d5db1b08-d885-4052-ab8a-a8a922327d6d" time="1380653531628" ignored="false" />
-    <file path="/game.py" changelist="d5db1b08-d885-4052-ab8a-a8a922327d6d" time="1380654999997" ignored="false" />
+    <file path="/creepy.xml" changelist="d5db1b08-d885-4052-ab8a-a8a922327d6d" time="1380664274247" ignored="false" />
+    <file path="/game.py" changelist="d5db1b08-d885-4052-ab8a-a8a922327d6d" time="1380662718945" ignored="false" />
     <file path="/main_game.py" changelist="d5db1b08-d885-4052-ab8a-a8a922327d6d" time="1380655931691" ignored="false" />
     <option name="TRACKING_ENABLED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -36,13 +36,11 @@
   </component>
   <component name="FileEditorManager">
     <leaf>
-      <file leaf-file-name="main_game.py" pinned="false" current="true" current-in-tab="true">
+      <file leaf-file-name="main_game.py" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/main_game.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="8" column="41" selection-start="209" selection-end="209" vertical-scroll-proportion="0.036105033">
-              <folding>
-                <element signature="e#1381#2285#0" expanded="true" />
-              </folding>
+            <state line="94" column="19" selection-start="2878" selection-end="2878" vertical-scroll-proportion="0.0">
+              <folding />
             </state>
           </provider>
         </entry>
@@ -50,32 +48,33 @@
       <file leaf-file-name="game.py" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/game.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="15" column="43" selection-start="675" selection-end="675" vertical-scroll-proportion="0.0">
+            <state line="343" column="44" selection-start="15009" selection-end="15009" vertical-scroll-proportion="0.0">
               <folding>
                 <element signature="e#175#184#0" expanded="true" />
+                <element signature="e#880#1584#0" expanded="true" />
+                <element signature="e#1630#1794#0" expanded="true" />
+                <element signature="e#1836#2068#0" expanded="true" />
+                <element signature="e#10238#10450#0" expanded="true" />
+                <element signature="e#19469#19608#0" expanded="true" />
               </folding>
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="creepy.xml" pinned="false" current="false" current-in-tab="false">
+      <file leaf-file-name="creepy.xml" pinned="false" current="true" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/Q2API_XML/creepy.xml">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="473" column="8" selection-start="33090" selection-end="33090" vertical-scroll-proportion="-184.92308">
+            <state line="316" column="36" selection-start="22735" selection-end="22735" vertical-scroll-proportion="5.515643">
               <folding>
                 <element signature="tag#desc#0;tag#room#0;tag#house#0" expanded="false" />
                 <element signature="tag#l#0;tag#room#0;tag#house#0" expanded="false" />
                 <element signature="tag#o#0;tag#room#0;tag#house#0" expanded="false" />
                 <element signature="tag#t#0;tag#room#0;tag#house#0" expanded="false" />
-                <element signature="tag#item#0;tag#room#0;tag#house#0" expanded="false" />
                 <element signature="tag#item#0;tag#item#0;tag#room#0;tag#house#0" expanded="false" />
                 <element signature="tag#l#0;tag#item#0;tag#item#0;tag#room#0;tag#house#0" expanded="false" />
-                <element signature="tag#item#0;tag#item#0;tag#item#1;tag#room#0;tag#house#0" expanded="false" />
-                <element signature="tag#item#1;tag#item#1;tag#room#0;tag#house#0" expanded="false" />
                 <element signature="tag#item#0;tag#item#1;tag#item#1;tag#room#0;tag#house#0" expanded="false" />
                 <element signature="tag#o#0;tag#item#2;tag#room#0;tag#house#0" expanded="false" />
                 <element signature="tag#item#0;tag#item#2;tag#room#0;tag#house#0" expanded="false" />
-                <element signature="tag#requirement#0;tag#item#2;tag#item#2;tag#room#0;tag#house#0" expanded="false" />
               </folding>
             </state>
           </provider>
@@ -116,9 +115,9 @@
         <option value="$PROJECT_DIR$/README.txt" />
         <option value="$PROJECT_DIR$/try.py" />
         <option value="$PROJECT_DIR$/Imports/ascii_art.py" />
+        <option value="$PROJECT_DIR$/main_game.py" />
         <option value="$PROJECT_DIR$/Q2API_XML/creepy.xml" />
         <option value="$PROJECT_DIR$/game.py" />
-        <option value="$PROJECT_DIR$/main_game.py" />
       </list>
     </option>
   </component>
@@ -523,11 +522,11 @@
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32942432" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32977587" sideWeight="0.5223404" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
-      <window_info id="Project" active="true" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.11099253" sideWeight="0.5531915" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="true" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.11099253" sideWeight="0.114893615" order="0" side_tool="false" content_ui="combo" />
       <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.44132918" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="1" side_tool="true" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.38421598" sideWeight="0.46318036" order="9" side_tool="true" content_ui="tabs" />
-      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.44680852" sideWeight="0.53681964" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.8851064" sideWeight="0.53681964" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.3287234" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
@@ -607,6 +606,11 @@
         <state line="200" column="0" selection-start="8726" selection-end="8726" vertical-scroll-proportion="0.0">
           <folding>
             <element signature="e#175#184#0" expanded="true" />
+            <element signature="e#880#1584#0" expanded="true" />
+            <element signature="e#1630#1794#0" expanded="true" />
+            <element signature="e#1836#2068#0" expanded="true" />
+            <element signature="e#10238#10450#0" expanded="true" />
+            <element signature="e#19469#19608#0" expanded="true" />
           </folding>
         </state>
       </provider>
@@ -619,15 +623,11 @@
             <element signature="tag#l#0;tag#room#0;tag#house#0" expanded="false" />
             <element signature="tag#o#0;tag#room#0;tag#house#0" expanded="false" />
             <element signature="tag#t#0;tag#room#0;tag#house#0" expanded="false" />
-            <element signature="tag#item#0;tag#room#0;tag#house#0" expanded="false" />
             <element signature="tag#item#0;tag#item#0;tag#room#0;tag#house#0" expanded="false" />
             <element signature="tag#l#0;tag#item#0;tag#item#0;tag#room#0;tag#house#0" expanded="false" />
-            <element signature="tag#item#0;tag#item#0;tag#item#1;tag#room#0;tag#house#0" expanded="false" />
-            <element signature="tag#item#1;tag#item#1;tag#room#0;tag#house#0" expanded="false" />
             <element signature="tag#item#0;tag#item#1;tag#item#1;tag#room#0;tag#house#0" expanded="false" />
             <element signature="tag#o#0;tag#item#2;tag#room#0;tag#house#0" expanded="false" />
             <element signature="tag#item#0;tag#item#2;tag#room#0;tag#house#0" expanded="false" />
-            <element signature="tag#requirement#0;tag#item#2;tag#item#2;tag#room#0;tag#house#0" expanded="false" />
           </folding>
         </state>
       </provider>
@@ -689,41 +689,40 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/main_game.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="94" column="19" selection-start="2878" selection-end="2878" vertical-scroll-proportion="0.0">
+          <folding />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/game.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="15" column="43" selection-start="675" selection-end="675" vertical-scroll-proportion="0.0">
+        <state line="343" column="44" selection-start="15009" selection-end="15009" vertical-scroll-proportion="0.0">
           <folding>
             <element signature="e#175#184#0" expanded="true" />
+            <element signature="e#880#1584#0" expanded="true" />
+            <element signature="e#1630#1794#0" expanded="true" />
+            <element signature="e#1836#2068#0" expanded="true" />
+            <element signature="e#10238#10450#0" expanded="true" />
+            <element signature="e#19469#19608#0" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/Q2API_XML/creepy.xml">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="473" column="8" selection-start="33090" selection-end="33090" vertical-scroll-proportion="-184.92308">
+        <state line="316" column="36" selection-start="22735" selection-end="22735" vertical-scroll-proportion="5.515643">
           <folding>
             <element signature="tag#desc#0;tag#room#0;tag#house#0" expanded="false" />
             <element signature="tag#l#0;tag#room#0;tag#house#0" expanded="false" />
             <element signature="tag#o#0;tag#room#0;tag#house#0" expanded="false" />
             <element signature="tag#t#0;tag#room#0;tag#house#0" expanded="false" />
-            <element signature="tag#item#0;tag#room#0;tag#house#0" expanded="false" />
             <element signature="tag#item#0;tag#item#0;tag#room#0;tag#house#0" expanded="false" />
             <element signature="tag#l#0;tag#item#0;tag#item#0;tag#room#0;tag#house#0" expanded="false" />
-            <element signature="tag#item#0;tag#item#0;tag#item#1;tag#room#0;tag#house#0" expanded="false" />
-            <element signature="tag#item#1;tag#item#1;tag#room#0;tag#house#0" expanded="false" />
             <element signature="tag#item#0;tag#item#1;tag#item#1;tag#room#0;tag#house#0" expanded="false" />
             <element signature="tag#o#0;tag#item#2;tag#room#0;tag#house#0" expanded="false" />
             <element signature="tag#item#0;tag#item#2;tag#room#0;tag#house#0" expanded="false" />
-            <element signature="tag#requirement#0;tag#item#2;tag#item#2;tag#room#0;tag#house#0" expanded="false" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/main_game.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="8" column="41" selection-start="209" selection-end="209" vertical-scroll-proportion="0.036105033">
-          <folding>
-            <element signature="e#1381#2285#0" expanded="true" />
           </folding>
         </state>
       </provider>

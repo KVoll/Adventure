@@ -73,9 +73,10 @@
                                                 "WANT OUT OF HERE?
                                                  Use this:
 
-                                                 { m b w y m f e n }"</o>
+                                                 { m b w y m f e n }"
+                </o>
                 <t>You take the journal hoping it will help lead to answers.</t>
-                <item type="picture" obtainable="1" inspected="0">
+                <item type="picture" obtainable="0" inspected="0">
                     <visible in="journal"/>
                     <l> Your gaze focused in on the picture attached to the mirror on the desk. There's a man, a woman,
                       and a little boy posing for a happy picture. Unfortunately, you don't know who the two boys are.
@@ -85,12 +86,11 @@
                     </l>
                     <o> You try to use the picture in an futile attempt to spark some memories.  The attempt ultimately
                   was unsuccessful.</o>
-                    <t>You decide that even though you don't know the men in this picture, you'd like to hold on to it
-                  in case you do gain some memories.  Maybe it will lead to insight about who you are.</t>
+                    <t>You could take the pillow with you, but it's really not necessary so you leave it behind.</t>
                     <item type="note" obtainable="1" inspected="0">
                         <visible in="picture"/>
                         <score point="2" on="l note">
-                            <prompt>                  &lt;You've added a memory to your memory bank.&gt;</prompt>
+                            <prompt>                   &lt;You've added a memory to your memory bank.&gt;</prompt>
                             <memory>You remember an important date.</memory>
                         </score>
                         <l>You look at the note stuck to the back of the picture with speculation.  Why did someone
@@ -115,17 +115,17 @@
                   you realize the bed is just an ordinary antique bed, but it is hiding something.</l>
             <o> You contemplate going to sleep, but decide against it in fear of forgetting everything you've remembered so far.</o>
             <t>There is no reason for you to do this.</t>
-            <item type="pillow" obtainable="1" inspected="0">
+            <item type="pillow" obtainable="0" inspected="0">
                 <visible in="bed"/>
                 <score point="2" on="l pillow">
-                    <prompt>                    &lt;You've gained a memory.&gt;</prompt>
+                    <prompt>                     &lt;You've gained a memory.&gt;</prompt>
                     <memory>Purple is your favorite color.</memory>
                 </score>
                 <l> The pillow looks dingy, yet it is still soft and fluffy. It has a purple pillowcase on it -
                      your favorite color.
                 </l>
                 <o> You take the pillowcase off and look anything that could be hidden inside.</o>
-                <t>You never know when you might need a pillow.</t>
+                <t>You could take the pillow with you, but it's really not necessary so you leave it behind.</t>
                 <item type="cloth" obtainable="1" inspected="0">
                     <visible in="pillow"/>
                     <requirement req="o pillow">
@@ -164,7 +164,7 @@
                     <prereq>&lt;You must have the note with the combination on it.&gt;</prereq>
                 </requirement>
                 <l>You  exam the lock. It has four dials with numbers ranging from one to ten. Currently, the numbers are 4-5-3-6 
-                  and the lock  won't budge.</l>
+                  and the lock won't budge.</l>
                 <o> With the combination securely in your inventory, you carefully turn the dials to the correct number double checking
                yourself with each turn.  After entering the last digit, you pull the lock open revealing the now unlocked chest.</o>
                 <t>The lock is attached to the safe which cannot be obtained.  Thus, you cannot take the lock, but you effort remains
@@ -180,13 +180,13 @@
                     <o> Since you've opened the lock, you can open the chest.  You pull the safe open, revealing items that intrigue you.
                Surely there's something with answers inside.</o>
                     <t>The safe is securely embedded in the wall.  Even though you would like to keep it, it's not yours to keep.</t>
-                    <item type="photo album" obtainable="1" inspected="0">
+                    <item type="photo album" obtainable="0" inspected="0">
                         <visible in="safe"/>
                         <!--<requirement req="o safe">-->
                             <!--<prereq>&lt;You cannot get to that item at the moment.&gt;</prereq>-->
                         <!--</requirement>-->
                         <score point="3" on="l photo album">
-                            <prompt>                        &lt;You've gained another memory.&gt;</prompt>
+                            <prompt>                          &lt;You've gained another memory.&gt;</prompt>
                             <memory>The gold engravings on the photo album.</memory>
                         </score>
                         <l>You look at the photo album, and blow off the dust build-up. Underneath all the
@@ -200,7 +200,7 @@
                      before.  Among the pages of antique photos, you stumble upon something interesting.
                      Maybe this will assist you decrypt encrypted phrases.
                         </o>
-                        <t>Since you remember the album from childhood, you feel it's necessary to take it with you.</t>
+                        <t>You don't need to take the album with you so you leave it behind.</t>
                         <item type="decryption table" obtainable="1" inspected="0">
                             <visible in="photo album"/>
                             <requirement req="o photo album">
@@ -272,7 +272,7 @@
                 <!--Book contains memory, gives more insight about who she is-->
                 <visible in="bookshelf"/>
                 <score point="2" on="l book">
-                    <prompt>                  &lt;You've gained another memory.&gt;</prompt>
+                    <prompt>                   &lt;You've gained another memory.&gt;</prompt>
                     <memory>Your mother reading to you before bedtime.</memory>
                 </score>
                 <l>The name of the book is "Alice in Wonderland" by Lewis Carrol. Well, if you're Alice, you're
@@ -303,7 +303,7 @@
                 <o> You use the screwdriver to remove the screws one by one.</o>
                 <t>The box would only take up space in your inventory.</t>
                 <item type="badge" obtainable="1" inspected="0">
-                   <visible in="box"/>
+                    <visible in="box"/>
                     <l>It looks like some sort of security badge. There's no distinguishable words on it, but there is an
                    oddly familiar symbol colorfully printed on it.</l>
                     <o>You notice there's a small indentation along the perimeter of the badge. You think about trying
@@ -354,18 +354,18 @@
             <!--Painting has numbers on it for opening the box-->
             <visible in="secret room"/>
             <score point="5" on="l painting">
-                <prompt>                        &lt;You've gained another memory.&gt;</prompt>
+                <prompt>                       &lt;You've gained another memory.&gt;</prompt>
                 <memory>Your mother painting the artwork in the secret room.</memory>
             </score>
             <l>The image painted is the same symbol on many other objects around.  When you look at the painting on the
-                       wall, you begin to daydream.  You remember a time when you were laying in bed, wrapped in your favorite
-                       blanket while your mother was on the opposite side of the room painting and your father was reading you
-                       "Alice in Wonderland".
+                      wall, you begin to daydream.  You remember a time when you were laying in bed, wrapped in your favorite
+                      blanket while your mother was on the opposite side of the room painting and your father was reading you
+                      "Alice in Wonderland".
             </l>
             <o>You lift the painting from the wall to see if there's anything hidden behind.  You're shocked when you
                   find out there's nothing there.</o>
             <t>As much as you'd love to take the painting with you, you decide against it.  Hauling it around in your
-                    inventory may damage it's beauty.</t>
+                   inventory may damage it's beauty.</t>
         </item>
         <item type="couch" obtainable="0" inspected="0">
             <visible in="secret room"/>
@@ -378,7 +378,7 @@
             <item type="blanket" obtainable="1" inspected="0">
                 <visible in="couch"/>
                 <score point="6" on="l blanket">
-                    <prompt>                    &lt;You've gained two new memories.&gt;</prompt>
+                    <prompt>                      &lt;You've gained two new memories.&gt;</prompt>
                     <memory>The blanket from your childhood.  Your father's death.</memory>
                 </score>
                 <l>You look at the blanket and remember everything about it.  You got it when you were just a child from
@@ -425,15 +425,15 @@
                 <o> You open the manual and scan the pages for any useful information.  There's a certain page that sticks
                  out to you.  This page looks like instructions for how to decrypt the encrypted message.</o>
                 <t>You take the manual with you in case you need it while operating the machine.</t>
-                <item type="instruction" obtainable="1" inspected="0">
+                <item type="recipe" obtainable="1" inspected="0">
                     <!--Instructions on how to decrypt the cipher-->
                     <visible in="manual"/>
                     <requirement req="o manual">
-                        <prereq>&lt;You need to open the manual first.</prereq>
+                        <prereq>&lt;You need to open the manual first.&gt;</prereq>
                     </requirement>
-                    <l>You look at the instructions and realize that they are not for humans to read, but for the machine.</l>
-                    <o>There's nothing on the instructions for you to use or open.</o>
-                    <t>The instructions may be useful so you decide to take them with you.</t>
+                    <l>You look at the recipe and realize that it is not for humans to read, but for the machine.</l>
+                    <o>There's nothing in the recipe for you to use or open.</o>
+                    <t>The recipe may be useful at some point so you decide to take them with you.</t>
                 </item>
             </item>
         </item>
@@ -456,11 +456,11 @@
             <item type="machine" obtainable="0" inspected="0">
                 <!--Special:  Password?-->
                 <visible in="table"/>
-                <requirement req="password">
+                <requirement req="recipe">
                     <prereq>You try to use the machine, but it asks for a password before you can do anything.</prereq>
                 </requirement>
                 <l>You don't know what this machine is or what it does.</l>
-                <o>After entering the password, you see a message that </o>
+                <o>After entering the password, you see a message that [DOES NOTHING RIGHT NOW]!</o>
                 <t>In order to take the machine with you, you'd have to unplug all the cables.  Not only that, where
                   would you keep it?  You move on without taking the machine.</t>
             </item>
@@ -470,7 +470,7 @@
     <room name="living room">
         <desc>
         Sorry to be so anti-climatic, but as it stands there's no ending to the story.  More to come... This is
-        a bitch of a placeholder.
+        a bitch of a placeholder.  You'll have to wait until the demo on Oct. 4 to know how it ends.  :)
         </desc>
     </room>
 </house>

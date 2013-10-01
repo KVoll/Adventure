@@ -14,7 +14,7 @@ class Game():
              'inspect': 'l', 'check': 'l', 'search': 'l', 'examine': 'l', 'read': 'l',
              'take': 't', 'get': 't', 'obtain': 't', 'steal': 't', 'remove': 't', 't': 't',
              'open': 'o', 'access': 'o', 'use': 'o', 'o': 'o', 'enter': 'e'}
-    keywords = ['exit', 'inv', 'menu', 'save', 'list', 'nouns', 'score']
+    keywords = ['exit', 'inv', 'menu', 'save', 'score', 'memories']   # , 'list', 'nouns'
     screen = terminal.get_terminal()
 
     def __init__(self, file_name):
@@ -24,6 +24,7 @@ class Game():
             xml_file = fin.read()
         self.nouns = []
         self.list_used = []
+        self.machine_used = False
         self.memories = []
         self.score = 0
         self.success, self.state = creepy.obj_wrapper(xml_file)     # Get the game state from Q2API obj_wrapper
@@ -32,11 +33,10 @@ class Game():
         self.room = self.get_current_room()
         self.exit_links = self.get_areas()
         self.player_room = self.state.player[0].room
-        print
 
     def display_score(self, num=0):
         if num != 0:
-            print " "*num + "Your current score is:  " + str(self.score)
+            print " "*num + "  Your current score is:  " + str(self.score)
         else:
             print "Your current score is:  " + str(self.score)
 
@@ -62,7 +62,7 @@ class Game():
         self.score += int(item.score[0].attrs["point"])
         self.display_score(num)
         # print("Current score is:    " + str(self.score))
-        print(" "*num + "Memory added:" + item.score[0].memory[0].value + "\n")
+        print(" "*num + "  Memory added: " + item.score[0].memory[0].value + "\n")
 
         self.memories.append(item.score[0].memory[0].value)
         for score in item.score:
@@ -167,20 +167,29 @@ class Game():
                     print "[OPEN " + noun.upper() + "]> ",
                     if item.requirement:
                         req = item.requirement[0].attrs["req"]
+                        # if ", " in req:
+                        #     self.special_case(req, item, temp_list)
+
                         if str(req).startswith("o "):
                             if place.attrs["inspected"] != "1":
-                                print item.requirement[0].prereq[0].value + "\n"
+                                print item.requirement[0].prereq[0].value
+
                             else:
                                 self.requirement_met(item, temp_list)
+                                if item.attrs["type"] in self.exit_links.keys():
+                                    self.room_change(item)
                         elif req not in player_inv:
-                            print item.requirement[0].prereq[0].value + "\n"
+                            print item.requirement[0].prereq[0].value
                         else:
                             self.requirement_met(item, temp_list)
+                            if item.attrs["type"] in self.exit_links.keys():
+                                self.room_change(item)
                     else:
                         self.requirement_met(item, temp_list)
+                        if item.attrs["type"] in self.exit_links.keys():
+                            self.room_change(item)
 
-                    if item.attrs["type"] in self.exit_links.keys():
-                        self.room_change(item)
+
 
                     # Print the appropriate temporary text
                     temp_str = ""
@@ -189,6 +198,8 @@ class Game():
                             temp_str += temp_list[i]
                             temp_str += ", a "
                         return " " * num + "  <You see a " + temp_str[:-4] + ".>\n"
+                    else:
+                        print "\n"
 
                 # Otherwise, if the item is not the noun given, make recursive call until item is found
                 else:
@@ -199,24 +210,25 @@ class Game():
             return
 
     def room_change(self, item):
-    # if self.exit_links[item.attrs["type"]] != self.room:
         self.room = self.exit_links[item.attrs["type"]]
         self.state.player[0].room[0].attrs["name"] = self.room.attrs["name"]
         if self.room.attrs["name"] != "living room":
             self.screen.cprint(3, 0, "")
-            print " "*50 + self.room.attrs["name"].upper()
+            print "\n" + " "*50 + self.room.attrs["name"].upper()
             self.screen.cprint(15, 0, "")
             print self.room.desc[0].value
         else:
             self.end_game()
 
     def end_game(self):
-        print " " * 50 + self.room.attrs["name"].upper()
+        self.screen.cprint(3, 0, "")
+        print "\n" + " " * 50 + self.room.attrs["name"].upper()
+        self.screen.cprint(15, 0, "")
         print self.room.desc[0].value
         sleep(3)
-        print("    You have completed the game and escaped the room. Thank you for playing!")
+        print("        You have completed the game and escaped the room. Thank you for playing!")
         sleep(1)
-        print("    Your final score is: " + str(self.score) + "\n")
+        print("        Your final score is: " + str(self.score) + "\n")
         sleep(1)
         print("Closing game...")
         sleep(1)
@@ -286,31 +298,11 @@ class Game():
                                 print str(take_stack.pop())
                         else:
                             self.take_item(item, take_stack, num)
-                            # text = item.t[0].value
-                            # text += "\n" + " " * num + " <Added " + item.attrs["type"] + " to inventory.>"
-                            # # Append to inventory
-                            # self.player_inv.attrs["items"] += item.attrs["type"] + ", a "
-                            # # Change visibility status to inventory
-                            # item.visible[0].attrs["in"] = "inventory"
-                            # # Item is no longer obtainable
-                            # item.attrs["obtainable"] = "0"
-                            # take_stack.push(text)
-                            # if not take_stack.isEmpty():
-                            #     print(str(take_stack.pop()))
+
                     # Otherwise, the item can be taken
                     else:
                         self.take_item(item, take_stack, num)
-                        # text = item.t[0].value
-                        # text += "\n" + " "*num + " <Added " + item.attrs["type"] + " to inventory.>"
-                        # # Append to inventory
-                        # self.player_inv.attrs["items"] += item.attrs["type"] + ", a "
-                        # # Change visibility status to inventory
-                        # item.visible[0].attrs["in"] = "inventory"
-                        # # Item is no longer obtainable
-                        # item.attrs["obtainable"] = "0"
-                        # take_stack.push(text)
-                        # if not take_stack.isEmpty():
-                        #     print(str(take_stack.pop()))
+
                 # If the item in place is not the noun given, make recursive call until item is found
                 else:
                     # Store and pass the parent's inspected status
@@ -331,10 +323,28 @@ class Game():
         if not take_stack.isEmpty():
             print(str(take_stack.pop()))
 
-    def special_case(self, item):
-        choice = raw_input("You found a secret room.  Would you like to enter it? (y/n)\n\n")
-        if choice == 'y' or 'yes':
-            self.room = item.room[0]
+    # def special_case(self, req, item, temp_list):
+    #     req_words = req.split(", ")
+    #     if self.player_inv.attrs["items"] != "":
+    #         player_inv = self.player_inv.attrs["items"].split(", a ")
+    #         # Remove any empty strings from player_inventory
+    #         for i in range(len(player_inv)):
+    #             if player_inv[i] == "":
+    #                 player_inv.pop()
+    #     else:
+    #         player_inv = []
+    #
+    #     for word in req_words:
+    #         if str(word).startswith("o "):
+    #             if self.machine_used:
+    #                 self.requirement_met(item, temp_list)
+    #             else:
+    #                 print item.requirement[0].prereq[0].value + "\n"
+    #         elif word in player_inv:
+    #             if word not in player_inv:
+    #                 print item.requirement[0].prereq[0].value + "\n"
+    #             else:
+    #                 self.requirement_met()
 
     def cmd_menu(self):
         """ Shows a list of verb commands and their shortcuts, and key words that can be used. """
@@ -397,15 +407,15 @@ class Game():
         num = len(player_inv)
 
         if num == 0:                                                  # If inventory is empty
-            print "       <There is nothing in your inventory.>\n"    # Print corresponding text
+            print "[INVENTORY]>    Your inventory is empty.\n"    # Print corresponding text
         elif num == 1:                                                # Else if single item in inventory, print singular
-            print "       <You have one item in your inventory: " + \
-                self.player_inv.attrs["items"][:-4] + ".>\n"
+            print "[INVENTORY]>    You have one item in your inventory: a " + \
+                self.player_inv.attrs["items"][:-4] + ".\n"
         else:                                                         # Otherwise, print multiple items
-            print "       <You have " + str(num) + " items in your inventory: a",
+            print "[INVENTORY]>    You have " + str(num) + " items in your inventory: a ",
             for i in range(len(player_inv)):
                 temp_str += player_inv[i] + ", a "
-            print temp_str[:-4] + ".>\n"
+            print temp_str[:-4] + ".\n"
 
     def cmd_exit(self):
         """ Safely close program. """
@@ -441,19 +451,24 @@ class Game():
         # return room object
         return self.room
 
-    def cmd_list(self):
-        for i in range(len(self.list_used)):
-            print "|  " + self.list_used[i] + "  |",
-        print("\n")
+    # def cmd_list(self):
+    #     for i in range(len(self.list_used)):
+    #         print "|  " + self.list_used[i] + "  |",
+    #     print("\n")
+    #
+    # def cmd_nouns(self):
+    #     for i in range(len(self.nouns)):
+    #         print "|  " + self.nouns[i] + "  |",
+    #     print("\n")
 
-    def cmd_nouns(self):
-        for i in range(len(self.nouns)):
-            print "|  " + self.nouns[i] + "  |",
-        print("\n")
-
+    def display_memories(self):
+        num = len("[MEMORIES]>    ")
+        print("[MEMORIES]>    ")
+        for memory in self.memories:
+            print(" "*num + memory)
     # Action shortcuts mapped to respective function
     actions = {'l': cmd_look, 'o': cmd_open, 't': cmd_take}
 
     # Keywords mapped to their respective function
-    key_words = {'exit': cmd_exit, 'menu': cmd_menu, 'inv': cmd_inv, 'save': cmd_save, 'list': cmd_list,
-                 'nouns': cmd_nouns, 'score': display_score}
+    key_words = {'exit': cmd_exit, 'menu': cmd_menu, 'inv': cmd_inv, 'save': cmd_save,
+                 'score': display_score, 'memories': display_memories}# 'list': cmd_list, 'nouns': cmd_nouns,
