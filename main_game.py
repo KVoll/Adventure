@@ -5,6 +5,8 @@ from game import Game
 from time import sleep
 from Imports import ascii_art
 from colorconsole import terminal
+# import pygame
+import pygame.mixer
 
 logger = logging.out_file_instance("Logs/game_log")
 screen = terminal.get_terminal()
@@ -27,9 +29,16 @@ def main():
     #     sleep(1.0)
     # # sys.stdout.write(game.intro)
     # sleep(3)
-    screen.cprint(3, 0, " "*55 + "  ELEVEN")
+    screen.cprint(3, 0, " "*55 + game.state.title[0].value)
     print("\n")
-    screen.set_color(8, 0)
+    # screen.set_color(8, 0)
+
+    # pygame.init()
+    pygame.mixer.init()
+    sound = pygame.mixer.Sound("Sounds/Lava_Dome_8bit.wav")
+    sound.set_volume(.10)
+    sound.play()
+    pygame.mixer.fadeout(100000)
     ascii_img = ascii_art.get_ascii_image()
     screen.cprint(15, 0, " ")
     ascii_img.get_image("eleven.png")
@@ -49,9 +58,11 @@ def main():
 
     while 1:
         run_command(game)
+    # high_scores(game)
 
 
 def run_command(game):
+
     screen.cprint(11, 0, "")
     command = raw_input("> ")
     logger.write_line(["The player input the command: "+repr(command)], debug_level=0)
@@ -97,21 +108,61 @@ def parse(command, game):
 
 def prompt_save():
     saved_game = os.listdir("Saved_Files")
-    choice = raw_input("Welcome to Eleven.  Would you like to start a saved game? (y/n)\n> ")
-    if choice == 'y':
+    choice = raw_input("Welcome to Eleven.  Would you like to start a new game? (y/n)\n> ")
+    if choice == 'n':
         if saved_game:
             for i, fin in enumerate(saved_game):
                 print str(i) + "\t" + fin.split(".")[0]
             choice = raw_input("Choose a saved game or type 'N' for a new game.\n> ")
+            if choice == "n" or choice == "N":
+                file_name = "Q2API_XML/creepy.xml"
         try:
                 file_name = "Saved_Files/" + saved_game[int(choice)]
-        except IndexError:
+        except ValueError:
             print "Invalid choice.  Starting new game..."
             file_name = "Q2API_XML/creepy.xml"
     else:
         file_name = "Q2API_XML/creepy.xml"
 
     return file_name
+
+
+def high_scores(game):
+    import pickle
+    column_width = 20
+    header = ("Name", "Total Score")
+
+    # high_scores_list = []
+    scores = open("scores.txt", "r")
+    try:
+        old_scores = pickle.load(scores)
+    except EOFError:
+        old_scores = []
+    scores.close()
+    # print old_scores
+    name = raw_input("Name?")
+    score = game.score
+    old_scores.append((name, score))
+    old_scores.sort()
+    for title in header:
+        print columnize(title, column_width),
+    print
+    for data in old_scores:
+        for col_data in data:
+            print columnize(str(col_data), column_width),
+        print
+    # print old_scores
+    scores = open("scores.txt", "w")
+    pickle.dump(old_scores[-10:], scores)
+    scores.close()
+
+
+def columnize(word, width):
+    num_spaces = width - len(word)
+    if num_spaces < 0:
+        num_spaces = 0
+    return word + (" "*num_spaces)
+
 
 if __name__ == "__main__":
     try:

@@ -1,0 +1,10 @@
+(lp0
+(S'Kristi'
+p1
+I0
+tp2
+a(S'asdf'
+p3
+I0
+tp4
+a.

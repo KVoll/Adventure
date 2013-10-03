@@ -2,6 +2,8 @@
     <player>
         <inventory items=""/>
         <room name="unknown room"/>
+        <memories memory=""/>
+        <computer used="False"/>
         <score val="0"/>
     </player>
     <intro>
@@ -11,6 +13,11 @@
     transpired before you woke. In fact, you fail to remember anything. Your eyes dart around the room in an attempt to
     find some kind of solution to the riddle of where and who you are.
     </intro>
+    <title>
+                                         ___  ___    ___  __       ___   _
+                                        |#|_  |#|   |#|_  \#\  /  |#|_  |#|\ |
+                                        |#|_  |#|_  |#|_   \#\/   |#|_  |#| \|
+    </title>
     <tip>
    ------------------------------------------------------------------------------------------------------------------------
     TIP:  You can type 'menu' to see a list of commands, 'inv' to see what items are in your inventory, and 'exit' to quit.
@@ -43,6 +50,26 @@
                    collect that much buildup.  You start to fade away into a daydream, and for a moment everything goes black.
                    When the light reappears, you notice you've drawn a symbol into the dust.  You stare at it until the image
                    is etched in your mind.
+                                                                ____
+                                                               /.../\
+                                                              /.../##\
+                                                             /.../####\
+                                                            /.../######\
+                                                           /.../###/\###\
+                                                          /.../###/  \###\
+                                                         /.../###/\   \###\
+                                                        /.../###/  \   \###\
+                                                       /.../###/    \   \###\
+                                                      /.../###/      \   \###\
+                                                     /.../###/        \   \###\
+                                                    /.../###/          \   \###\
+                                                   /.../###/            \   \###\
+                                                  /.../###/______________\   \###\
+                                                 /........................\   \###\
+                                                /..........................\   \###\
+                                                -----------------------------   \###/
+                                               \                                 \#/
+                                                \_________________________________/
             </l>
             <o> You hesitated for a moment because the thing feels unsteady.  The last thing you want is for it to fall
                apart.  Whoever has kept you here might be upset.  Who DOES have you here, you wonder.  Eventually you
@@ -86,12 +113,12 @@
                     </l>
                     <o> You try to use the picture in an futile attempt to spark some memories.  The attempt ultimately
                   was unsuccessful.</o>
-                    <t>You could take the pillow with you, but it's really not necessary so you leave it behind.</t>
+                    <t>You could take the picture with you, but it's really not necessary so you leave it behind.</t>
                     <item type="note" obtainable="1" inspected="0">
                         <visible in="picture"/>
                         <score point="2" on="l note">
                             <prompt>                   &lt;You've added a memory to your memory bank.&gt;</prompt>
-                            <memory>You remember an important date.</memory>
+                            <memory>You remember an important date:  March 14, 1915</memory>
                         </score>
                         <l>You look at the note stuck to the back of the picture with speculation.  Why did someone
                   put it in a locked journal on the back of a picture?  Clearly, it was meant to stay hidden.
@@ -134,8 +161,7 @@
                     <l>Inspecting the cloth shows that it was written on in the past with what appears to be faded
                    permanent marker. It took some time but eventually you were able to make out what it says,
 
-                                                  "KEYWORD = SALT"
-                    </l>
+                                                  "KEYWORD = SALT"</l>
                     <o>You can't do that.</o>
                     <t>You think this will help you.</t>
                 </item>
@@ -152,39 +178,56 @@
                     <requirement req="o mattress">
                         <prereq>&lt;That item cannot be found.&gt;</prereq>
                     </requirement>
-                    <l>You don't know what it opens, but it's got to open something.</l>
+                    <l>
+                                                     _
+                                                    /o \_____
+                                                    \__/-="="`
+
+                        You don't know what it opens, but it's got to open something.</l>
                     <o>The key cannot be opened.</o>
                     <t>You hold on to the key hoping to find what it unlocks.</t>
                 </item>
             </item>
             <item type="lock" obtainable="0" inspected="0">
-            <!--Special: Enter combination-->
                 <visible in="bed"/>
-                <requirement req="note">
-                    <prereq>&lt;You must have the note with the combination on it.&gt;</prereq>
+                <requirement req="book">
+                    <prereq>&lt;You must have the item with the combination in it.&gt;</prereq>
                 </requirement>
-                <l>You  exam the lock. It has four dials with numbers ranging from one to ten. Currently, the numbers are 4-5-3-6 
-                  and the lock won't budge.</l>
+                <l>
+
+                                                       .-""-.
+                                                      / .--. \
+                                                     / /    \ \
+                                                     | |    | |
+                                                     | |.-""-.|
+                                                    ///`.::::.`\
+                                                   ||| ::/  \:: ;
+                                                   ||; ::\__/:: ;
+                                                    \\\ '::::' /
+                                                     `=':-..-'`
+
+                    You exam the lock. It has a circular dial with numbers ranging from one to 30. Currently, the lock won't budge.</l>
                 <o> With the combination securely in your inventory, you carefully turn the dials to the correct number double checking
                yourself with each turn.  After entering the last digit, you pull the lock open revealing the now unlocked chest.</o>
                 <t>The lock is attached to the safe which cannot be obtained.  Thus, you cannot take the lock, but you effort remains
                valiant.</t>
                 <item type="safe" obtainable="0" inspected="0">
                     <visible in="lock"/>
-                    <!--<requirement req="combo">-->
-                        <!--<prereq>&lt;You look around the room, but cannot remember where it is.&gt;</prereq>-->
-                    <!--</requirement>-->
+                    <requirement req="o lock">
+                        <prereq>&lt;You look around the room, but cannot remember where it is.&gt;</prereq>
+                    </requirement>
                     <l>Upon inspection, you realize that the safe is embedded in the wall, and it's seemingly impossible to remove.
                   You wonder who would go through so much effort to keep things locked and hidden in walls.  The person wasn't very
-                  clever to leave the combination in the same room.</l>
+                  clever to leave the combination in the same room.
+                    </l>
                     <o> Since you've opened the lock, you can open the chest.  You pull the safe open, revealing items that intrigue you.
                Surely there's something with answers inside.</o>
                     <t>The safe is securely embedded in the wall.  Even though you would like to keep it, it's not yours to keep.</t>
                     <item type="photo album" obtainable="0" inspected="0">
                         <visible in="safe"/>
-                        <!--<requirement req="o safe">-->
-                            <!--<prereq>&lt;You cannot get to that item at the moment.&gt;</prereq>-->
-                        <!--</requirement>-->
+                        <requirement req="o safe">
+                            <prereq>&lt;You cannot get to that item at the moment.&gt;</prereq>
+                        </requirement>
                         <score point="3" on="l photo album">
                             <prompt>                          &lt;You've gained another memory.&gt;</prompt>
                             <memory>The gold engravings on the photo album.</memory>
@@ -196,10 +239,9 @@
                          words were soft and muffled.  You can't decipher whether or not it's male or female,
                          young or old, or anything else.  All you know is this album is important.
                         </l>
-                        <o>You open the photo album and see old fashioned pictures of people you've never seen
-                     before.  Among the pages of antique photos, you stumble upon something interesting.
-                     Maybe this will assist you decrypt encrypted phrases.
-                        </o>
+                        <o> You open the photo album and see old fashioned pictures of people you've never seen
+                      before.  Among the pages of antique photos, you stumble upon something interesting.
+                      Maybe this will assist you decrypt encrypted phrases.</o>
                         <t>You don't need to take the album with you so you leave it behind.</t>
                         <item type="decryption table" obtainable="1" inspected="0">
                             <visible in="photo album"/>
@@ -264,7 +306,22 @@
                 <requirement req="o bookshelf">
                     <prereq>You need to open the bookshelf first.</prereq>
                 </requirement>
-                <l>The door was carefully hidden by the bookshelf.  There must be something valuable behind it.</l>
+                <l>
+                                                 __________
+                                                |  __  __  |
+                                                | |  ||  | |
+                                                | |  ||  | |
+                                                | |__||__| |
+                                                |  __  __()|
+                                                | |  ||  | |
+                                                | |  ||  | |
+                                                | |  ||  | |
+                                                | |  ||  | |
+                                                | |__||__| |
+                                                |__________|
+
+                   The door was carefully hidden by the bookshelf.  There must be something valuable behind it.
+                </l>
                 <o>You open the door and walk into the secret room.</o>
                 <t>The door cannot be removed from the wall.</t>
             </item>
@@ -275,12 +332,24 @@
                     <prompt>                   &lt;You've gained another memory.&gt;</prompt>
                     <memory>Your mother reading to you before bedtime.</memory>
                 </score>
-                <l>The name of the book is "Alice in Wonderland" by Lewis Carrol. Well, if you're Alice, you're
+                <l>
+                                                         /-/|
+                                                        /_/ |
+                                                        | |/|
+                                                        |^| |
+                                                        |_|/
+
+                  The name of the book is "Alice in Wonderland" by Lewis Carrol. Well, if you're Alice, you're
                   certainly not in Wonderland.  You don't think you're Alice... at least not that Alice.
                   You remember a time when your mother used to read it to you before bedtime.
                 </l>
                 <o>You flip through the pages stopping at your favorite parts.  The pictures intrigue you since you haven't
-              seen them in however many years.  How many years has it been?</o>
+              seen them in however many years.  'How many years has it been?', you wonder.  As you're about ready to close
+              the book, you notice that on the front of the cover there is a handwritten message.  It reads,
+
+                                     "start 7 - right 17 - left 13 - left 27 - right 29"
+
+              This looks like the combination to a lock. </o>
                 <t>This book is a memento. You want to keep it.</t>
                 <!--<item type="page" obtainable="1" inspected="0">-->
                     <!--<visible in="book"/>-->
@@ -314,10 +383,26 @@
         </item>
         <item type="metal door" obtainable="0" inspected="0">
             <visible in="unknown room"/>
-            <requirement req="badge">
+            <special/>
+            <requirement req="badge, computer_used">
                 <prereq>&lt;You desperately wiggle the knob, but the door does not open.&gt;</prereq>
             </requirement>
-            <l>You look at the metal door and thoroughly inspect it.  It appears that the door's locks are electronic.
+            <l>
+                                                    .---------------.
+                                                    ||      |      ||
+                                                    ||      |      ||
+                                                    ||      |      ||
+                                                    ||      |      ||
+                                                    ||      |      ||_
+                                                    ||      |      ||_|
+                                                    ||      |      ||
+                                                    ||      |      ||
+                                                    ||      |      ||
+                                                    ||      |      ||
+                                                    ||      |      ||
+                                                    ||      |      ||
+                                                    '---------------'
+            You look at the metal door and thoroughly inspect it.  It appears that the door's locks are electronic.
             There's something that looks like a slot for a digital badge.  Also, there's a type-pad with the numbers 0-9.
             You wonder if you'll be clever enough to hack your way out.</l>
             <o>After obtaining the badge, and entering the password, you hear a loud noise.  The large metal locks have
@@ -342,7 +427,8 @@
         <!--</requirement>-->
         <l>You slowly walk around the perimeter of the room taking note of everything you see.  Immediately, you feel
                       more comfortable in this room than the other.  In here, it's not so dreary.</l>
-        <o>Opening the room is unfeasible.</o>
+        <o>Opening the room is unfeasible.
+        </o>
         <t>This simply isn't going to happen.</t>
         <item type="entrance" obtainable="0" inspected="0">
             <visible in="secret room"/>
@@ -369,7 +455,17 @@
         </item>
         <item type="couch" obtainable="0" inspected="0">
             <visible in="secret room"/>
-            <l> The couch is large and comfortable.  It's made with fine brown leather and can seat around eight people.
+            <l>
+
+                                                 .-="""""""""""=-.
+                                                 | . . . . . . . |
+                                                 | .'.'.'.'.'.'. |
+                                                ()____ _____ ____()
+                                                ||____I_____I____||
+                                                ||_______________||
+                                                W                 W
+
+                    The couch is large and comfortable.  It's made with fine brown leather.
                     Why that many people would be in the secret room, you don't know.  Nonetheless, the couch is a nice piece
                     of furniture.</l>
             <o> The couch is to heavy for you to lift so you get on the floor and look for anything underneath.  There's
@@ -392,7 +488,7 @@
             <item type="cushion" obtainable="0" inspected="0">
                 <visible in="couch"/>
                 <l>The cushions are nothing special except for the expensive looking fabric.  You notice that the cushions
-                     can be removed from the couch.</l>
+                   can be removed from the couch.</l>
                 <o> You lift the cushions from the couch searching for something hiding in the couch cushions.</o>
                 <t>There's really no reason for you to do that.</t>
                 <item type="screwdriver" obtainable="1" inspected="0">
@@ -400,7 +496,14 @@
                     <requirement req="o cushion">
                         <prereq>&lt;There is no screwdriver in sight.&gt;</prereq>
                     </requirement>
-                    <l>At first look, the screwdriver is a disappointment.  Then you think of all the uses a screwdriver
+                    <l>
+                                                                       ____________________________
+                                     _____                           ,\\  ___________________      \
+                                    |      `------------------------' || (___________________)     `|
+                                    |_____.------------------------._ ||   ____________________     |
+                                                                     `//__(____________________)___/
+
+                        At first look, the screwdriver is a disappointment.  Then you think of all the uses a screwdriver
                          can have.</l>
                     <o>The screwdriver cannot be opened.</o>
                     <t>You decide it may be useful to take the screwdriver with you.</t>
@@ -414,24 +517,24 @@
             </requirement>
             <l>You look at the cabinets and realize there's nothing special about them.  The only thing that looks out of
                      the ordinary is the handle that has been fiddled with.</l>
-            <o>You attach the handle to the cabinet door and open it to see what's inside.</o>
+            <o> You attach the handle to the cabinet door and open it to see what's inside.</o>
             <t>The cabinet cannot be taken with you.</t>
             <item type="manual" obtainable="1" inspected="0">
                 <visible in="cabinet"/>
                 <requirement req="o cabinet">
                     <prereq>&lt;You must open the cabinet first.&gt;</prereq>
                 </requirement>
-                <l>The manual looks like it's for the machine on the table.</l>
+                <l>The manual looks like it's for the computer on the table.</l>
                 <o> You open the manual and scan the pages for any useful information.  There's a certain page that sticks
                  out to you.  This page looks like instructions for how to decrypt the encrypted message.</o>
-                <t>You take the manual with you in case you need it while operating the machine.</t>
+                <t>You take the manual with you in case you need it while operating the computer.</t>
                 <item type="recipe" obtainable="1" inspected="0">
                     <!--Instructions on how to decrypt the cipher-->
                     <visible in="manual"/>
                     <requirement req="o manual">
                         <prereq>&lt;You need to open the manual first.&gt;</prereq>
                     </requirement>
-                    <l>You look at the recipe and realize that it is not for humans to read, but for the machine.</l>
+                    <l>You look at the recipe and realize that it is not for humans to read, but for the computer.</l>
                     <o>There's nothing in the recipe for you to use or open.</o>
                     <t>The recipe may be useful at some point so you decide to take them with you.</t>
                 </item>
@@ -453,16 +556,17 @@
                 <!--<o>FILL</o>-->
                 <!--<t>FILL</t>-->
             <!--</item>-->
-            <item type="machine" obtainable="0" inspected="0">
+            <item type="computer" obtainable="0" inspected="0">
                 <!--Special:  Password?-->
                 <visible in="table"/>
-                <requirement req="recipe">
-                    <prereq>You try to use the machine, but it asks for a password before you can do anything.</prereq>
-                </requirement>
-                <l>You don't know what this machine is or what it does.</l>
-                <o>After entering the password, you see a message that [DOES NOTHING RIGHT NOW]!</o>
-                <t>In order to take the machine with you, you'd have to unplug all the cables.  Not only that, where
-                  would you keep it?  You move on without taking the machine.</t>
+                <special/>
+                <!--<requirement req="o table">-->
+                    <!--<prereq>You try to use the computer, but it asks for a password before you can do anything.</prereq>-->
+                <!--</requirement>-->
+                <l>You don't know what a computer is or what it does.</l>
+                <o> </o>
+                <t>In order to take the computer with you, you'd have to unplug all the cables.  Not only that, where
+                   would you keep it?  You move on without taking the computer.</t>
             </item>
         </item>
         <exit link="entrance" to="unknown room"/>
@@ -472,5 +576,8 @@
         Sorry to be so anti-climatic, but as it stands there's no ending to the story.  More to come... This is
         a bitch of a placeholder.  You'll have to wait until the demo on Oct. 4 to know how it ends.  :)
         </desc>
+        <l> </l>
+        <o> </o>
+        <t> </t>
     </room>
 </house>

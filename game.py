@@ -6,8 +6,8 @@ from Imports.Stack import stack
 from Q2API_XML import creepy
 from colorconsole import terminal
 from time import sleep
-#from Imports import ascii_art
-
+from Imports import ascii_art
+import pygame.mixer
 
 class Game():
     verbs = {'look': 'l', 'scan': 'l', 'view': 'l', 'scout': 'l', 'explore': 'l', 'l': 'l',
@@ -24,15 +24,15 @@ class Game():
             xml_file = fin.read()
         self.nouns = []
         self.list_used = []
-        self.machine_used = False
-        self.memories = []
-        self.score = 0
         self.success, self.state = creepy.obj_wrapper(xml_file)     # Get the game state from Q2API obj_wrapper
         self.player_inv = self.state.player[0].inventory[0]         # Creates an instance of the inventory_q2class
         self.intro = self.state.intro[0].value
         self.room = self.get_current_room()
         self.exit_links = self.get_areas()
         self.player_room = self.state.player[0].room
+        self.memories = self.state.player[0].memories[0].attrs["memory"].split(".")
+        self.score = int(self.state.player[0].score[0].attrs["val"])
+        self.computer_used = self.state.player[0].computer[0].attrs["used"]
 
     def display_score(self, num=0):
         if num != 0:
@@ -44,7 +44,6 @@ class Game():
         for room in self.state.room:
             if room.attrs["name"] == self.state.player[0].room[0].attrs["name"]:
                 self.nouns.append(room.attrs["name"])
-                print room.attrs["name"]
                 return room
 
     def get_areas(self):
@@ -65,6 +64,8 @@ class Game():
         print(" "*num + "  Memory added: " + item.score[0].memory[0].value + "\n")
 
         self.memories.append(item.score[0].memory[0].value)
+        self.state.player[0].memories[0].attrs["memory"] += item.score[0].memory[0].value
+        self.state.player[0].score[0].attrs["val"] = str(self.score)
         for score in item.score:
             item.score[0].attrs["point"] = "0"
             item.children.remove(score)
@@ -164,6 +165,10 @@ class Game():
             for item in place.item:
                 # If the item is the same as the noun, the item is found
                 if item.attrs["type"] == noun:
+
+                    if item.special:
+                        return self.special_item(item)
+
                     print "[OPEN " + noun.upper() + "]> ",
                     if item.requirement:
                         req = item.requirement[0].attrs["req"]
@@ -189,8 +194,6 @@ class Game():
                         if item.attrs["type"] in self.exit_links.keys():
                             self.room_change(item)
 
-
-
                     # Print the appropriate temporary text
                     temp_str = ""
                     if temp_list:
@@ -199,7 +202,7 @@ class Game():
                             temp_str += ", a "
                         return " " * num + "  <You see a " + temp_str[:-4] + ".>\n"
                     else:
-                        print "\n"
+                        return "\n"
 
                 # Otherwise, if the item is not the noun given, make recursive call until item is found
                 else:
@@ -209,9 +212,110 @@ class Game():
             # Returns None to the caller
             return
 
+    def special_item(self, item):
+        if self.player_inv.attrs["items"] != "":
+            player_inv = self.player_inv.attrs["items"].split(", a ")
+            # Remove any empty strings from player_inventory
+            for i in range(len(player_inv)):
+                if player_inv[i] == "":
+                    player_inv.pop()
+        else:
+            player_inv = []
+
+        if item.attrs["type"] == "computer":
+            self.computer(player_inv)
+            print "Shutting down..."
+            sleep(3)
+            self.screen.clear()
+        elif item.attrs["type"] == "metal door":
+            self.metal_door(player_inv, item)
+
+    def computer(self, player_inv):
+        keyword = "salt"
+        password = "031415purple"
+
+        self.screen.clear()
+
+        ascii_img = ascii_art.get_ascii_image()
+        ascii_img.get_image("computer.png")
+
+        print "You can type quit, leave, or stop to stop trying the password.\nThe only thing you can access while" \
+              " using the computer is your memories.\n"
+
+        while 1:
+            enter_pass = raw_input("Enter password:    ")
+            if enter_pass == "quit" or enter_pass == "leave" or enter_pass == "stop":
+                print "Shutting down computer."
+                break
+            elif enter_pass == "memories":
+                self.display_memories()
+            elif enter_pass != password:
+                print "Password incorrect.\n" \
+                      "[Hint:  Grandpa's Birthday (mmddyy) + Favorite Color. No spaces or capitals.]\n "
+            elif enter_pass == password:
+                # self.machine_used = True
+                enter_keyword = raw_input("Enter the keyword:    ")
+                if enter_keyword.lower() != keyword:
+                    print "Sorry, keyword incorrect.  Cannot decrypt message.  Shutting down for security " \
+                          "measures.  Try again later when you know the correct keyword.\n"
+                    # break
+                else:
+                    if "journal" not in player_inv:
+                        print "The encryption is not detected in your inventory." \
+                              "\nTry again later when you have the encryption.\n"
+                        # break
+                    elif "journal" in player_inv:
+                        print "Detected encryption..."
+                        sleep(1)
+                        # Case 1 = Both False (0, 0) -> Fail
+                        if "decryption table" not in player_inv and "recipe" not in player_inv:
+                            print "Sorry, you do not have the decryption table or recipe needed to translate " \
+                                  "message.  Try again later when you have the decryption table and recipe.\n"
+                            # break
+                        # Case 2 = One False, One True (0, 1) -> Fail
+                        elif "decryption table" not in player_inv and "recipe" in player_inv:
+                            print "Sorry, you do not have the decryption table needed to translate message.  " \
+                                  "Try again later when you have the decryption table.\n"
+                            # break
+                        # Case 3 = One False, One True (1, 0) -> Fail
+                        elif "decryption table" in player_inv and "recipe" not in player_inv:
+                            print "Sorry, you do not have the recipe needed to translate message.  Try again " \
+                                  "later when you have the recipe.\n"
+                            # break
+                        # Case 4 = Both True (1, 1) -> Win
+                        elif "decryption table" in player_inv and "recipe" in player_inv:
+                            self.computer_used = "True"
+                            self.state.player[0].computer[0].attrs["used"] = "True"
+                            print "Detected decryption table..."
+                            sleep(1)
+                            print "Detected recipe..."
+                            sleep(1)
+                            print "Decrypting message..."
+                            sleep(1)
+                            print "Decryption successful.\nLatch no. 1 has been released.\nYou hear a loud noise " \
+                                  "coming from the other room.\n\nTHE MACHINE UNLOCKED A LATCH ON THE METAL DOOR.\n"
+        # cont = raw_input("Press [ENTER] to continue.")
+
+    # def cont(self):
+    #     cont = raw_input("Press [ENTER] to continue.")
+    #     while 1:
+    #         if cont == "":
+    #             return
+
+    def metal_door(self, player_inv, item):
+        if self.computer_used == "False" and "badge" not in player_inv:
+            print "Must use computer to unlock latch no. 1 and badge to enter.\n"
+        elif self.computer_used == "True" and "badge" not in player_inv:
+            print "Must have badge to enter.\n"
+        elif self.computer_used == "False" and "badge" in player_inv:
+            print "Must use computer to unlock latch no. 1.\n"
+        elif self.computer_used == "True" and "badge" in player_inv:
+            self.room_change(item)
+
     def room_change(self, item):
         self.room = self.exit_links[item.attrs["type"]]
         self.state.player[0].room[0].attrs["name"] = self.room.attrs["name"]
+
         if self.room.attrs["name"] != "living room":
             self.screen.cprint(3, 0, "")
             print "\n" + " "*50 + self.room.attrs["name"].upper()
@@ -231,7 +335,7 @@ class Game():
         print("        Your final score is: " + str(self.score) + "\n")
         sleep(1)
         print("Closing game...")
-        sleep(1)
+        sleep(2)
         self.cmd_exit()
 
     def requirement_met(self, item, temp_list):
@@ -323,29 +427,6 @@ class Game():
         if not take_stack.isEmpty():
             print(str(take_stack.pop()))
 
-    # def special_case(self, req, item, temp_list):
-    #     req_words = req.split(", ")
-    #     if self.player_inv.attrs["items"] != "":
-    #         player_inv = self.player_inv.attrs["items"].split(", a ")
-    #         # Remove any empty strings from player_inventory
-    #         for i in range(len(player_inv)):
-    #             if player_inv[i] == "":
-    #                 player_inv.pop()
-    #     else:
-    #         player_inv = []
-    #
-    #     for word in req_words:
-    #         if str(word).startswith("o "):
-    #             if self.machine_used:
-    #                 self.requirement_met(item, temp_list)
-    #             else:
-    #                 print item.requirement[0].prereq[0].value + "\n"
-    #         elif word in player_inv:
-    #             if word not in player_inv:
-    #                 print item.requirement[0].prereq[0].value + "\n"
-    #             else:
-    #                 self.requirement_met()
-
     def cmd_menu(self):
         """ Shows a list of verb commands and their shortcuts, and key words that can be used. """
         commands = {}
@@ -419,12 +500,35 @@ class Game():
 
     def cmd_exit(self):
         """ Safely close program. """
-        choice = raw_input("Would you like to save before exiting? (y/n)\n")
-        if choice == "y":
-            self.cmd_save()
-            sys.exit()
-        else:
-            sys.exit()
+        import main_game
+        affirm = raw_input("Are you sure you want to exit? (y/n)\n")
+        if affirm == "n":
+            return
+        elif affirm == "y":
+            choice = raw_input("Would you like to save before exiting? (y/n)\n")
+            if choice == "y":
+                self.cmd_save()
+                self.screen.clear()
+                main_game.high_scores(self)
+                again = raw_input("Play again? (y/n)\n")
+                if again == "y":
+                    main_game.main()
+                else:
+                    print("Closing game...")
+                    sleep(1)
+                    self.screen.clear()
+                    sys.exit()
+            else:
+                self.screen.clear()
+                main_game.high_scores(self)
+                again = raw_input("Play again? (y/n)\n")
+                if again == "y":
+                    main_game.main()
+                else:
+                    print("Closing game...")
+                    sleep(1)
+                    self.screen.clear()
+                    sys.exit()
 
     def cmd_save(self):
         """ Uses the Q2API to flatten the game state to new XML doc. """
@@ -451,21 +555,16 @@ class Game():
         # return room object
         return self.room
 
-    # def cmd_list(self):
-    #     for i in range(len(self.list_used)):
-    #         print "|  " + self.list_used[i] + "  |",
-    #     print("\n")
-    #
-    # def cmd_nouns(self):
-    #     for i in range(len(self.nouns)):
-    #         print "|  " + self.nouns[i] + "  |",
-    #     print("\n")
-
     def display_memories(self):
         num = len("[MEMORIES]>    ")
-        print("[MEMORIES]>    ")
-        for memory in self.memories:
-            print(" "*num + memory)
+        print "[MEMORIES]>    ",
+        if self.memories:
+            print "You remember:"
+            for memory in self.memories:
+                print(" "*num + memory)
+        else:
+            print "You remember nothing.\n"
+
     # Action shortcuts mapped to respective function
     actions = {'l': cmd_look, 'o': cmd_open, 't': cmd_take}
 
