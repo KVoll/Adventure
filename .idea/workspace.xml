@@ -4,10 +4,6 @@
     <list default="true" id="d5db1b08-d885-4052-ab8a-a8a922327d6d" name="Default" comment="" />
     <ignored path="Adventure.iws" />
     <ignored path=".idea/workspace.xml" />
-    <file path="/Dummy.txt" changelist="d5db1b08-d885-4052-ab8a-a8a922327d6d" time="1380831723732" ignored="false" />
-    <file path="/creepy.xml" changelist="d5db1b08-d885-4052-ab8a-a8a922327d6d" time="1380820251379" ignored="false" />
-    <file path="/game.py" changelist="d5db1b08-d885-4052-ab8a-a8a922327d6d" time="1380836979847" ignored="false" />
-    <file path="/main_game.py" changelist="d5db1b08-d885-4052-ab8a-a8a922327d6d" time="1380836621537" ignored="false" />
     <option name="TRACKING_ENABLED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -16,8 +12,8 @@
   </component>
   <component name="ChangesViewManager" flattened_view="true" show_ignored="false" />
   <component name="CoverageDataManager">
+    <SUITE FILE_PATH="coverage/Adventure$main_game.coverage" NAME="main_game Coverage Results" MODIFIED="1380898353088" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
     <SUITE FILE_PATH="coverage/Adventure$Gui.coverage" NAME="Gui Coverage Results" MODIFIED="1380221312507" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="C:/Python27/Lib/site-packages/swampy" />
-    <SUITE FILE_PATH="coverage/Adventure$main_game.coverage" NAME="main_game Coverage Results" MODIFIED="1380320765998" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
   </component>
   <component name="CreatePatchCommitExecutor">
     <option name="PATCH_PATH" value="" />
@@ -39,38 +35,13 @@
       <file leaf-file-name="main_game.py" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/main_game.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="49" column="35" selection-start="1308" selection-end="1308" vertical-scroll-proportion="67.2">
+            <state line="143" column="22" selection-start="4370" selection-end="4370" vertical-scroll-proportion="0.0" vertical-offset="799" max-vertical-offset="3600">
               <folding>
                 <element signature="e#0#9#0" expanded="true" />
-                <element signature="e#1640#2544#0" expanded="true" />
-                <element signature="e#2577#3139#0" expanded="true" />
-                <element signature="e#3165#3918#0" expanded="true" />
-                <element signature="e#3948#4667#0" expanded="true" />
-                <element signature="e#4702#4813#0" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="game_log.10-02-2013.log" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/Logs/game_log.10-02-2013.log">
-          <provider editor-type-id="com.intellij.persistence.database.editor.CsvTableFileEditorProvider">
-            <state />
-          </provider>
-          <provider selected="true" editor-type-id="text-editor">
-            <state line="22" column="62" selection-start="1316" selection-end="1316" vertical-scroll-proportion="23.8">
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="game.py" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/game.py">
-          <provider selected="true" editor-type-id="text-editor">
-            <state line="301" column="28" selection-start="14199" selection-end="14199" vertical-scroll-proportion="0.0">
-              <folding>
-                <element signature="e#175#184#0" expanded="true" />
-                <element signature="e#14824#15235#0" expanded="true" />
+                <element signature="e#291#1559#0" expanded="true" />
+                <element signature="e#1590#2494#0" expanded="true" />
+                <element signature="e#3115#4029#0" expanded="true" />
+                <element signature="e#4951#5062#0" expanded="true" />
               </folding>
             </state>
           </provider>
@@ -79,16 +50,34 @@
       <file leaf-file-name="scores.txt" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/scores.txt">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="5" column="0" selection-start="26" selection-end="26" vertical-scroll-proportion="0.0">
+            <state line="5" column="0" selection-start="27" selection-end="27" vertical-scroll-proportion="0.0" vertical-offset="68" max-vertical-offset="1186">
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="creepy.xml" pinned="false" current="true" current-in-tab="true">
+      <file leaf-file-name="game.py" pinned="false" current="true" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/game.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="608" column="39" selection-start="26476" selection-end="26476" vertical-scroll-proportion="0.41137856" vertical-offset="3891" max-vertical-offset="5317">
+              <folding>
+                <element signature="e#175#184#0" expanded="true" />
+                <element signature="e#905#1781#0" expanded="true" />
+                <element signature="e#2634#3380#0" expanded="true" />
+                <element signature="e#9822#10515#0" expanded="true" />
+                <element signature="e#10561#14532#0" expanded="true" />
+                <element signature="e#14733#15430#0" expanded="true" />
+                <element signature="e#15473#16833#0" expanded="true" />
+                <element signature="e#16868#17364#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="creepy.xml" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/Q2API_XML/creepy.xml">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="120" column="79" selection-start="9152" selection-end="9152" vertical-scroll-proportion="0.14221218">
+            <state line="192" column="52" selection-start="13537" selection-end="13537" vertical-scroll-proportion="9.807693" vertical-offset="3519" max-vertical-offset="12040">
               <folding />
             </state>
           </provider>
@@ -128,10 +117,10 @@
         <option value="$PROJECT_DIR$/README.txt" />
         <option value="$PROJECT_DIR$/try.py" />
         <option value="$PROJECT_DIR$/Imports/ascii_art.py" />
-        <option value="$PROJECT_DIR$/Q2API_XML/creepy.xml" />
         <option value="$PROJECT_DIR$/scores.txt" />
         <option value="$PROJECT_DIR$/main_game.py" />
         <option value="$PROJECT_DIR$/game.py" />
+        <option value="$PROJECT_DIR$/Q2API_XML/creepy.xml" />
       </list>
     </option>
   </component>
@@ -551,17 +540,17 @@
     <editor active="true" />
     <layout>
       <window_info id="Changes" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32942432" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32942432" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32977587" sideWeight="0.5223404" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.11526147" sideWeight="0.13326226" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.10458911" sideWeight="0.13404255" order="0" side_tool="false" content_ui="combo" />
       <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.44132918" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="1" side_tool="true" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.38421598" sideWeight="0.46318036" order="9" side_tool="true" content_ui="tabs" />
-      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.8667377" sideWeight="0.53681964" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.86595744" sideWeight="0.53681964" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.3287234" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
-      <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
       <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32942432" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
@@ -574,58 +563,9 @@
     <option name="myLimit" value="2678400000" />
   </component>
   <component name="VcsManagerConfiguration">
-    <option name="OFFER_MOVE_TO_ANOTHER_CHANGELIST_ON_PARTIAL_COMMIT" value="true" />
-    <option name="CHECK_CODE_SMELLS_BEFORE_PROJECT_COMMIT" value="false" />
-    <option name="CHECK_NEW_TODO" value="true" />
     <option name="myTodoPanelSettings">
-      <value>
-        <are-packages-shown value="false" />
-        <are-modules-shown value="false" />
-        <flatten-packages value="false" />
-        <is-autoscroll-to-source value="false" />
-      </value>
+      <TodoPanelSettings />
     </option>
-    <option name="PERFORM_UPDATE_IN_BACKGROUND" value="true" />
-    <option name="PERFORM_COMMIT_IN_BACKGROUND" value="true" />
-    <option name="PERFORM_EDIT_IN_BACKGROUND" value="true" />
-    <option name="PERFORM_CHECKOUT_IN_BACKGROUND" value="true" />
-    <option name="PERFORM_ADD_REMOVE_IN_BACKGROUND" value="true" />
-    <option name="PERFORM_ROLLBACK_IN_BACKGROUND" value="false" />
-    <option name="CHECK_LOCALLY_CHANGED_CONFLICTS_IN_BACKGROUND" value="false" />
-    <option name="CHANGED_ON_SERVER_INTERVAL" value="60" />
-    <option name="SHOW_ONLY_CHANGED_IN_SELECTION_DIFF" value="true" />
-    <option name="CHECK_COMMIT_MESSAGE_SPELLING" value="true" />
-    <option name="DEFAULT_PATCH_EXTENSION" value="patch" />
-    <option name="SHORT_DIFF_HORIZONTALLY" value="true" />
-    <option name="SHORT_DIFF_EXTRA_LINES" value="2" />
-    <option name="SOFT_WRAPS_IN_SHORT_DIFF" value="true" />
-    <option name="INCLUDE_TEXT_INTO_PATCH" value="false" />
-    <option name="INCLUDE_TEXT_INTO_SHELF" value="false" />
-    <option name="SHOW_FILE_HISTORY_DETAILS" value="true" />
-    <option name="SHOW_VCS_ERROR_NOTIFICATIONS" value="true" />
-    <option name="SHOW_DIRTY_RECURSIVELY" value="false" />
-    <option name="LIMIT_HISTORY" value="true" />
-    <option name="MAXIMUM_HISTORY_ROWS" value="1000" />
-    <option name="UPDATE_FILTER_SCOPE_NAME" />
-    <option name="USE_COMMIT_MESSAGE_MARGIN" value="false" />
-    <option name="COMMIT_MESSAGE_MARGIN_SIZE" value="72" />
-    <option name="WRAP_WHEN_TYPING_REACHES_RIGHT_MARGIN" value="false" />
-    <option name="FORCE_NON_EMPTY_COMMENT" value="false" />
-    <option name="CLEAR_INITIAL_COMMIT_MESSAGE" value="false" />
-    <option name="LAST_COMMIT_MESSAGE" />
-    <option name="MAKE_NEW_CHANGELIST_ACTIVE" value="false" />
-    <option name="OPTIMIZE_IMPORTS_BEFORE_PROJECT_COMMIT" value="false" />
-    <option name="CHECK_FILES_UP_TO_DATE_BEFORE_COMMIT" value="false" />
-    <option name="REFORMAT_BEFORE_PROJECT_COMMIT" value="false" />
-    <option name="REFORMAT_BEFORE_FILE_COMMIT" value="false" />
-    <option name="FILE_HISTORY_DIALOG_COMMENTS_SPLITTER_PROPORTION" value="0.8" />
-    <option name="FILE_HISTORY_DIALOG_SPLITTER_PROPORTION" value="0.5" />
-    <option name="ACTIVE_VCS_NAME" />
-    <option name="UPDATE_GROUP_BY_PACKAGES" value="false" />
-    <option name="UPDATE_GROUP_BY_CHANGELIST" value="false" />
-    <option name="UPDATE_FILTER_BY_SCOPE" value="false" />
-    <option name="SHOW_FILE_HISTORY_AS_TREE" value="false" />
-    <option name="FILE_HISTORY_SPLITTER_PROPORTION" value="0.6" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -633,91 +573,140 @@
     </breakpoint-manager>
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://C:/Python27/Lib/site-packages/swampy/Gui.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0" />
-      </provider>
-    </entry>
-    <entry file="file://C:/Python27/Lib/lib-tk/Tkinter.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="3261" column="0" selection-start="137388" selection-end="137388" vertical-scroll-proportion="0.1814301" />
-      </provider>
-    </entry>
-    <entry file="file://C:/Python27/Lib/site-packages/colorconsole/__init__.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0" />
-      </provider>
-    </entry>
-    <entry file="file://C:/Python27/Lib/site-packages/colorconsole/terminal.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="58" column="11" selection-start="1873" selection-end="1873" vertical-scroll-proportion="0.0" />
-      </provider>
-    </entry>
-    <entry file="file://C:/Python27/Lib/site-packages/colorconsole/win.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="108" column="46" selection-start="3385" selection-end="3385" vertical-scroll-proportion="0.0" />
-      </provider>
-    </entry>
-    <entry file="file://C:/Python27/Lib/site-packages/colorconsole/ansi.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="115" column="46" selection-start="3479" selection-end="3479" vertical-scroll-proportion="0.3991462" />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/Imports/Stack.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="0" column="13" selection-start="13" selection-end="13" vertical-scroll-proportion="0.0" />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/Logs/game_log.10-01-2013.log">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="28" column="65" selection-start="1665" selection-end="1665" vertical-scroll-proportion="0.0" />
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/main_game.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="49" column="35" selection-start="1308" selection-end="1308" vertical-scroll-proportion="67.2">
+        <state line="49" column="25" selection-start="1302" selection-end="1302" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="2074">
           <folding>
             <element signature="e#0#9#0" expanded="true" />
-            <element signature="e#1640#2544#0" expanded="true" />
-            <element signature="e#2577#3139#0" expanded="true" />
-            <element signature="e#3165#3918#0" expanded="true" />
-            <element signature="e#3948#4667#0" expanded="true" />
-            <element signature="e#4702#4813#0" expanded="true" />
+            <element signature="e#291#1559#0" expanded="true" />
+            <element signature="e#1590#2494#0" expanded="true" />
+            <element signature="e#3115#4029#0" expanded="true" />
+            <element signature="e#4951#5062#0" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/scores.txt">
+    <entry file="file://$PROJECT_DIR$/game.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="5" column="0" selection-start="26" selection-end="26" vertical-scroll-proportion="0.0">
+        <state line="301" column="28" selection-start="13478" selection-end="13478" vertical-scroll-proportion="0.0" vertical-offset="5117" max-vertical-offset="6732">
+          <folding>
+            <element signature="e#175#184#0" expanded="true" />
+            <element signature="e#905#1781#0" expanded="true" />
+            <element signature="e#2634#3380#0" expanded="true" />
+            <element signature="e#9822#10515#0" expanded="true" />
+            <element signature="e#10561#14532#0" expanded="true" />
+            <element signature="e#14733#15430#0" expanded="true" />
+            <element signature="e#15473#16833#0" expanded="true" />
+            <element signature="e#16868#17364#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Q2API_XML/creepy.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="244" column="0" selection-start="16147" selection-end="16147" vertical-scroll-proportion="0.0" vertical-offset="4148" max-vertical-offset="4182">
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/game.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="301" column="28" selection-start="14199" selection-end="14199" vertical-scroll-proportion="0.0">
+        <state line="301" column="28" selection-start="14199" selection-end="14199" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="0">
           <folding>
             <element signature="e#175#184#0" expanded="true" />
-            <element signature="e#14824#15235#0" expanded="true" />
+            <element signature="e#905#1781#0" expanded="true" />
+            <element signature="e#2634#3380#0" expanded="true" />
+            <element signature="e#9822#10515#0" expanded="true" />
+            <element signature="e#10561#14532#0" expanded="true" />
+            <element signature="e#14733#15430#0" expanded="true" />
+            <element signature="e#15473#16833#0" expanded="true" />
+            <element signature="e#16868#17364#0" expanded="true" />
           </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/Logs/game_log.10-02-2013.log">
-      <provider editor-type-id="com.intellij.persistence.database.editor.CsvTableFileEditorProvider">
-        <state />
-      </provider>
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="22" column="62" selection-start="1316" selection-end="1316" vertical-scroll-proportion="23.8">
-          <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/Q2API_XML/creepy.xml">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="120" column="79" selection-start="9152" selection-end="9152" vertical-scroll-proportion="0.14221218">
+        <state line="120" column="79" selection-start="9152" selection-end="9152" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="0">
           <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://C:/Python27/Lib/site-packages/swampy/Gui.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="0" />
+      </provider>
+    </entry>
+    <entry file="file://C:/Python27/Lib/lib-tk/Tkinter.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="3261" column="0" selection-start="137388" selection-end="137388" vertical-scroll-proportion="0.1814301" vertical-offset="0" max-vertical-offset="0" />
+      </provider>
+    </entry>
+    <entry file="file://C:/Python27/Lib/site-packages/colorconsole/__init__.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="0" />
+      </provider>
+    </entry>
+    <entry file="file://C:/Python27/Lib/site-packages/colorconsole/terminal.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="58" column="11" selection-start="1873" selection-end="1873" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="0" />
+      </provider>
+    </entry>
+    <entry file="file://C:/Python27/Lib/site-packages/colorconsole/win.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="108" column="46" selection-start="3385" selection-end="3385" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="0" />
+      </provider>
+    </entry>
+    <entry file="file://C:/Python27/Lib/site-packages/colorconsole/ansi.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="115" column="46" selection-start="3479" selection-end="3479" vertical-scroll-proportion="0.3991462" vertical-offset="0" max-vertical-offset="0" />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Imports/Stack.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="0" column="13" selection-start="13" selection-end="13" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="0" />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Q2API_XML/creepy.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="192" column="52" selection-start="13537" selection-end="13537" vertical-scroll-proportion="9.807693" vertical-offset="3519" max-vertical-offset="12040">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/main_game.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="143" column="22" selection-start="4370" selection-end="4370" vertical-scroll-proportion="0.0" vertical-offset="544" max-vertical-offset="3600">
+          <folding>
+            <element signature="e#0#9#0" expanded="true" />
+            <element signature="e#291#1559#0" expanded="true" />
+            <element signature="e#1590#2494#0" expanded="true" />
+            <element signature="e#3115#4029#0" expanded="true" />
+            <element signature="e#4951#5062#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/scores.txt">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="5" column="0" selection-start="27" selection-end="27" vertical-scroll-proportion="0.0" vertical-offset="85" max-vertical-offset="1118">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/game.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="608" column="39" selection-start="26476" selection-end="26476" vertical-scroll-proportion="0.41137856" vertical-offset="3891" max-vertical-offset="5317">
+          <folding>
+            <element signature="e#175#184#0" expanded="true" />
+            <element signature="e#905#1781#0" expanded="true" />
+            <element signature="e#2634#3380#0" expanded="true" />
+            <element signature="e#9822#10515#0" expanded="true" />
+            <element signature="e#10561#14532#0" expanded="true" />
+            <element signature="e#14733#15430#0" expanded="true" />
+            <element signature="e#15473#16833#0" expanded="true" />
+            <element signature="e#16868#17364#0" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>

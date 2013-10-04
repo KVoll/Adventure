@@ -5,7 +5,6 @@ from game import Game
 from time import sleep
 from Imports import ascii_art
 from colorconsole import terminal
-# import pygame
 import pygame.mixer
 
 logger = logging.out_file_instance("Logs/game_log")
@@ -15,12 +14,16 @@ screen = terminal.get_terminal()
 def main():
     os.system('cls')
     screen.set_title("ELEVEN")
-
+    pygame.mixer.init()
+    sound = pygame.mixer.Sound("Sounds/Lava_Dome_8bit.wav")
+    sound.set_volume(.10)
+    sound.play(loops=100)
+    #pygame.mixer.fadeout(100000)
     if os.listdir("Saved_Files"):
         file_name = prompt_save()
-        game = Game(file_name)
+        game = Game(file_name, sound)
     else:
-        game = Game("Q2API_XML/creepy.xml")
+        game = Game("Q2API_XML/creepy.xml", sound)
 
     screen.clear()
     # Slow text via sleep for intro
@@ -31,23 +34,17 @@ def main():
     # sleep(3)
     screen.cprint(3, 0, " "*55 + game.state.title[0].value)
     print("\n")
-    # screen.set_color(8, 0)
 
-    # pygame.init()
-    pygame.mixer.init()
-    sound = pygame.mixer.Sound("Sounds/Lava_Dome_8bit.wav")
-    sound.set_volume(.10)
-    sound.play()
-    pygame.mixer.fadeout(100000)
+
     ascii_img = ascii_art.get_ascii_image()
     screen.cprint(15, 0, " ")
     ascii_img.get_image("eleven.png")
     print("\n")
-    # for lines in game.state.intro[0].value.split("\n"):
-    #     screen.cprint(15, 0, lines+"\n")
-    #     sleep(1.5)
-    # print("\n")
-    print game.state.intro[0].value
+    for lines in game.state.intro[0].value.split("\n"):
+        screen.cprint(15, 0, lines+"\n")
+        sleep(1)
+    print("\n")
+    #print game.state.intro[0].value
     sleep(0.8)
     screen.cprint(15, 0, " ")
     print "\n" + game.state.tip[0].value
@@ -117,7 +114,11 @@ def prompt_save():
             if choice == "n" or choice == "N":
                 file_name = "Q2API_XML/creepy.xml"
         try:
+            try:
                 file_name = "Saved_Files/" + saved_game[int(choice)]
+            except IndexError:
+                print "Invalid choice.  Starting new game..."
+                file_name = "Q2API_XML/creepy.xml"
         except ValueError:
             print "Invalid choice.  Starting new game..."
             file_name = "Q2API_XML/creepy.xml"
@@ -129,6 +130,7 @@ def prompt_save():
 
 def high_scores(game):
     import pickle
+    from operator import itemgetter
     column_width = 20
     header = ("Name", "Total Score")
 
@@ -140,20 +142,21 @@ def high_scores(game):
         old_scores = []
     scores.close()
     # print old_scores
-    name = raw_input("Name?")
+    name = raw_input("Enter your name for the scores list:  ")
     score = game.score
     old_scores.append((name, score))
-    old_scores.sort()
+    #old_scores.sort()
+    new_scores = sorted(old_scores, key=itemgetter(1), reverse=True)
     for title in header:
         print columnize(title, column_width),
     print
-    for data in old_scores:
+    for data in new_scores:
         for col_data in data:
             print columnize(str(col_data), column_width),
         print
-    # print old_scores
+    #print new_scores
     scores = open("scores.txt", "w")
-    pickle.dump(old_scores[-10:], scores)
+    pickle.dump(new_scores[-10:], scores)
     scores.close()
 
 

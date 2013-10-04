@@ -1,0 +1,318 @@
+<house><player><inventory items=""></inventory><room name="unknown room"></room><memories memory=""></memories><computer used="False"></computer><score val="0"></score></player><intro>
+    Consciousness slowly returns to you after a very unnatural slumber. You feel your eyes open as panic sends your mind
+    into an adrenaline fueled search of your last memory. You take deep breaths trying to calm yourself from the
+    initial flood of panic. As your mind races you slowly come to terms that you have no recollection of the events that
+    transpired before you woke. In fact, you fail to remember anything. Your eyes dart around the room in an attempt to
+    find some kind of solution to the riddle of where and who you are.
+    </intro><title>
+                                         ___  ___    ___  __       ___   _
+                                        |#|_  |#|   |#|_  \#\  /  |#|_  |#|\ |
+                                        |#|_  |#|_  |#|_   \#\/   |#|_  |#| \|
+    </title><tip>
+   ------------------------------------------------------------------------------------------------------------------------
+    TIP:  You can type 'menu' to see a list of commands, 'inv' to see what items are in your inventory, and 'exit' to quit.
+   ------------------------------------------------------------------------------------------------------------------------
+    </tip><room name="unknown room"><desc>     The room is completely foreign to you.  There's no telling how long you've been unconscious. Days? Weeks?
+     Months?  You're uncertain.  The only choice you have is to try to find answers.  Try to find a way out.  The
+     truly unfortunate thing is that your capabilities are rendered.  You only know how to look, open, and take
+     the artifacts around you.  The first thing you do is carefully inspect your surroundings.  There's a bookshelf,
+     the bed that you woke up on, a large metal door, and a desk.
+        </desc><l>You notice that the room is furnished with dusty antiques.  The only light source is coming from thin
+                      paneled windows with bars on them.  You take a moment to get more familiar with the room you're in.</l><o>You go to the metal door and try to escape.  To no surprise, the metal door is locked.  For a moment you
+              contemplated the possibility of the windows being a way out.  It's not long before you realize that even if
+              you got the bars off, you wouldn't fit through the tiny slit anyway.  Ultimately, your attempts to open the
+              room have failed.</o><t>Knowing how to perform only three actions must be taking it's toll on your intelligence.  After hours of
+               struggling with your pockets you finally come to the conclusion that your pants were made too tight to fit a
+               room inside of them. You give up, and stop trying to take the room.</t><item obtainable="0" type="desk" inspected="0"><score on="l desk" point="1"><prompt>                   &lt;You've added a memory to your memory bank, and earned a point.&gt;</prompt><memory>The symbol drawn on the desk's layer of dust.</memory></score><visible in="unknown room"></visible><l> The desk is aged and brittle probably made out of wood.  You're afraid to touch it in fear it might fall
+                   apart.  Dust and thick spiderwebs are covering the surface.  It must have been here for a long time to
+                   collect that much buildup.  You start to fade away into a daydream, and for a moment everything goes black.
+                   When the light reappears, you notice you've drawn a symbol into the dust.  You stare at it until the image
+                   is etched in your mind.
+                                                                ____
+                                                               /.../\
+                                                              /.../##\
+                                                             /.../####\
+                                                            /.../######\
+                                                           /.../###/\###\
+                                                          /.../###/  \###\
+                                                         /.../###/\   \###\
+                                                        /.../###/  \   \###\
+                                                       /.../###/    \   \###\
+                                                      /.../###/      \   \###\
+                                                     /.../###/        \   \###\
+                                                    /.../###/          \   \###\
+                                                   /.../###/            \   \###\
+                                                  /.../###/______________\   \###\
+                                                 /........................\   \###\
+                                                /..........................\   \###\
+                                                -----------------------------   \###/
+                                               \                                 \#/
+                                                \_________________________________/
+            </l><o> You hesitated for a moment because the thing feels unsteady.  The last thing you want is for it to fall
+               apart.  Whoever has kept you here might be upset.  Who DOES have you here, you wonder.  Eventually you
+               opened the drawers slowly as the desk trembled.</o><t>Your attempts are futile, poor thing.  The second you got your arms around it the whole thing shifted and
+               almost fell on top of you.  You're lucky you're still alive.</t><item obtainable="1" type="mirror" inspected="0"><visible in="desk"></visible><l>You stare into the mirror wishing you knew who the woman staring back at you is.  You remember your face
+                    but the things you don't remember still outweigh the few that you do.  After carefully inspecting the mirror,
+                    you notice the name "Alice" engraved on the back.  Is that your name?   It doesn't spark any memories, so you
+                    figure Alice must be someone else, but who?</l><o>The mirror is of little use.</o><t>You hope that having the mirror in your inventory will help you remember.</t></item><item obtainable="1" type="journal" inspected="0"><visible in="desk"></visible><requirement req="key"><prereq>&lt;The journal is locked.  You must find the key to unlock it.&gt;</prereq></requirement><l> The journal is old, falling apart at its seams.  You don't remember having seen this item before, but
+                      you're eyes are focused on the symbol engraved in the leather.  It appears to be the as the one that
+                      appeared on the desk.</l><o>You started to go through the journal and saw a lot of meaningless things written.  It seems like the
+                 owner was a scientist of sorts.  It wasn't until you got to the last page that you saw something
+                 interesting.  It reads,
+
+                                                "WANT OUT OF HERE?
+                                                 Use this:
+
+                                                 { m b w y m f e n }"
+                </o><t>You take the journal hoping it will help lead to answers.</t><item obtainable="0" type="picture" inspected="0"><visible in="journal"></visible><l> Your gaze focused in on the picture attached to the mirror on the desk. There's a man, a woman,
+                      and a little boy posing for a happy picture. Unfortunately, you don't know who the two boys are.
+                      At that moment you recall seeing your reflection in the window.  It wasn't long before you
+                      realized that the woman in the picture is me. You took a moment to inspect the picture further
+                      and found something strange on the back. There is a small note stuck to it.
+                    </l><o> You try to use the picture in an futile attempt to spark some memories.  The attempt was ultimately
+                  unsuccessful.</o><t>You could take the picture with you, but it's really not necessary so you leave it behind.</t><item obtainable="1" type="note" inspected="0"><visible in="picture"></visible><score on="l note" point="2"><prompt>                   &lt;You've added a memory to your memory bank.&gt;</prompt><memory>You remember an important date:  March 14, 1915</memory></score><l>You look at the note stuck to the back of the picture with speculation.  Why did someone
+                  put it in a locked journal on the back of a picture?  Clearly, it was meant to stay hidden.
+                  Regardless, you read the note.  It reads,
+                           
+                                           "March 14, 1915"
+
+                  The date rings a bell to you.  You're not sure if it is someones birthday or just a date you happen
+                  to remember.
+                        </l><o>What are you trying to do?  Don't cause anymore trouble for yourself.  Try not to destroy the
+              owner's belongings.</o><t>You carefully detach the note from the picture, and place the note in your pocket.</t></item></item></item></item><item obtainable="0" type="bed" inspected="1"><visible in="unknown room"></visible><l> Knowing that the bed is where you woke, you decide inspecting it is a good idea. After thorough inspection
+                  you realize the bed is just an ordinary antique bed, but it is hiding something.</l><o> You contemplate going to sleep, but decide against it in fear of forgetting everything you've remembered so far.</o><t>There is no reason for you to do this.</t><item obtainable="0" type="pillow" inspected="0"><visible in="bed"></visible><score on="l pillow" point="2"><prompt>                     &lt;You've gained a memory.&gt;</prompt><memory>Purple is your favorite color.</memory></score><l> The pillow looks dingy, yet it is still soft and fluffy. It has a purple pillowcase on it -
+                     your favorite color.
+                </l><o> You take the pillowcase off and look anything that could be hidden inside.</o><t>You could take the pillow with you, but it's really not necessary so you leave it behind.</t><item obtainable="1" type="cloth" inspected="0"><visible in="pillow"></visible><requirement req="o pillow"><prereq>&lt;That item is unreachable.&gt;</prereq></requirement><l>Inspecting the cloth shows that it was written on in the past with what appears to be faded
+                   permanent marker. It took some time but eventually you were able to make out what it says,
+
+                                                  "KEYWORD = SALT"</l><o>You can't do that.</o><t>You think this will help you.</t></item></item><item obtainable="0" type="mattress" inspected="0"><visible in="bed"></visible><l>You look at the mattress wondering how much time you spent laying on it. You can see the indentation
+                      of where your body used to lay for hours on end. How many hours was it, you wonder?
+                </l><o> You lift the mattress off the box spring looking for anything you can find.</o><t>You try to take the mattress off the bed, but fail miserably.</t><item obtainable="1" type="key" inspected="0"><visible in="mattress"></visible><requirement req="o mattress"><prereq>&lt;That item cannot be found.&gt;</prereq></requirement><l>
+                                                     _
+                                                    /o \_____
+                                                    \__/-="="`
+
+                        You don't know what it opens, but it's got to open something.</l><o>The key cannot be opened.</o><t>You hold on to the key hoping to find what it unlocks.</t></item></item><item obtainable="0" type="lock" inspected="0"><visible in="bed"></visible><requirement req="book"><prereq>&lt;You must have the item with the combination in it.&gt;</prereq></requirement><l>
+
+                                                       .-""-.
+                                                      / .--. \
+                                                     / /    \ \
+                                                     | |    | |
+                                                     | |.-""-.|
+                                                    ///`.::::.`\
+                                                   ||| ::/  \:: ;
+                                                   ||; ::\__/:: ;
+                                                    \\\ '::::' /
+                                                     `=':-..-'`
+
+                    You exam the lock. It has a circular dial with numbers ranging from one to 30. Currently, the lock won't budge.</l><o> With the combination securely in your inventory, you carefully turn the dials to the correct number double checking
+               yourself with each turn.  After entering the last digit, you pull the lock open revealing the now unlocked chest.</o><t>The lock is attached to the safe which cannot be obtained.  Thus, you cannot take the lock, but you effort remains
+               valiant.</t><item obtainable="0" type="safe" inspected="0"><visible in="lock"></visible><requirement req="o lock"><prereq>&lt;You look around the room, but cannot remember where it is.&gt;</prereq></requirement><l>Upon inspection, you realize that the safe is embedded in the wall, and it's seemingly impossible to remove.
+                  You wonder who would go through so much effort to keep things locked and hidden in walls.  The person wasn't very
+                  clever to leave the combination in the same room.
+                    </l><o> Since you've opened the lock, you can open the chest.  You pull the safe open, revealing items that intrigue you.
+               Surely there's something with answers inside.</o><t>The safe is securely embedded in the wall.  Even though you would like to keep it, it's not yours to keep.</t><item obtainable="0" type="photo album" inspected="0"><visible in="safe"></visible><requirement req="o safe"><prereq>&lt;You cannot get to that item at the moment.&gt;</prereq></requirement><score on="l photo album" point="3"><prompt>                          &lt;You've gained another memory.&gt;</prompt><memory>The gold engravings on the photo album.</memory></score><l>You look at the photo album, and blow off the dust build-up. Underneath all the
+                         dust, you see a beautiful leather cover with gold engravings.  These gold engravings
+                         make you have a flashback of your childhood.   You remember seeing this album before
+                         as a child.  Someone was showing it to you and telling you of its importance.  The
+                         words were soft and muffled.  You can't decipher whether or not it's male or female,
+                         young or old, or anything else.  All you know is this album is important.
+                        </l><o> You open the photo album and see old fashioned pictures of people you've never seen
+                      before.  Among the pages of antique photos, you stumble upon something interesting.
+                      Maybe this will assist you decrypt encrypted phrases.</o><t>You don't need to take the album with you so you leave it behind.</t><item obtainable="1" type="decryption table" inspected="0"><visible in="photo album"></visible><requirement req="o photo album"><prereq>&lt;You must open the photo album first.&gt;</prereq></requirement><l>
+                                 | A B C D E F G H I J K L M N O P Q R S T U V W X Y Z
+                                ======================================================
+                                A| b c d e f g h i j k l m n o p q r s t u v w x y z a
+                                B| c d e f g h i j k l m n o p q r s t u v w x y z a b
+                                C| d e f g h i j k l m n o p q r s t u v w x y z a b c
+                                D| e f g h i j k l m n o p q r s t u v w x y z a b c d
+                                E| f g h i j k l m n o p q r s t u v w x y z a b c d e
+                                F| g h i j k l m n o p q r s t u v w x y z a b c d e f
+                                G| h i j k l m n o p q r s t u v w x y z a b c d e f g
+                                H| i j k l m n o p q r s t u v w x y z a b c d e f g h
+                                I| j k l m n o p q r s t u v w x y z a b c d e f g h i
+                                J| k l m n o p q r s t u v w x y z a b c d e f g h i j
+                                K| l m n o p q r s t u v w x y z a b c d e f g h i j k
+                                L| m n o p q r s t u v w x y z a b c d e f g h i j k l
+                                M| n o p q r s t u v w x y z a b c d e f g h i j k l m
+                                N| o p q r s t u v w x y z a b c d e f g h i j k l m n
+                                O| p q r s t u v w x y z a b c d e f g h i j k l m n o
+                                P| q r s t u v w x y z a b c d e f g h i j k l m n o p
+                                Q| r s t u v w x y z a b c d e f g h i j k l m n o p q
+                                R| s t u v w x y z a b c d e f g h i j k l m n o p q r
+                                S| t u v w x y z a b c d e f g h i j k l m n o p q r s
+                                T| u v w x y z a b c d e f g h i j k l m n o p q r s t
+                                U| v w x y z a b c d e f g h i j k l m n o p q r s t u
+                                V| w x y z a b c d e f g h i j k l m n o p q r s t u v
+                                W| x y z a b c d e f g h i j k l m n o p q r s t u v w
+                                X| y z a b c d e f g h i j k l m n o p q r s t u v w x
+                                Y| z a b c d e f g h i j k l m n o p q r s t u v w x y
+                                Z| a b c d e f g h i j k l m n o p q r s t u v w x y z
+                            </l><o>You can't do that.</o><t>You want to keep this with you in case you ever need to decrypt something.</t></item></item><item obtainable="1" type="handle" inspected="0"><visible in="safe"></visible><requirement req="o safe"><prereq>&lt;You can't get to that item yet.&gt;</prereq></requirement><l>This handle looks like it has fallen off of something like a drawer or cabinet.</l><o>You twist and turn the handle trying to open it while making sure it doesn't open 
+                or have any surprises hidden inside.</o><t>Maybe the broken remains will be needed to open something.</t></item></item></item></item><item obtainable="0" type="bookshelf" inspected="0"><visible in="unknown room"></visible><l> Amongst the crowd of books on the bookshelf, one stands out. Your eyes are drawn to one specific book.</l><o> After inspecting the bookshelf, you notice that there's a gap between it and the wall behind. You slide
+                    your fingers as far in between as possible. On the very tips of your fingers you feel an edge on the wall.</o><t>The bookshelf cannot be removed from the hinges attached to the wall.</t><item obtainable="0" type="door" inspected="0"><visible in="bookshelf"></visible><requirement req="o bookshelf"><prereq>You need to open the bookshelf first.</prereq></requirement><l>
+                                                 __________
+                                                |  __  __  |
+                                                | |  ||  | |
+                                                | |  ||  | |
+                                                | |__||__| |
+                                                |  __  __()|
+                                                | |  ||  | |
+                                                | |  ||  | |
+                                                | |  ||  | |
+                                                | |  ||  | |
+                                                | |__||__| |
+                                                |__________|
+
+                   The door was carefully hidden by the bookshelf.  There must be something valuable behind it.
+                </l><o>You open the door and walk into the secret room.</o><t>The door cannot be removed from the wall.</t></item><item obtainable="1" type="book" inspected="0"><visible in="bookshelf"></visible><score on="l book" point="2"><prompt>                   &lt;You've gained another memory.&gt;</prompt><memory>Your mother reading to you before bedtime.</memory></score><l>The name of the book is "Alice in Wonderland" by Lewis Carrol. Well, if you're Alice, you're
+                  certainly not in Wonderland.  You don't think you're Alice... at least not that Alice.
+                  You remember a time when your mother used to read it to you before bedtime.
+
+
+                    ========================================================
+
+                    'It is a long tail, certainly said Alice, looking down
+                    with wonder at the Mouse's tail; 'but why do you call it
+                    sad?' And she kept on puzzling about it while the
+                    Mouse was speaking, so that her idea of the tale was
+                    something like this:- 'Fury said to a
+                                       mouse, That
+                                         he met in the
+                                              house, "Let
+                                                  us both go
+                                                     to law: I
+                                                     will prosec-
+                                                      cute you --
+                                                    Come, I'll
+                                                 take no de-
+                                             nial: We
+                                         must have
+                                     the trial;
+                                   For really
+                                 this morn-
+                               ing I've
+                              nothing
+                             to do."
+                              Said the
+                               mouse to
+                                the cur,
+                                 "Such a
+                                   trial, dear
+                                       sir, With
+                                          no jury
+                                           or judge,
+                                               would
+                                            be wast-
+                                         ing our
+                                      breath."
+                                    "I'll be
+                                  judge,
+                               I'll be
+                             jury,"
+                            said
+                           cun-
+                           ning
+                             old
+                              Fury;
+                                "I'll
+                                  try
+                                    the
+                                     whole
+                                      cause,
+                                       and
+                                     con-
+                                   demn
+                                 you to
+                              death"
+                    ========================================================
+
+                </l><o>You flip through the pages stopping at your favorite parts.  The pictures intrigue you since you haven't
+              seen them in however many years.  'How many years has it been?', you wonder.  As you're about ready to close
+              the book, you notice that on the front of the cover there is a handwritten message.  It reads,
+
+                                     "start 7 - right 17 - left 13 - left 27 - right 29"
+
+              This looks like the combination to a lock. </o><t>This book is a memento. You want to keep it.</t></item><item obtainable="0" type="box" inspected="0"><visible in="bookshelf"></visible><requirement req="screwdriver"><prereq>&lt;You need to have a screwdriver in your inventory to open this box.&gt;</prereq></requirement><l>The box is wooden and looks to be hand made.</l><o> You use the screwdriver to remove the screws one by one.</o><t>The box would only take up space in your inventory.</t><item obtainable="1" type="badge" inspected="0"><visible in="box"></visible><l>It looks like some sort of security badge. There's no distinguishable words on it, but there is an
+                   oddly familiar symbol colorfully printed on it.</l><o>You notice there's a small indentation along the perimeter of the badge. You think about trying
+               to take the thing apart but decide against it. It's of more use in one piece.</o><t>You slide the badge in your back pocket.</t></item></item></item><item obtainable="0" type="metal door" inspected="0"><visible in="unknown room"></visible><special></special><requirement req="badge, computer_used"><prereq>&lt;You desperately wiggle the knob, but the door does not open.&gt;</prereq></requirement><l>You look at the metal door and thoroughly inspect it.  It appears that the door's locks are electronic.
+            There's something that looks like a slot for a digital badge.  Also, there's a type-pad with the numbers 0-9.
+            You wonder if you'll be clever enough to hack your way out.</l><o>After obtaining the badge, and entering the password, you hear a loud noise.  The large metal locks have
+                     been released.  Hesitantly, you open the door.  </o><t>There's no way to take the metal door.</t></item><exit to="secret room" link="door"></exit><exit to="living room" link="metal door"></exit></room><room name="secret room"><desc>
+        You've entered the secret room where everything is different.  In the room before, everything was antique,
+        dusty, and meek.  In here, it looks like a high-tech operations area.  Nothing in the room is dusty or meek.
+        In fact, it's quite shiny and clean.  It appears as though this room has been maintained while you were "away".
+        There are things in the secret room that beg for your attention.
+        </desc><l>You slowly walk around the perimeter of the room taking note of everything you see.  Immediately, you feel
+                      more comfortable in this room than the other.  In here, it's not so dreary.</l><o>Opening the room is unfeasible.
+        </o><t>This simply isn't going to happen.</t><item obtainable="0" type="entrance" inspected="0"><visible in="secret room"></visible><l>The entrance leads back to the secret room where you came from.</l><o>Entering unknown room...</o><t>The entrance can't be detached from the wall.</t></item><item obtainable="0" type="painting" inspected="0"><visible in="secret room"></visible><score on="l painting" point="5"><prompt>                       &lt;You've gained another memory.&gt;</prompt><memory>Your mother painting the artwork in the secret room.</memory></score><l>
+                                                        ,--._                      _
+                                                        "'.  '.                  ,';
+                                                           )   '.              ,' /
+                                                         _/      '.          ,'   '.
+                                                       -"__        '.;  /  ,`'    ,-`
+                                                           \        /  ( ,===.  _`. )
+                                                           /__      `.__//.' \\/_.-`
+                                                              '-,._.-    \ \_/\\ ,-.
+                                                                  \.-     /  \_\\/||
+                                                                 _/\\    :o o :-'/;.`.
+                                                              _,";-,;|   :/"\ : // ||))
+                                                         _..."((|_//||-.._\"//  `` ;;''
+                                                        /,-----"||" ''    \`._
+                                                       //      ,'|         `-.`-..._
+                                                      ::     ,','             '.__.=
+                                                      ::     |||  _
+                                                       \\_   ""   ))     'Beware the jabberwock'
+                                                        \_"--....';
+                                                          '""---"'
+
+
+
+
+                When you look at the painting on the
+                      wall, you begin to daydream.  You remember a time when you were laying in bed, wrapped in your favorite
+                      blanket while your mother was on the opposite side of the room painting and your father was reading you
+                      "Alice in Wonderland".
+            </l><o>You lift the painting from the wall to see if there's anything hidden behind.  You're shocked when you
+                  find out there's nothing there.</o><t>As much as you'd love to take the painting with you, you decide against it.  Hauling it around in your
+                   inventory may damage it's beauty.</t></item><item obtainable="0" type="couch" inspected="0"><visible in="secret room"></visible><l>
+
+                                                 .-="""""""""""=-.
+                                                 | . . . . . . . |
+                                                 | .'.'.'.'.'.'. |
+                                                ()____ _____ ____()
+                                                ||____I_____I____||
+                                                ||_______________||
+                                                W                 W
+
+                    The couch is large and comfortable.  It's made with fine brown leather.
+                    Why that many people would be in the secret room, you don't know.  Nonetheless, the couch is a nice piece
+                    of furniture.</l><o> The couch is to heavy for you to lift so you get on the floor and look for anything underneath.  There's
+                nothing underneath, but you see some other things.</o><t>The couch is too heavy to take.</t><item obtainable="1" type="blanket" inspected="0"><visible in="couch"></visible><score on="l blanket" point="6"><prompt>                      &lt;You've gained two new memories.&gt;</prompt><memory>The blanket from your childhood.  Your father's death.</memory></score><l>You look at the blanket and remember everything about it.  You got it when you were just a child from
+                     your grandmother.  She knitted it for your fifth birthday.  Since the moment you got it, you always slept
+                     with it.  After your father died, you would wrap yourself in this blanket for comfort.
+                </l><o>You use the blanket by wrapping it around yourself.  When you do so, you don't feel so alone and
+                 confused.  In fact, for a moment you feel at ease.</o><t>You take the blanket along with you in case you get cold.</t></item><item obtainable="0" type="cushion" inspected="0"><visible in="couch"></visible><l>The cushions are nothing special except for the expensive looking fabric.  You notice that the cushions
+                   can be removed from the couch.</l><o> You lift the cushions from the couch searching for something hiding in the couch cushions.</o><t>There's really no reason for you to do that.</t><item obtainable="1" type="screwdriver" inspected="0"><visible in="cushion"></visible><requirement req="o cushion"><prereq>&lt;There is no screwdriver in sight.&gt;</prereq></requirement><l>
+                                                                       ____________________________
+                                     _____                           ,\\  ___________________      \
+                                    |      `------------------------' || (___________________)     `|
+                                    |_____.------------------------._ ||   ____________________     |
+                                                                     `//__(____________________)___/
+
+                        At first look, the screwdriver is a disappointment.  Then you think of all the uses a screwdriver
+                         can have.</l><o>The screwdriver cannot be opened.</o><t>You decide it may be useful to take the screwdriver with you.</t></item></item></item><item obtainable="0" type="cabinet" inspected="0"><visible in="secret room"></visible><requirement req="handle"><prereq>&lt;The cabinet is missing its handle. Try opening it once you have the handle in your inventory.&gt;</prereq></requirement><l>You look at the cabinets and realize there's nothing special about them.  The only thing that looks out of
+                     the ordinary is the handle that has been fiddled with.</l><o> You attach the handle to the cabinet door and open it to see what's inside.</o><t>The cabinet cannot be taken with you.</t><item obtainable="1" type="manual" inspected="0"><visible in="cabinet"></visible><requirement req="o cabinet"><prereq>&lt;You must open the cabinet first.&gt;</prereq></requirement><l>The manual looks like it's for the computer on the table.</l><o> You open the manual and scan the pages for any useful information.  There's a certain page that sticks
+                 out to you.  This page looks like instructions for how to decrypt the encrypted message.</o><t>You take the manual with you in case you need it while operating the computer.</t><item obtainable="1" type="recipe" inspected="0"><visible in="manual"></visible><requirement req="o manual"><prereq>&lt;You need to open the manual first.&gt;</prereq></requirement><l>You look at the recipe and realize that it is not for humans to read, but for the computer.</l><o>There's nothing in the recipe for you to use or open.</o><t>The recipe may be useful at some point so you decide to take them with you.</t></item></item></item><item obtainable="0" type="table" inspected="0"><visible in="secret room"></visible><l>The table is much newer than the things in the other room.  It's made of high quality wood with live edges.</l><o> You try to lift the table off the ground, but it's of no use.  The table is too heavy.</o><t>There's no way you'll be able to carry the table.</t><item obtainable="0" type="computer" inspected="0"><visible in="table"></visible><special></special><l>You don't know what a computer is or what it does.</l><o> </o><t>In order to take the computer with you, you'd have to unplug all the cables.  Not only that, where
+                   would you keep it?  You move on without taking the computer.</t></item></item><exit to="unknown room" link="entrance"></exit></room><room name="living room"><desc>
+        You insert your badge into the metal door and watch as it slowly grinds open.  A bright light catches your eye
+        as it disappears down a long tunnel.  As the light fades from sight you feel a sudden shift in gravity.  Without
+        warning you are now falling down the tunnel towards the light that holds the truth...
+
+        Suddenly, you hit the ground with a loud THUD.  You stand up, and dust yourself off.  When you look around your
+        memory comes back to you.  You're not Alice, no. But your mother is.  You've been trapped in this house directly
+        above Wonderland by your mom's nemesis.  They've been holding you hostage for ELEVEN years, but you've never aged.
+
+        Now that you have the answers, you're nothing more than confused.  There's nowhere else for you to go but back up
+        to the room you just escaped.  And just like that symbol you've seen around the room, everything seems impossible.
+        </desc></room></house>

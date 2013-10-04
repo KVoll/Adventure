@@ -17,13 +17,14 @@ class Game():
     keywords = ['exit', 'inv', 'menu', 'save', 'score', 'memories']   # , 'list', 'nouns'
     screen = terminal.get_terminal()
 
-    def __init__(self, file_name):
+    def __init__(self, file_name, sound):
         """ Initialize the game objects """
         # Get the XML data from file given
         with open(file_name, "r") as fin:
             xml_file = fin.read()
         self.nouns = []
         self.list_used = []
+        self.sound = sound
         self.success, self.state = creepy.obj_wrapper(xml_file)     # Get the game state from Q2API obj_wrapper
         self.player_inv = self.state.player[0].inventory[0]         # Creates an instance of the inventory_q2class
         self.intro = self.state.intro[0].value
@@ -60,6 +61,10 @@ class Game():
         print(item.score[0].prompt[0].value)
         self.score += int(item.score[0].attrs["point"])
         self.display_score(num)
+        pygame.mixer.init()
+        sound = pygame.mixer.Sound("Sounds/nintendo_08.wav")
+        sound.set_volume(.10)
+        sound.play()
         # print("Current score is:    " + str(self.score))
         print(" "*num + "  Memory added: " + item.score[0].memory[0].value + "\n")
 
@@ -226,7 +231,10 @@ class Game():
             self.computer(player_inv)
             print "Shutting down..."
             sleep(3)
+            #self.sound.set_volume(.10)
+            #self.sound.play()
             self.screen.clear()
+            print
         elif item.attrs["type"] == "metal door":
             self.metal_door(player_inv, item)
 
@@ -235,6 +243,13 @@ class Game():
         password = "031415purple"
 
         self.screen.clear()
+
+        #self.sound.fadeout(500)
+        #sleep(.5)
+        pygame.mixer.init()
+        sound = pygame.mixer.Sound("Sounds/iMac_Startup.wav")
+        sound.set_volume(.10)
+        sound.play()
 
         ascii_img = ascii_art.get_ascii_image()
         ascii_img.get_image("computer.png")
@@ -245,13 +260,13 @@ class Game():
         while 1:
             enter_pass = raw_input("Enter password:    ")
             if enter_pass == "quit" or enter_pass == "leave" or enter_pass == "stop":
-                print "Shutting down computer."
+                #print "Shutting down computer."
                 break
             elif enter_pass == "memories":
                 self.display_memories()
             elif enter_pass != password:
                 print "Password incorrect.\n" \
-                      "[Hint:  Grandpa's Birthday (mmddyy) + Favorite Color. No spaces or capitals.]\n "
+                      "[Hint:  Irrational Date (mmddyy) + Favorite Color. No spaces or capitals.]\n "
             elif enter_pass == password:
                 # self.machine_used = True
                 enter_keyword = raw_input("Enter the keyword:    ")
@@ -310,33 +325,63 @@ class Game():
         elif self.computer_used == "False" and "badge" in player_inv:
             print "Must use computer to unlock latch no. 1.\n"
         elif self.computer_used == "True" and "badge" in player_inv:
+            pygame.mixer.init()
+            pygame.mixer.fadeout(500)
+            sound = pygame.mixer.Sound("Sounds/nintendo_15.wav")
+            sound.set_volume(.10)
+            sound.play()
             self.room_change(item)
 
     def room_change(self, item):
+        #sound.set_volume(.10)
         self.room = self.exit_links[item.attrs["type"]]
         self.state.player[0].room[0].attrs["name"] = self.room.attrs["name"]
 
         if self.room.attrs["name"] != "living room":
+            pygame.mixer.init()
+            sound = pygame.mixer.Sound("Sounds/Galaga_ChallengeComp.wav")
+            sound.set_volume(.10)
+            sound.play()
             self.screen.cprint(3, 0, "")
             print "\n" + " "*50 + self.room.attrs["name"].upper()
             self.screen.cprint(15, 0, "")
             print self.room.desc[0].value
         else:
-            self.end_game()
+            self.screen.cprint(3, 0, "")
+            print "\n" + " " * 50 + self.room.attrs["name"].upper()
+            self.screen.cprint(15, 0, "")
+            print self.room.desc[0].value
+            #self.sound.mixer.fadeout(500)
+            cont = raw_input("\n\nPress any key to continue.")
+            if cont or cont == "":
+                import main_game
+                self.sound.fadeout(500)
+                self.screen.clear()
+                main_game.high_scores(self)
+                again = raw_input("Play again? (y/n)\n")
+                if again == "y":
+                    main_game.main()
+                else:
+                    print("Closing game...")
+                    sleep(1)
+                    self.screen.clear()
+                    sys.exit()
+
 
     def end_game(self):
         self.screen.cprint(3, 0, "")
         print "\n" + " " * 50 + self.room.attrs["name"].upper()
         self.screen.cprint(15, 0, "")
         print self.room.desc[0].value
-        sleep(3)
+        sleep(2)
         print("        You have completed the game and escaped the room. Thank you for playing!")
         sleep(1)
         print("        Your final score is: " + str(self.score) + "\n")
         sleep(1)
         print("Closing game...")
         sleep(2)
-        self.cmd_exit()
+        self.sound.fadeout(500)
+        #self.cmd_exit()
 
     def requirement_met(self, item, temp_list):
         print item.o[0].value
@@ -501,7 +546,7 @@ class Game():
     def cmd_exit(self):
         """ Safely close program. """
         import main_game
-        affirm = raw_input("Are you sure you want to exit? (y/n)\n")
+        affirm = raw_input("Do you want to exit? (y/n)\n")
         if affirm == "n":
             return
         elif affirm == "y":

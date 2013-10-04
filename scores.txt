@@ -1,10 +1,18 @@
 (lp0
 (S'Kristi'
 p1
-I0
+I24
 tp2
-a(S'asdf'
+a(S"I Don't Want to"
 p3
-I0
+I5
 tp4
+a(S'No'
+p5
+I0
+tp6
+a(S'No'
+p7
+I0
+tp8
 a.

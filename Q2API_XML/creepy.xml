@@ -20,7 +20,8 @@
     </title>
     <tip>
    ------------------------------------------------------------------------------------------------------------------------
-    TIP:  You can type 'menu' to see a list of commands, 'inv' to see what items are in your inventory, and 'exit' to quit.
+    TIP:  You can type 'menu' to see a list of commands, 'inv' to see what items are in your inventory, 'memories' to see
+          what you've remembered, 'score' to see your current score, 'save' to save game, and 'exit' to quit.
    ------------------------------------------------------------------------------------------------------------------------
     </tip>
     <room name="unknown room">
@@ -42,14 +43,13 @@
         <item type="desk" obtainable="0" inspected="0">
             <score point="1" on="l desk">
                 <prompt>                   &lt;You've added a memory to your memory bank, and earned a point.&gt;</prompt>
-                <memory>The symbol drawn on the desk's layer of dust.</memory>
+                <memory>The impossible shape drawn on the desk's layer of dust.</memory>
             </score>
             <visible in="unknown room"/>
             <l> The desk is aged and brittle probably made out of wood.  You're afraid to touch it in fear it might fall
                    apart.  Dust and thick spiderwebs are covering the surface.  It must have been here for a long time to
                    collect that much buildup.  You start to fade away into a daydream, and for a moment everything goes black.
-                   When the light reappears, you notice you've drawn a symbol into the dust.  You stare at it until the image
-                   is etched in your mind.
+                   When the light reappears, you notice you've drawn a symbol into the dust.  It's impossible.
                                                                 ____
                                                                /.../\
                                                               /.../##\
@@ -78,12 +78,17 @@
                almost fell on top of you.  You're lucky you're still alive.</t>
             <item type="mirror" obtainable="1" inspected="0">
                 <visible in="desk"/>
+                <score point="3" on="l mirror">
+                    <prompt>                     &lt;You've gained another memory.&gt;</prompt>
+                    <memory>Alice is your mother.</memory>
+                </score>
                 <l>You stare into the mirror wishing you knew who the woman staring back at you is.  You remember your face
                     but the things you don't remember still outweigh the few that you do.  After carefully inspecting the mirror,
-                    you notice the name "Alice" engraved on the back.  Is that your name?   It doesn't spark any memories, so you
-                    figure Alice must be someone else, but who?</l>
+                    you notice the name "Alice" engraved on the back.  A memory comes back to you.  Your mother's name is
+                    Alice.
+                </l>
                 <o>The mirror is of little use.</o>
-                <t>You hope that having the mirror in your inventory will help you remember.</t>
+                <t>You hope that having the mirror in your inventory will help you.</t>
             </item>
             <item type="journal" obtainable="1" inspected="0">
                 <visible in="desk"/>
@@ -111,14 +116,14 @@
                       realized that the woman in the picture is me. You took a moment to inspect the picture further
                       and found something strange on the back. There is a small note stuck to it.
                     </l>
-                    <o> You try to use the picture in an futile attempt to spark some memories.  The attempt ultimately
-                  was unsuccessful.</o>
+                    <o> You try to use the picture in an futile attempt to spark some memories.  The attempt was ultimately
+                  unsuccessful.</o>
                     <t>You could take the picture with you, but it's really not necessary so you leave it behind.</t>
                     <item type="note" obtainable="1" inspected="0">
                         <visible in="picture"/>
                         <score point="2" on="l note">
                             <prompt>                   &lt;You've added a memory to your memory bank.&gt;</prompt>
-                            <memory>You remember an important date:  March 14, 1915</memory>
+                            <memory>You remember an irrational date:  March 14, 1915</memory>
                         </score>
                         <l>You look at the note stuck to the back of the picture with speculation.  Why did someone
                   put it in a locked journal on the back of a picture?  Clearly, it was meant to stay hidden.
@@ -127,7 +132,7 @@
                                            "March 14, 1915"
 
                   The date rings a bell to you.  You're not sure if it is someones birthday or just a date you happen
-                  to remember.
+                  to remember.  It certainly is an irrational date.
                         </l>
                         <o>What are you trying to do?  Don't cause anymore trouble for yourself.  Try not to destroy the
               owner's belongings.</o>
@@ -158,10 +163,15 @@
                     <requirement req="o pillow">
                         <prereq>&lt;That item is unreachable.&gt;</prereq>
                     </requirement>
+                    <score point="3" on="l cloth">
+                        <prompt>                    &lt;You've gained another memory.&gt;</prompt>
+                        <memory>The keyword is SALT.</memory>
+                    </score>
                     <l>Inspecting the cloth shows that it was written on in the past with what appears to be faded
                    permanent marker. It took some time but eventually you were able to make out what it says,
 
-                                                  "KEYWORD = SALT"</l>
+                                                  "KEYWORD = SALT"
+                    </l>
                     <o>You can't do that.</o>
                     <t>You think this will help you.</t>
                 </item>
@@ -332,16 +342,68 @@
                     <prompt>                   &lt;You've gained another memory.&gt;</prompt>
                     <memory>Your mother reading to you before bedtime.</memory>
                 </score>
-                <l>
-                                                         /-/|
-                                                        /_/ |
-                                                        | |/|
-                                                        |^| |
-                                                        |_|/
-
-                  The name of the book is "Alice in Wonderland" by Lewis Carrol. Well, if you're Alice, you're
+                <l>The name of the book is "Alice in Wonderland" by Lewis Carrol. Well, if you're Alice, you're
                   certainly not in Wonderland.  You don't think you're Alice... at least not that Alice.
                   You remember a time when your mother used to read it to you before bedtime.
+                  Your eyes stop at your favorite part:
+
+                    ========================================================
+
+                    'It is a long tail, certainly said Alice, looking down
+                    with wonder at the Mouse's tail; 'but why do you call it
+                    sad?' And she kept on puzzling about it while the
+                    Mouse was speaking, so that her idea of the tale was
+                    something like this:- 'Fury said to a
+                                       mouse, That
+                                         he met in the
+                                              house, "Let
+                                                  us both go
+                                                     to law: I
+                                                     will prosec-
+                                                      cute you --
+                                                    Come, I'll
+                                                 take no de-
+                                             nial: We
+                                         must have
+                                     the trial;
+                                   For really
+                                 this morn-
+                               ing I've
+                              nothing
+                             to do."
+                              Said the
+                               mouse to
+                                the cur,
+                                 "Such a
+                                   trial, dear
+                                       sir, With
+                                          no jury
+                                           or judge,
+                                               would
+                                            be wast-
+                                         ing our
+                                      breath."
+                                    "I'll be
+                                  judge,
+                               I'll be
+                             jury,"
+                            said
+                           cun-
+                           ning
+                             old
+                              Fury;
+                                "I'll
+                                  try
+                                    the
+                                     whole
+                                      cause,
+                                       and
+                                     con-
+                                   demn
+                                 you to
+                              death"
+                    ========================================================
+
                 </l>
                 <o>You flip through the pages stopping at your favorite parts.  The pictures intrigue you since you haven't
               seen them in however many years.  'How many years has it been?', you wonder.  As you're about ready to close
@@ -387,24 +449,9 @@
             <requirement req="badge, computer_used">
                 <prereq>&lt;You desperately wiggle the knob, but the door does not open.&gt;</prereq>
             </requirement>
-            <l>
-                                                    .---------------.
-                                                    ||      |      ||
-                                                    ||      |      ||
-                                                    ||      |      ||
-                                                    ||      |      ||
-                                                    ||      |      ||_
-                                                    ||      |      ||_|
-                                                    ||      |      ||
-                                                    ||      |      ||
-                                                    ||      |      ||
-                                                    ||      |      ||
-                                                    ||      |      ||
-                                                    ||      |      ||
-                                                    '---------------'
-            You look at the metal door and thoroughly inspect it.  It appears that the door's locks are electronic.
-            There's something that looks like a slot for a digital badge.  Also, there's a type-pad with the numbers 0-9.
-            You wonder if you'll be clever enough to hack your way out.</l>
+            <l>You look at the metal door and thoroughly inspect it.  It appears that the door's locks are electronic.
+                        There's something that looks like a slot for a digital badge.  Also, there's a type-pad with the numbers 0-9.
+                        You wonder if you'll be clever enough to hack your way out.</l>
             <o>After obtaining the badge, and entering the password, you hear a loud noise.  The large metal locks have
                      been released.  Hesitantly, you open the door.  </o>
             <t>There's no way to take the metal door.</t>
@@ -443,10 +490,30 @@
                 <prompt>                       &lt;You've gained another memory.&gt;</prompt>
                 <memory>Your mother painting the artwork in the secret room.</memory>
             </score>
-            <l>The image painted is the same symbol on many other objects around.  When you look at the painting on the
-                      wall, you begin to daydream.  You remember a time when you were laying in bed, wrapped in your favorite
-                      blanket while your mother was on the opposite side of the room painting and your father was reading you
-                      "Alice in Wonderland".
+            <l>
+                                            ,--._                      _
+                                            "'.  '.                  ,';
+                                               )   '.              ,' /
+                                             _/      '.          ,'   '.
+                                           -"__        '.;  /  ,`'    ,-`
+                                               \        /  ( ,===.  _`. )
+                                               /__      `.__//.' \\/_.-`
+                                                  '-,._.-    \ \_/\\ ,-.
+                                                      \.-     /  \_\\/||
+                                                     _/\\    :o o :-'/;.`.
+                                                  _,";-,;|   :/"\ : // ||))
+                                             _..."((|_//||-.._\"//  `` ;;''
+                                            /,-----"||" ''    \`._
+                                           //      ,'|         `-.`-..._
+                                          ::     ,','             '.__.=
+                                          ::     |||  _
+                                           \\_   ""   ))     'Beware the jabberwock'
+                                            \_"--....';
+                                              '""---"'
+
+                       When you look at the painting on the wall, you begin to daydream.  You remember a time when you were laying
+                       in bed, wrapped in your favorite blanket while your mother was on the opposite side of the room painting
+                       and your father was reading you "Alice in Wonderland".
             </l>
             <o>You lift the painting from the wall to see if there's anything hidden behind.  You're shocked when you
                   find out there's nothing there.</o>
@@ -487,8 +554,7 @@
             </item>
             <item type="cushion" obtainable="0" inspected="0">
                 <visible in="couch"/>
-                <l>The cushions are nothing special except for the expensive looking fabric.  You notice that the cushions
-                   can be removed from the couch.</l>
+                <l>The cushions are nothing special.  You notice that the cushions can be removed from the couch.</l>
                 <o> You lift the cushions from the couch searching for something hiding in the couch cushions.</o>
                 <t>There's really no reason for you to do that.</t>
                 <item type="screwdriver" obtainable="1" inspected="0">
@@ -504,7 +570,7 @@
                                                                      `//__(____________________)___/
 
                         At first look, the screwdriver is a disappointment.  Then you think of all the uses a screwdriver
-                         can have.</l>
+                        can have.</l>
                     <o>The screwdriver cannot be opened.</o>
                     <t>You decide it may be useful to take the screwdriver with you.</t>
                 </item>
@@ -573,11 +639,19 @@
     </room>
     <room name="living room">
         <desc>
-        Sorry to be so anti-climatic, but as it stands there's no ending to the story.  More to come... This is
-        a bitch of a placeholder.  You'll have to wait until the demo on Oct. 4 to know how it ends.  :)
+        You insert your badge into the metal door and watch as it slowly grinds open.  A bright light catches your eye
+        as it disappears down a long tunnel.  As the light fades from sight you feel a sudden shift in gravity.  Without
+        warning you are now falling down the tunnel towards the light that holds the truth...
+
+        Suddenly, you hit the ground with a loud THUD.  You stand up, and dust yourself off.  When you look around your
+        memory comes back to you.  You're not Alice, no. But your mother is.  You've been trapped in this house directly
+        above Wonderland by your mom's nemesis.  They've been holding you hostage for ELEVEN years, but you've never aged.
+
+        Now that you have the answers, you're nothing more than confused.  There's nowhere else for you to go but back up
+        to the room you just escaped.  And just like that symbol you've seen around the room, everything seems impossible.
         </desc>
-        <l> </l>
-        <o> </o>
-        <t> </t>
     </room>
 </house>
+
+
+
